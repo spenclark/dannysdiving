@@ -191,7 +191,7 @@ export default function Header() {
               <div>
                 <button 
                   onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
-                  className="flex items-center justify-between w-full text-left py-2 hover:text-primary transition-colors"
+                  className="flex items-center justify-between w-full text-left py-2 text-foreground hover:text-primary transition-colors"
                   data-testid="mobile-nav-services-trigger"
                 >
                   <span>Services</span>
@@ -218,21 +218,21 @@ export default function Header() {
               </div>
               <button 
                 onClick={() => handleNavClick('videos')}
-                className="text-left py-2 hover:text-primary transition-colors"
+                className="text-left py-2 text-foreground hover:text-primary transition-colors"
                 data-testid="mobile-nav-videos"
               >
                 Recent Work
               </button>
               <button 
                 onClick={() => handleNavClick('testimonials')}
-                className="text-left py-2 hover:text-primary transition-colors"
+                className="text-left py-2 text-foreground hover:text-primary transition-colors"
                 data-testid="mobile-nav-testimonials"
               >
                 Testimonials
               </button>
               <button 
                 onClick={() => handleNavClick('contact')}
-                className="text-left py-2 hover:text-primary transition-colors"
+                className="text-left py-2 text-foreground hover:text-primary transition-colors"
                 data-testid="mobile-nav-contact"
               >
                 Contact

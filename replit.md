@@ -4,6 +4,17 @@
 
 Danny's Diving Services is a marketing website for a professional commercial diving business based in Victoria BC and Vancouver Island. The site showcases diving services including hull cleaning, underwater inspections, zinc anode replacement, mooring services, and equipment retrieval. Built as a lead generation platform, it features trust-building elements like video documentation, testimonials, certifications, and prominent call-to-action elements to drive phone calls and quote requests.
 
+## Recent Changes
+
+**November 12, 2025**
+- Replaced "WorkSafeBC Compliant" trust badge with "Video Documentation - Every Job Recorded" to emphasize video recording of all jobs
+- Migrated all images from generated assets to professional stock photography for better authenticity
+- Created dedicated video gallery page (`/videos`) showcasing 9+ recent diving projects with thumbnails, durations, and dates
+- Integrated contact form with backend API including email notifications via Nodemailer
+- Added full-screen video modal preview for video gallery items
+- Enhanced navigation with "Recent Work" link to video gallery page
+- Implemented proper loading states and error handling for contact form submissions
+
 ## User Preferences
 
 Preferred communication style: Simple, everyday language.
@@ -34,7 +45,8 @@ Preferred communication style: Simple, everyday language.
 - Functional components with hooks
 - Modular component structure: separate page components (Home, Videos) and reusable UI components
 - Example components provided for development/testing purposes
-- Key interactive features: before/after slider, video gallery, mobile-responsive navigation
+- Key interactive features: before/after slider, video gallery with modal previews, mobile-responsive navigation
+- Video gallery displays stock imagery thumbnails with play buttons, duration overlays, and full-screen modal on click
 
 ### Backend Architecture
 
@@ -109,8 +121,9 @@ Preferred communication style: Simple, everyday language.
 
 **CDN & External Assets**
 - Google Fonts CDN for typography (Inter, Open Sans)
-- Stock images stored in `attached_assets/stock_images/` directory
-- Video content structure prepared but using placeholder implementations
+- Stock images stored in `attached_assets/stock_images/` directory (11 professional diving/maritime photos)
+- Video gallery uses stock imagery as thumbnails with modal previews
+- Note: Video playback functionality prepared for integration with actual video hosting service (YouTube, Vimeo, or custom solution)
 
 **Third-Party UI Libraries**
 - Radix UI component primitives (20+ components)

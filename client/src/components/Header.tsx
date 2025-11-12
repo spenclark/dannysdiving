@@ -25,6 +25,20 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Handle scrolling to hash sections on page load
+  useEffect(() => {
+    const hash = window.location.hash.substring(1); // Remove the #
+    if (hash) {
+      // Small delay to ensure page is fully loaded
+      setTimeout(() => {
+        const element = document.getElementById(hash);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    }
+  }, []);
+
   const handleNavClick = (section: string) => {
     console.log(`Navigate to: ${section}`);
     setIsMobileMenuOpen(false);

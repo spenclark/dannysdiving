@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Video } from "lucide-react";
 import beforeAfterImg from "@assets/stock_images/boat_hull_before_aft_522613ec.jpg";
 
 export default function BeforeAfter() {
@@ -86,6 +87,17 @@ export default function BeforeAfter() {
           <div className="absolute top-4 right-4 bg-black/60 text-white px-4 py-2 rounded-md text-sm font-semibold">
             After
           </div>
+        </div>
+
+        <div className="mt-8 text-center">
+          <a 
+            href="/videos"
+            className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors font-medium"
+            data-testid="link-view-recent-work"
+          >
+            <Video className="w-5 h-5" />
+            <span>Watch our recent work videos - every job is recorded</span>
+          </a>
         </div>
       </div>
     </section>

@@ -5,6 +5,7 @@ import { Phone, Menu, X } from "lucide-react";
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const isHomePage = window.location.pathname === '/';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,13 +30,15 @@ export default function Header() {
   };
 
   const handleCallNow = () => {
-    window.location.href = 'tel:+12505551234';
+    window.location.href = 'tel:+17785354506';
   };
+
+  const shouldUseDarkText = isScrolled || !isHomePage;
 
   return (
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-background/95 backdrop-blur-sm shadow-md' : 'bg-transparent'
+        shouldUseDarkText ? 'bg-background/95 backdrop-blur-sm shadow-md' : 'bg-transparent'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 md:px-6">
@@ -45,10 +48,10 @@ export default function Header() {
               <span className="text-primary-foreground font-bold text-xl">DD</span>
             </div>
             <div>
-              <h1 className={`font-bold text-lg leading-tight ${isScrolled ? 'text-foreground' : 'text-white'}`}>
+              <h1 className={`font-bold text-lg leading-tight ${shouldUseDarkText ? 'text-foreground' : 'text-white'}`}>
                 Danny's Diving
               </h1>
-              <p className={`text-xs ${isScrolled ? 'text-muted-foreground' : 'text-gray-300'}`}>
+              <p className={`text-xs ${shouldUseDarkText ? 'text-muted-foreground' : 'text-gray-300'}`}>
                 Professional Services
               </p>
             </div>
@@ -58,7 +61,7 @@ export default function Header() {
             <button 
               onClick={() => handleNavClick('services')}
               className={`text-sm font-medium hover:text-primary transition-colors ${
-                isScrolled ? 'text-foreground' : 'text-white'
+                shouldUseDarkText ? 'text-foreground' : 'text-white'
               }`}
               data-testid="nav-services"
             >
@@ -67,7 +70,7 @@ export default function Header() {
             <button 
               onClick={() => handleNavClick('videos')}
               className={`text-sm font-medium hover:text-primary transition-colors ${
-                isScrolled ? 'text-foreground' : 'text-white'
+                shouldUseDarkText ? 'text-foreground' : 'text-white'
               }`}
               data-testid="nav-videos"
             >
@@ -76,7 +79,7 @@ export default function Header() {
             <button 
               onClick={() => handleNavClick('testimonials')}
               className={`text-sm font-medium hover:text-primary transition-colors ${
-                isScrolled ? 'text-foreground' : 'text-white'
+                shouldUseDarkText ? 'text-foreground' : 'text-white'
               }`}
               data-testid="nav-testimonials"
             >
@@ -85,7 +88,7 @@ export default function Header() {
             <button 
               onClick={() => handleNavClick('contact')}
               className={`text-sm font-medium hover:text-primary transition-colors ${
-                isScrolled ? 'text-foreground' : 'text-white'
+                shouldUseDarkText ? 'text-foreground' : 'text-white'
               }`}
               data-testid="nav-contact"
             >
@@ -95,18 +98,18 @@ export default function Header() {
 
           <div className="flex items-center gap-4">
             <Button 
-              variant={isScrolled ? "default" : "secondary"}
+              variant={shouldUseDarkText ? "default" : "secondary"}
               size="default"
               onClick={handleCallNow}
               className="hidden md:flex"
               data-testid="button-header-call"
             >
               <Phone className="w-4 h-4 mr-2" />
-              (250) 555-1234
+              (778) 535-4506
             </Button>
 
             <button
-              className={`lg:hidden ${isScrolled ? 'text-foreground' : 'text-white'}`}
+              className={`lg:hidden ${shouldUseDarkText ? 'text-foreground' : 'text-white'}`}
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               data-testid="button-mobile-menu"
             >
@@ -153,7 +156,7 @@ export default function Header() {
                 data-testid="button-mobile-call"
               >
                 <Phone className="w-4 h-4 mr-2" />
-                Call (250) 555-1234
+                (778) 535-4506
               </Button>
             </nav>
           </div>

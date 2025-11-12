@@ -5,7 +5,7 @@ import heroImage from "@assets/stock_images/commercial_diver_oce_08019dc9.jpg";
 export default function HeroSection() {
   const handleCallNow = () => {
     console.log('Call button clicked');
-    window.location.href = 'tel:+12505551234';
+    window.location.href = 'tel:+17785354506';
   };
 
   const handleGetQuote = () => {
@@ -37,7 +37,7 @@ export default function HeroSection() {
             data-testid="button-hero-call"
           >
             <Phone className="mr-2 h-5 w-5" />
-            Call Now: (250) 555-1234
+            Call Now: (778) 535-4506
           </Button>
           <Button 
             size="lg" 

@@ -71,16 +71,16 @@ export const services: Service[] = [
   },
   {
     title: "Underwater Inspections Victoria BC",
-    description: "Comprehensive underwater hull inspections in Victoria BC and Vancouver Island. Professional diving inspections of hulls, propellers, shafts, rudders, and through-hulls with detailed video documentation and observation reports.",
+    description: "Comprehensive underwater hull inspections in Victoria BC and Vancouver Island. Professional diving inspections of hulls, propellers, shafts, rudders, and through-hulls with detailed video documentation and observation reports. Inspect damage below the waterline without hauling out.",
     image: inspectionImg,
     slug: "underwater-inspections",
-    metaDescription: "Professional underwater boat inspections in Victoria BC. Hull inspections, propeller checks, through-hull examination. Complete video documentation. Call (778) 535-4506",
+    metaDescription: "Professional underwater boat inspections in Victoria BC. Hull damage assessment, propeller checks, through-hull examination. Complete video documentation. Call (778) 535-4506",
     benefits: [
+      "Assess damage below the waterline without hauling out",
       "Complete video documentation of underwater surfaces",
       "Visual inspection before purchasing a vessel",
       "Identify problems before they become expensive",
       "Detailed observation reports with photos and video",
-      "See hull condition without hauling out",
       "Faster and more affordable than dry dock"
     ],
     process: [
@@ -102,7 +102,7 @@ export const services: Service[] = [
     faqs: [
       {
         question: "When should I get an underwater inspection in Victoria?",
-        answer: "Annual inspections help catch problems early. Also consider inspections before purchasing a used boat, after grounding incidents, or if you notice unusual vibrations or performance issues."
+        answer: "Annual inspections help catch problems early. Also consider inspections before purchasing a used boat, after grounding or collision incidents, if you notice unusual vibrations or performance issues, or to assess any suspected damage below the waterline."
       },
       {
         question: "What do you inspect during an underwater inspection?",

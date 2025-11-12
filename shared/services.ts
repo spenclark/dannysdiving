@@ -24,7 +24,7 @@ export const services: Service[] = [
     description: "Professional underwater hull cleaning services in Victoria BC and Vancouver Island. Remove barnacles, algae, and marine growth to improve vessel performance and fuel efficiency.",
     image: hullCleaningImg,
     slug: "hull-cleaning",
-    metaDescription: "Expert hull cleaning services in Victoria BC & Vancouver Island. Remove barnacles & marine growth. Improve fuel efficiency. Licensed commercial diver. Call (778) 535-4506",
+    metaDescription: "Expert hull cleaning services in Victoria BC & Vancouver Island. Remove barnacles & marine growth. Improve fuel efficiency. Professional commercial diver. Call (778) 535-4506",
     benefits: [
       "Improve fuel efficiency by up to 20%",
       "Increase vessel speed and performance",
@@ -71,23 +71,23 @@ export const services: Service[] = [
   },
   {
     title: "Underwater Inspections Victoria BC",
-    description: "Comprehensive underwater hull inspections in Victoria BC and Vancouver Island. Professional diving surveys of hulls, propellers, shafts, rudders, and through-hulls with detailed video documentation and reports.",
+    description: "Comprehensive underwater hull inspections in Victoria BC and Vancouver Island. Professional diving inspections of hulls, propellers, shafts, rudders, and through-hulls with detailed video documentation and observation reports.",
     image: inspectionImg,
     slug: "underwater-inspections",
-    metaDescription: "Professional underwater boat inspections in Victoria BC. Hull surveys, propeller inspection, through-hull checks. Video documentation. Insurance approved. Call (778) 535-4506",
+    metaDescription: "Professional underwater boat inspections in Victoria BC. Hull inspections, propeller checks, through-hull examination. Complete video documentation. Call (778) 535-4506",
     benefits: [
-      "Insurance-approved inspection reports",
-      "Pre-purchase vessel surveys",
+      "Complete video documentation of underwater surfaces",
+      "Visual inspection before purchasing a vessel",
       "Identify problems before they become expensive",
-      "Video documentation of all findings",
-      "Detailed written reports with photos",
-      "Faster and more affordable than hauling out"
+      "Detailed observation reports with photos and video",
+      "See hull condition without hauling out",
+      "Faster and more affordable than dry dock"
     ],
     process: [
-      { step: "Consultation", description: "Discuss your inspection needs - whether pre-purchase survey, insurance requirement, or routine maintenance check." },
-      { step: "Underwater Survey", description: "Our licensed commercial diver performs a thorough underwater inspection of your hull, running gear, through-hulls, and other submerged components." },
-      { step: "Video Recording", description: "Every inch of your underwater surfaces is recorded in high-definition video for your records and insurance purposes." },
-      { step: "Detailed Report", description: "Receive a comprehensive written report with video footage, photographs, and specific recommendations for any issues discovered." }
+      { step: "Consultation", description: "Discuss your inspection needs - whether checking a vessel before purchase, routine maintenance, or assessing suspected damage." },
+      { step: "Underwater Inspection", description: "Our commercial diver performs a thorough underwater visual inspection of your hull, running gear, through-hulls, and other submerged components." },
+      { step: "Video Recording", description: "Every inch of your underwater surfaces is recorded in high-definition video for your records and documentation." },
+      { step: "Observation Report", description: "Receive a detailed written observation report with video footage, photographs, and notes about what was found during the inspection." }
     ],
     serviceAreas: [
       "Victoria Harbour marinas",
@@ -102,19 +102,19 @@ export const services: Service[] = [
     faqs: [
       {
         question: "When should I get an underwater inspection in Victoria?",
-        answer: "We recommend annual inspections for all vessels. Additionally, get inspections before purchasing a used boat, for insurance requirements, after grounding incidents, or if you notice unusual vibrations or performance issues."
+        answer: "Annual inspections help catch problems early. Also consider inspections before purchasing a used boat, after grounding incidents, or if you notice unusual vibrations or performance issues."
       },
       {
-        question: "What do you inspect during an underwater survey?",
-        answer: "We inspect the hull for damage or blistering, all through-hull fittings and seacocks, propeller and shaft condition, rudder and steering components, zincs, trim tabs, transducers, and any other underwater appendages."
+        question: "What do you inspect during an underwater inspection?",
+        answer: "We visually inspect the hull for damage or blistering, all through-hull fittings, propeller and shaft condition, rudder and steering components, zincs, trim tabs, transducers, and any other underwater components. Everything is recorded on video."
       },
       {
-        question: "Are your inspection reports accepted by insurance companies?",
-        answer: "Yes. Our licensed commercial diver provides detailed reports with video documentation that meet insurance company requirements throughout BC."
+        question: "Can I use your inspection reports for insurance or surveys?",
+        answer: "We provide detailed visual documentation and observation reports. We are not licensed marine surveyors and do not provide insurance-approved surveys. For official survey requirements, contact a licensed marine surveyor. Our inspections help you see your boat's underwater condition."
       },
       {
         question: "How long does an underwater inspection take?",
-        answer: "Most inspections take 1-3 hours depending on vessel size. You'll receive your detailed report with video within 24-48 hours."
+        answer: "Most inspections take 1-3 hours depending on vessel size. You'll receive your detailed observation report with video within 24-48 hours."
       }
     ],
     pricing: "Inspection pricing based on vessel length and scope of work. Contact us for a detailed quote for your Victoria BC boat inspection."
@@ -174,7 +174,7 @@ export const services: Service[] = [
     description: "Professional mooring inspection, maintenance, and installation services in Victoria BC and Vancouver Island. Ensure your vessel stays secure in all weather conditions with expert mooring solutions.",
     image: mooringImg,
     slug: "mooring-services",
-    metaDescription: "Expert mooring services in Victoria BC & Vancouver Island. Inspection, maintenance, installation. Keep your boat secure. Licensed commercial diver. Call (778) 535-4506",
+    metaDescription: "Expert mooring services in Victoria BC & Vancouver Island. Inspection, maintenance, installation. Keep your boat secure. Professional commercial diver. Call (778) 535-4506",
     benefits: [
       "Peace of mind in storm season",
       "Prevent vessel damage from mooring failure",
@@ -224,7 +224,7 @@ export const services: Service[] = [
     description: "Professional underwater search and recovery services in Victoria BC and Vancouver Island. Recover lost items, tools, equipment, and valuable belongings from the ocean floor with experienced commercial divers.",
     image: retrievalImg,
     slug: "lost-item-retrieval",
-    metaDescription: "Underwater recovery services Victoria BC. Lost items, tools, equipment retrieval. Professional search diving. Vancouver Island. Licensed diver. Call (778) 535-4506",
+    metaDescription: "Underwater recovery services Victoria BC. Lost items, tools, equipment retrieval. Professional search diving. Vancouver Island. Expert diver. Call (778) 535-4506",
     benefits: [
       "Recover valuable items thought to be lost forever",
       "Professional search patterns and techniques",

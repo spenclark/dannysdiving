@@ -1,4 +1,5 @@
 import { Mail, MapPin, Phone } from "lucide-react";
+import { FaFacebook, FaInstagram } from "react-icons/fa";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -19,6 +20,28 @@ export default function Footer() {
             <p className="text-muted-foreground text-sm leading-relaxed mb-4">
               Professional commercial diving services in Victoria BC and Vancouver Island. Licensed, insured, and trusted by boat owners for over 3 years.
             </p>
+            <div className="flex gap-4">
+              <a 
+                href="https://www.facebook.com/people/Dannys-Diving-Services/61582809442381/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-primary transition-colors"
+                data-testid="link-facebook"
+                aria-label="Visit our Facebook page"
+              >
+                <FaFacebook className="w-6 h-6" />
+              </a>
+              <a 
+                href="https://www.instagram.com/dannysdivingservices" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-primary transition-colors"
+                data-testid="link-instagram"
+                aria-label="Visit our Instagram profile"
+              >
+                <FaInstagram className="w-6 h-6" />
+              </a>
+            </div>
           </div>
 
           <div>

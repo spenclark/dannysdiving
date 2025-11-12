@@ -196,7 +196,14 @@ export default function ContactForm() {
                 <p className="text-sm opacity-90 mb-4">
                   Need urgent diving services? We offer 24/7 emergency response for critical marine situations.
                 </p>
-                <Button variant="secondary" size="sm" className="w-full" data-testid="button-emergency">
+                <Button 
+                  variant="secondary" 
+                  size="sm" 
+                  className="w-full" 
+                  onClick={() => window.location.href = 'tel:+17785354506'}
+                  data-testid="button-emergency"
+                >
+                  <Phone className="w-4 h-4 mr-2" />
                   Call Emergency Line
                 </Button>
               </CardContent>

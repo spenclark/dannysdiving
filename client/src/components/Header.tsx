@@ -1,10 +1,20 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Phone, Menu, X } from "lucide-react";
+import { Phone, Menu, X, ChevronDown } from "lucide-react";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from "@/components/ui/navigation-menu";
+import { services } from "@shared/services";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
   const isHomePage = window.location.pathname === '/';
 
   useEffect(() => {
@@ -18,6 +28,7 @@ export default function Header() {
   const handleNavClick = (section: string) => {
     console.log(`Navigate to: ${section}`);
     setIsMobileMenuOpen(false);
+    setIsMobileServicesOpen(false);
     if (section === 'videos') {
       window.location.href = '/videos';
     } else if (section === 'services') {
@@ -70,15 +81,40 @@ export default function Header() {
           </div>
 
           <nav className="hidden lg:flex items-center gap-8">
-            <button 
-              onClick={() => handleNavClick('services')}
-              className={`text-sm font-medium hover:text-primary transition-colors ${
-                shouldUseDarkText ? 'text-foreground' : 'text-white'
-              }`}
-              data-testid="nav-services"
-            >
-              Services
-            </button>
+            <NavigationMenu>
+              <NavigationMenuList>
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger 
+                    className={`text-sm font-medium bg-transparent hover:bg-transparent data-[state=open]:bg-transparent ${
+                      shouldUseDarkText ? 'text-foreground hover:text-primary' : 'text-white hover:text-primary'
+                    }`}
+                    data-testid="nav-services-trigger"
+                  >
+                    Services
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+                      {services.map((service) => (
+                        <li key={service.slug}>
+                          <NavigationMenuLink asChild>
+                            <a
+                              href={`/services/${service.slug}`}
+                              className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                              data-testid={`nav-service-${service.slug}`}
+                            >
+                              <div className="text-sm font-medium leading-none">{service.title.replace(' Victoria BC', '')}</div>
+                              <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                                {service.description.substring(0, 100)}...
+                              </p>
+                            </a>
+                          </NavigationMenuLink>
+                        </li>
+                      ))}
+                    </ul>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+              </NavigationMenuList>
+            </NavigationMenu>
             <button 
               onClick={() => handleNavClick('videos')}
               className={`text-sm font-medium hover:text-primary transition-colors ${
@@ -122,7 +158,12 @@ export default function Header() {
 
             <button
               className={`lg:hidden ${shouldUseDarkText ? 'text-foreground' : 'text-white'}`}
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              onClick={() => {
+                setIsMobileMenuOpen(!isMobileMenuOpen);
+                if (isMobileMenuOpen) {
+                  setIsMobileServicesOpen(false);
+                }
+              }}
               data-testid="button-mobile-menu"
             >
               {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -133,13 +174,34 @@ export default function Header() {
         {isMobileMenuOpen && (
           <div className="lg:hidden py-4 border-t">
             <nav className="flex flex-col gap-4">
-              <button 
-                onClick={() => handleNavClick('services')}
-                className="text-left py-2 hover:text-primary transition-colors"
-                data-testid="mobile-nav-services"
-              >
-                Services
-              </button>
+              <div>
+                <button 
+                  onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
+                  className="flex items-center justify-between w-full text-left py-2 hover:text-primary transition-colors"
+                  data-testid="mobile-nav-services-trigger"
+                >
+                  <span>Services</span>
+                  <ChevronDown className={`w-4 h-4 transition-transform ${isMobileServicesOpen ? 'rotate-180' : ''}`} />
+                </button>
+                {isMobileServicesOpen && (
+                  <div className="ml-4 mt-2 flex flex-col gap-2">
+                    {services.map((service) => (
+                      <a
+                        key={service.slug}
+                        href={`/services/${service.slug}`}
+                        className="text-sm py-2 text-muted-foreground hover:text-primary transition-colors"
+                        data-testid={`mobile-nav-service-${service.slug}`}
+                        onClick={() => {
+                          setIsMobileMenuOpen(false);
+                          setIsMobileServicesOpen(false);
+                        }}
+                      >
+                        {service.title.replace(' Victoria BC', '')}
+                      </a>
+                    ))}
+                  </div>
+                )}
+              </div>
               <button 
                 onClick={() => handleNavClick('videos')}
                 className="text-left py-2 hover:text-primary transition-colors"

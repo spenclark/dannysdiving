@@ -1,59 +1,15 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import hullCleaningImg from "@assets/stock_images/professional_commerc_fe47fda8.jpg";
-import inspectionImg from "@assets/stock_images/underwater_boat_hull_a2ba17a3.jpg";
-import zincImg from "@assets/stock_images/professional_commerc_90fd6021.jpg";
-import mooringImg from "@assets/stock_images/underwater_boat_hull_5ed3bff6.jpg";
-import retrievalImg from "@assets/stock_images/commercial_diver_oce_e582419b.jpg";
-import commercialImg from "@assets/stock_images/commercial_diver_oce_4aae3a08.jpg";
-
-const services = [
-  {
-    title: "Hull Cleaning",
-    description: "Professional underwater hull cleaning to improve performance and fuel efficiency. Remove barnacles, algae, and marine growth.",
-    image: hullCleaningImg,
-    slug: "hull-cleaning"
-  },
-  {
-    title: "Underwater Inspections",
-    description: "Comprehensive underwater inspections of hulls, propellers, rudders, and through-hulls. Detailed reports provided.",
-    image: inspectionImg,
-    slug: "underwater-inspections"
-  },
-  {
-    title: "Zinc Anode Replacement",
-    description: "Professional zinc anode inspection and replacement to protect your vessel from corrosion and extend its lifespan.",
-    image: zincImg,
-    slug: "zinc-changes"
-  },
-  {
-    title: "Mooring Services",
-    description: "Expert mooring inspection, maintenance, and installation. Ensure your vessel stays secure in all conditions.",
-    image: mooringImg,
-    slug: "mooring-services"
-  },
-  {
-    title: "Lost Item Retrieval",
-    description: "Underwater search and recovery services. Recover valuable items, tools, and equipment from the ocean floor.",
-    image: retrievalImg,
-    slug: "lost-item-retrieval"
-  },
-  {
-    title: "Commercial Diving",
-    description: "Licensed commercial diving services for marine construction, inspections, and specialized underwater projects.",
-    image: commercialImg,
-    slug: "commercial-diving"
-  }
-];
+import { services } from "@shared/services";
 
 export default function ServicesGrid() {
   const handleLearnMore = (slug: string) => {
-    console.log(`Navigate to service: ${slug}`);
+    window.location.href = `/services/${slug}`;
   };
 
   return (
-    <section className="py-16 md:py-24 bg-background">
+    <section id="services" className="py-16 md:py-24 bg-background">
       <div className="max-w-7xl mx-auto px-4 md:px-6">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">Our Diving Services</h2>
@@ -73,9 +29,9 @@ export default function ServicesGrid() {
                 />
               </div>
               <CardHeader className="space-y-2">
-                <CardTitle className="text-2xl">{service.title}</CardTitle>
+                <CardTitle className="text-2xl">{service.title.replace(' Victoria BC', '')}</CardTitle>
                 <CardDescription className="text-base leading-relaxed">
-                  {service.description}
+                  {service.description.split('.')[0] + '.'}
                 </CardDescription>
               </CardHeader>
               <CardContent>

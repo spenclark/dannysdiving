@@ -20,11 +20,23 @@ export default function Header() {
     setIsMobileMenuOpen(false);
     if (section === 'videos') {
       window.location.href = '/videos';
-    } else if (section === 'contact') {
-      if (window.location.pathname === '/videos') {
-        window.location.href = '/#contact-form';
+    } else if (section === 'services') {
+      if (window.location.pathname === '/') {
+        document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
       } else {
+        window.location.href = '/#services';
+      }
+    } else if (section === 'testimonials') {
+      if (window.location.pathname === '/') {
+        document.getElementById('testimonials')?.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        window.location.href = '/#testimonials';
+      }
+    } else if (section === 'contact') {
+      if (window.location.pathname === '/' || window.location.pathname.startsWith('/services/')) {
         document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        window.location.href = '/#contact-form';
       }
     }
   };

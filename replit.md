@@ -8,12 +8,24 @@ Danny's Diving Services is a marketing website for a professional commercial div
 
 **November 12, 2025**
 - Replaced "WorkSafeBC Compliant" trust badge with "Video Documentation - Every Job Recorded" to emphasize video recording of all jobs
+- Updated experience stats to "3+ Years Experience" and "50+ Clients" for accuracy
+- Updated phone number throughout site to (778) 535-4506
+- Fixed navbar visibility on white background pages (Videos page)
 - Migrated all images from generated assets to professional stock photography for better authenticity
 - Created dedicated video gallery page (`/videos`) showcasing 9+ recent diving projects with thumbnails, durations, and dates
 - Integrated contact form with backend API including email notifications via Nodemailer
 - Added full-screen video modal preview for video gallery items
 - Enhanced navigation with "Recent Work" link to video gallery page
 - Implemented proper loading states and error handling for contact form submissions
+- **Created 6 SEO-optimized service pages** for local search (Victoria BC & Vancouver Island):
+  - Hull Cleaning (`/services/hull-cleaning`)
+  - Underwater Inspections (`/services/underwater-inspections`)
+  - Zinc Anode Replacement (`/services/zinc-changes`)
+  - Mooring Services (`/services/mooring-services`)
+  - Underwater Recovery (`/services/lost-item-retrieval`)
+  - Commercial Diving (`/services/commercial-diving`)
+- Each service page includes: local keywords, benefits, process steps, service areas, FAQs, pricing info, and multiple CTAs
+- Added smooth scroll navigation for on-page sections (services, testimonials, contact)
 
 ## User Preferences
 
@@ -26,8 +38,12 @@ Preferred communication style: Simple, everyday language.
 **Framework & Build System**
 - React 18+ with TypeScript for type-safe component development
 - Vite as the build tool and development server
-- Wouter for lightweight client-side routing (Home, Videos, and 404 pages)
-- Single-page application architecture with minimal routes
+- Wouter for lightweight client-side routing
+- Multi-page application with SEO-optimized routes:
+  - Home (`/`)
+  - Videos (`/videos`)
+  - 6 individual service pages (`/services/:slug`)
+  - 404 Not Found page
 
 **UI Component System**
 - shadcn/ui component library (New York style variant) for consistent design
@@ -43,10 +59,12 @@ Preferred communication style: Simple, everyday language.
 
 **Component Architecture**
 - Functional components with hooks
-- Modular component structure: separate page components (Home, Videos) and reusable UI components
+- Modular component structure: separate page components (Home, Videos, ServicePage) and reusable UI components
 - Example components provided for development/testing purposes
 - Key interactive features: before/after slider, video gallery with modal previews, mobile-responsive navigation
 - Video gallery displays stock imagery thumbnails with play buttons, duration overlays, and full-screen modal on click
+- Service pages: Dynamic routing with comprehensive SEO content including benefits, process, service areas, FAQs
+- Shared service data model (`shared/services.ts`) containing all service information for consistency
 
 ### Backend Architecture
 
@@ -124,6 +142,29 @@ Preferred communication style: Simple, everyday language.
 - Stock images stored in `attached_assets/stock_images/` directory (11 professional diving/maritime photos)
 - Video gallery uses stock imagery as thumbnails with modal previews
 - Note: Video playback functionality prepared for integration with actual video hosting service (YouTube, Vimeo, or custom solution)
+
+## SEO Strategy
+
+**Local Search Optimization**
+- 6 individual service pages optimized for Victoria BC and Vancouver Island searches
+- Each page includes 20+ local keyword mentions (Victoria BC, Vancouver Island, Oak Bay, Sidney, etc.)
+- Service area sections list specific marinas and locations throughout the region
+- Meta descriptions optimized for local search with phone number inclusion
+- Unique H1 tags per service page with local modifiers
+
+**Content Structure for SEO**
+- Comprehensive FAQ sections answering common local questions
+- Detailed process descriptions for user education and keyword density
+- Benefits sections highlighting value propositions
+- Service areas clearly listed with local place names
+- Multiple call-to-action sections with phone number and quote requests
+
+**Technical SEO**
+- Dynamic page titles and meta descriptions per service
+- Clean URL structure (`/services/hull-cleaning`)
+- Internal linking from service grid to individual pages
+- Mobile-responsive design for local mobile searches
+- Fast loading with optimized images
 
 **Third-Party UI Libraries**
 - Radix UI component primitives (20+ components)

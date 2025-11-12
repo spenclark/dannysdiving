@@ -47,12 +47,12 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold mb-4">Our Services</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><a href="#" className="hover:text-primary transition-colors">Hull Cleaning</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Underwater Inspections</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Zinc Anode Replacement</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Mooring Services</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Lost Item Retrieval</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Commercial Diving</a></li>
+              <li><a href="/services/hull-cleaning" className="hover:text-primary transition-colors">Hull Cleaning</a></li>
+              <li><a href="/services/underwater-inspections" className="hover:text-primary transition-colors">Underwater Inspections</a></li>
+              <li><a href="/services/zinc-changes" className="hover:text-primary transition-colors">Zinc Anode Replacement</a></li>
+              <li><a href="/services/mooring-services" className="hover:text-primary transition-colors">Mooring Services</a></li>
+              <li><a href="/services/lost-item-retrieval" className="hover:text-primary transition-colors">Lost Item Retrieval</a></li>
+              <li><a href="/services/commercial-diving" className="hover:text-primary transition-colors">Commercial Diving</a></li>
             </ul>
           </div>
 

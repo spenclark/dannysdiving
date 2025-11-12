@@ -70,7 +70,7 @@ export default function Header() {
     window.location.href = 'tel:+17785354506';
   };
 
-  const shouldUseDarkText = isScrolled || !isHomePage;
+  const shouldUseDarkText = isScrolled || !isHomePage || isMobileMenuOpen;
 
   return (
     <header 

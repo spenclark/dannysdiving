@@ -17,7 +17,7 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-              Professional commercial diving services in Victoria BC and Vancouver Island. Licensed, insured, and trusted by boat owners for over 15 years.
+              Professional commercial diving services in Victoria BC and Vancouver Island. Licensed, insured, and trusted by boat owners for over 3 years.
             </p>
           </div>
 

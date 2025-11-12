@@ -18,8 +18,8 @@ const badges = [
   },
   {
     icon: Clock,
-    title: "15+ Years Experience",
-    description: "Trusted by 500+ Clients"
+    title: "3+ Years Experience",
+    description: "Trusted by 50+ Clients"
   }
 ];
 

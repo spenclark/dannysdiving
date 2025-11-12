@@ -18,46 +18,40 @@ export default function ContactForm() {
     message: ""
   });
 
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
-
-    try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
-
-      const result = await response.json();
-
-      if (response.ok) {
-        toast({
-          title: "Quote Request Received!",
-          description: "We'll contact you within 24 hours to discuss your diving needs.",
-        });
-        setFormData({ name: "", phone: "", email: "", service: "", message: "" });
-      } else {
-        toast({
-          title: "Error",
-          description: result.message || "Failed to submit request. Please try again.",
-          variant: "destructive",
-        });
-      }
-    } catch (error) {
-      console.error('Failed to submit form:', error);
+    
+    // Validate required fields
+    if (!formData.name || !formData.phone || !formData.email) {
       toast({
-        title: "Error",
-        description: "Failed to submit request. Please try again.",
+        title: "Missing Information",
+        description: "Please fill in your name, phone, and email.",
         variant: "destructive",
       });
-    } finally {
-      setIsSubmitting(false);
+      return;
     }
+
+    // Create mailto link with all form data
+    const subject = encodeURIComponent(`Quote Request from ${formData.name}`);
+    const body = encodeURIComponent(
+      `Name: ${formData.name}\n` +
+      `Phone: ${formData.phone}\n` +
+      `Email: ${formData.email}\n` +
+      `Service: ${formData.service || 'Not specified'}\n\n` +
+      `Message:\n${formData.message || 'No message provided'}`
+    );
+    
+    const mailtoLink = `mailto:dannysdivingservices@gmail.com?subject=${subject}&body=${body}`;
+    window.location.href = mailtoLink;
+    
+    // Clear form after opening email client
+    setTimeout(() => {
+      setFormData({ name: "", phone: "", email: "", service: "", message: "" });
+      toast({
+        title: "Email Client Opened",
+        description: "Please send the email from your email client to complete your request.",
+      });
+    }, 500);
   };
 
   const handleChange = (field: string, value: string) => {
@@ -151,8 +145,8 @@ export default function ContactForm() {
                   />
                 </div>
 
-                <Button type="submit" size="lg" className="w-full" disabled={isSubmitting} data-testid="button-submit-quote">
-                  {isSubmitting ? "Submitting..." : "Request Quote"}
+                <Button type="submit" size="lg" className="w-full" data-testid="button-submit-quote">
+                  Request Quote via Email
                 </Button>
               </form>
             </CardContent>

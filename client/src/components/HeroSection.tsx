@@ -10,7 +10,9 @@ export default function HeroSection() {
 
   const handleGetQuote = () => {
     console.log('Get quote button clicked');
-    document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' });
+    const subject = encodeURIComponent('Diving Services Quote Request');
+    const body = encodeURIComponent('I would like to request a quote for diving services.\n\nName: \nPhone: \nVessel Details: \nService Needed: ');
+    window.location.href = `mailto:dannysdivingservices@gmail.com?subject=${subject}&body=${body}`;
   };
 
   return (

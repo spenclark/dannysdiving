@@ -27,7 +27,18 @@ export default function ServicePage() {
   };
 
   const handleGetQuote = () => {
-    window.location.href = '/#contact-form';
+    if (service) {
+      const subject = encodeURIComponent(`Quote Request: ${service.title.replace(' Victoria BC', '')}`);
+      const body = encodeURIComponent(
+        `I would like to request a quote for ${service.title.replace(' Victoria BC', '')} services.\n\n` +
+        `Name: \n` +
+        `Phone: \n` +
+        `Email: \n` +
+        `Vessel Details: \n` +
+        `Additional Information: `
+      );
+      window.location.href = `mailto:dannysdivingservices@gmail.com?subject=${subject}&body=${body}`;
+    }
   };
 
   const handleBackToServices = () => {

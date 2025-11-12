@@ -175,7 +175,7 @@ export default function ContactForm() {
                   <Mail className="w-5 h-5 text-primary mt-0.5" />
                   <div>
                     <p className="font-semibold">Email</p>
-                    <a href="mailto:danny@dannydiver.com" className="text-muted-foreground hover:text-primary">danny@dannydiver.com</a>
+                    <a href="mailto:dannysdivingservices@gmail.com" className="text-muted-foreground hover:text-primary">dannysdivingservices@gmail.com</a>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">

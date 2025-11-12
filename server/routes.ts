@@ -42,7 +42,7 @@ Submitted at: ${new Date().toLocaleString()}
 
         await transporter.sendMail({
           from: process.env.SMTP_FROM || '"Danny\'s Diving" <noreply@dannydiver.com>',
-          to: process.env.CONTACT_EMAIL || "danny@dannydiver.com",
+          to: process.env.CONTACT_EMAIL || "dannysdivingservices@gmail.com",
           subject: `New Quote Request from ${validatedData.name}`,
           text: emailContent,
         });

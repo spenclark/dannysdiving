@@ -1,38 +1,24 @@
-import { type User, type InsertUser } from "@shared/schema";
-import { randomUUID } from "crypto";
+import { type InsertContactRequest, type ContactRequest, contactRequests } from "@shared/schema";
+import { neon } from "@neondatabase/serverless";
+import { drizzle } from "drizzle-orm/neon-http";
 
-// modify the interface with any CRUD methods
-// you might need
+const sql = neon(process.env.DATABASE_URL!);
+const db = drizzle(sql);
 
 export interface IStorage {
-  getUser(id: string): Promise<User | undefined>;
-  getUserByUsername(username: string): Promise<User | undefined>;
-  createUser(user: InsertUser): Promise<User>;
+  createContactRequest(request: InsertContactRequest): Promise<ContactRequest>;
+  getAllContactRequests(): Promise<ContactRequest[]>;
 }
 
-export class MemStorage implements IStorage {
-  private users: Map<string, User>;
-
-  constructor() {
-    this.users = new Map();
+export class DbStorage implements IStorage {
+  async createContactRequest(request: InsertContactRequest): Promise<ContactRequest> {
+    const [contactRequest] = await db.insert(contactRequests).values(request).returning();
+    return contactRequest;
   }
 
-  async getUser(id: string): Promise<User | undefined> {
-    return this.users.get(id);
-  }
-
-  async getUserByUsername(username: string): Promise<User | undefined> {
-    return Array.from(this.users.values()).find(
-      (user) => user.username === username,
-    );
-  }
-
-  async createUser(insertUser: InsertUser): Promise<User> {
-    const id = randomUUID();
-    const user: User = { ...insertUser, id };
-    this.users.set(id, user);
-    return user;
+  async getAllContactRequests(): Promise<ContactRequest[]> {
+    return await db.select().from(contactRequests).orderBy(contactRequests.createdAt);
   }
 }
 
-export const storage = new MemStorage();
+export const storage = new DbStorage();

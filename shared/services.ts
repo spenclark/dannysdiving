@@ -271,12 +271,12 @@ export const services: Service[] = [
   },
   {
     title: "Commercial Diving Victoria BC",
-    description: "Licensed commercial diving services in Victoria BC and Vancouver Island. Professional underwater construction, marine surveys, infrastructure inspection, and specialized underwater projects for commercial and industrial clients.",
+    description: "Professional commercial diving services in Victoria BC and Vancouver Island. Expert underwater construction, marine surveys, infrastructure inspection, and specialized underwater projects for commercial and industrial clients.",
     image: commercialImg,
     slug: "commercial-diving",
-    metaDescription: "Licensed commercial diving services Victoria BC. Marine construction, infrastructure inspection, underwater surveys. Vancouver Island. Fully insured. Call (778) 535-4506",
+    metaDescription: "Professional commercial diving services Victoria BC. Marine construction, infrastructure inspection, underwater surveys. Vancouver Island. Fully insured. Call (778) 535-4506",
     benefits: [
-      "Licensed commercial diver with full insurance",
+      "Commercial diver with full insurance coverage",
       "Experience with marine infrastructure projects",
       "Video documentation for records and compliance",
       "Safe diving practices and equipment",
@@ -286,7 +286,7 @@ export const services: Service[] = [
     process: [
       { step: "Project Consultation", description: "Discuss your commercial diving needs, project scope, timelines, and any regulatory requirements specific to Victoria BC." },
       { step: "Planning & Safety", description: "Develop comprehensive dive plan including safety procedures, equipment needs, and coordination with other contractors." },
-      { step: "Professional Execution", description: "Execute diving operations with licensed commercial diver following all safety protocols and industry best practices." },
+      { step: "Professional Execution", description: "Execute diving operations with commercial diver following all safety protocols and industry best practices." },
       { step: "Documentation & Reporting", description: "Provide detailed reports, video documentation, and any required certifications or compliance paperwork." }
     ],
     serviceAreas: [
@@ -305,8 +305,8 @@ export const services: Service[] = [
         answer: "We provide underwater construction assistance, infrastructure inspection, marine surveys, salvage operations, debris removal, underwater photography/video, hull and pier damage assessment, and custom commercial diving projects throughout Victoria and Vancouver Island."
       },
       {
-        question: "Are you licensed and insured for commercial work?",
-        answer: "Yes. We are fully licensed commercial divers with $2M liability insurance coverage and all required certifications for commercial diving operations in British Columbia."
+        question: "Are you insured for commercial work?",
+        answer: "Yes. We carry $2M liability insurance coverage and maintain all required certifications for commercial diving operations in British Columbia."
       },
       {
         question: "Can you handle emergency commercial diving calls?",

@@ -80,7 +80,7 @@ export default function Header() {
     >
       <div className="max-w-7xl mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between h-20">
-          <div className="flex items-center gap-2">
+          <a href="/" className="flex items-center gap-2" data-testid="link-home-logo">
             <div className="w-10 h-10 bg-primary rounded-md flex items-center justify-center">
               <span className="text-primary-foreground font-bold text-xl">DD</span>
             </div>
@@ -92,7 +92,7 @@ export default function Header() {
                 Professional Services
               </p>
             </div>
-          </div>
+          </a>
 
           <nav className="hidden lg:flex items-center gap-8">
             <NavigationMenu>

@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Phone } from "lucide-react";
-import heroImage from "@assets/generated_images/Underwater_hull_inspection_hero_15d7de7d.png";
+import heroImage from "@assets/stock_images/commercial_diver_oce_08019dc9.jpg";
 
 export default function HeroSection() {
   const handleCallNow = () => {

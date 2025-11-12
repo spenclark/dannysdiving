@@ -18,14 +18,46 @@ export default function ContactForm() {
     message: ""
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    toast({
-      title: "Quote Request Received!",
-      description: "We'll contact you within 24 hours to discuss your diving needs.",
-    });
-    setFormData({ name: "", phone: "", email: "", service: "", message: "" });
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        toast({
+          title: "Quote Request Received!",
+          description: "We'll contact you within 24 hours to discuss your diving needs.",
+        });
+        setFormData({ name: "", phone: "", email: "", service: "", message: "" });
+      } else {
+        toast({
+          title: "Error",
+          description: result.message || "Failed to submit request. Please try again.",
+          variant: "destructive",
+        });
+      }
+    } catch (error) {
+      console.error('Failed to submit form:', error);
+      toast({
+        title: "Error",
+        description: "Failed to submit request. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (field: string, value: string) => {
@@ -119,8 +151,8 @@ export default function ContactForm() {
                   />
                 </div>
 
-                <Button type="submit" size="lg" className="w-full" data-testid="button-submit-quote">
-                  Request Quote
+                <Button type="submit" size="lg" className="w-full" disabled={isSubmitting} data-testid="button-submit-quote">
+                  {isSubmitting ? "Submitting..." : "Request Quote"}
                 </Button>
               </form>
             </CardContent>

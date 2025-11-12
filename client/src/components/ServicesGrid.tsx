@@ -1,12 +1,12 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import hullCleaningImg from "@assets/generated_images/Hull_cleaning_service_card_4bb37382.png";
-import inspectionImg from "@assets/generated_images/Underwater_inspection_service_card_a75c71a2.png";
-import zincImg from "@assets/generated_images/Zinc_replacement_service_card_b4f31b3c.png";
-import mooringImg from "@assets/generated_images/Mooring_services_card_42cd2489.png";
-import retrievalImg from "@assets/generated_images/Lost_item_retrieval_card_7b3109c3.png";
-import commercialImg from "@assets/generated_images/Commercial_diving_professional_portrait_d97c28ff.png";
+import hullCleaningImg from "@assets/stock_images/professional_commerc_fe47fda8.jpg";
+import inspectionImg from "@assets/stock_images/underwater_boat_hull_a2ba17a3.jpg";
+import zincImg from "@assets/stock_images/professional_commerc_90fd6021.jpg";
+import mooringImg from "@assets/stock_images/underwater_boat_hull_5ed3bff6.jpg";
+import retrievalImg from "@assets/stock_images/commercial_diver_oce_e582419b.jpg";
+import commercialImg from "@assets/stock_images/commercial_diver_oce_4aae3a08.jpg";
 
 const services = [
   {

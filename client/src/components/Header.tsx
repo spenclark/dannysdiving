@@ -17,8 +17,14 @@ export default function Header() {
   const handleNavClick = (section: string) => {
     console.log(`Navigate to: ${section}`);
     setIsMobileMenuOpen(false);
-    if (section === 'contact') {
-      document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' });
+    if (section === 'videos') {
+      window.location.href = '/videos';
+    } else if (section === 'contact') {
+      if (window.location.pathname === '/videos') {
+        window.location.href = '/#contact-form';
+      } else {
+        document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' });
+      }
     }
   };
 
@@ -59,13 +65,13 @@ export default function Header() {
               Services
             </button>
             <button 
-              onClick={() => handleNavClick('about')}
+              onClick={() => handleNavClick('videos')}
               className={`text-sm font-medium hover:text-primary transition-colors ${
                 isScrolled ? 'text-foreground' : 'text-white'
               }`}
-              data-testid="nav-about"
+              data-testid="nav-videos"
             >
-              About
+              Recent Work
             </button>
             <button 
               onClick={() => handleNavClick('testimonials')}
@@ -120,11 +126,11 @@ export default function Header() {
                 Services
               </button>
               <button 
-                onClick={() => handleNavClick('about')}
+                onClick={() => handleNavClick('videos')}
                 className="text-left py-2 hover:text-primary transition-colors"
-                data-testid="mobile-nav-about"
+                data-testid="mobile-nav-videos"
               >
-                About
+                Recent Work
               </button>
               <button 
                 onClick={() => handleNavClick('testimonials')}

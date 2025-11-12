@@ -1,4 +1,4 @@
-import { Shield, Award, CheckCircle, Clock } from "lucide-react";
+import { Shield, Award, Video, Clock } from "lucide-react";
 
 const badges = [
   {
@@ -12,9 +12,9 @@ const badges = [
     description: "Certified & Experienced"
   },
   {
-    icon: CheckCircle,
-    title: "WorkSafeBC Compliant",
-    description: "Safety First Always"
+    icon: Video,
+    title: "Video Documentation",
+    description: "Every Job Recorded"
   },
   {
     icon: Clock,

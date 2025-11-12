@@ -1,5 +1,5 @@
 import { useState } from "react";
-import beforeAfterImg from "@assets/generated_images/Before_after_hull_cleaning_cda0933c.png";
+import beforeAfterImg from "@assets/stock_images/boat_hull_before_aft_522613ec.jpg";
 
 export default function BeforeAfter() {
   const [sliderPosition, setSliderPosition] = useState(50);

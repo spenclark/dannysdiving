@@ -1,0 +1,11 @@
+# Danny's Diving Services - Robots.txt
+# Professional diving services in Victoria BC and Vancouver Island
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://dannysdiving.com/sitemap.xml
+
+# Crawl rate
+Crawl-delay: 1

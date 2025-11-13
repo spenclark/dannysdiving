@@ -89,6 +89,38 @@ Submitted at: ${new Date().toLocaleString()}
     }
   });
 
+  // Sitemap for SEO
+  app.get("/sitemap.xml", (req, res) => {
+    const baseUrl = "https://dannysdiving.com";
+    const currentDate = new Date().toISOString().split('T')[0];
+    
+    const pages = [
+      { url: "/", priority: "1.0", changefreq: "weekly" },
+      { url: "/videos", priority: "0.8", changefreq: "weekly" },
+      { url: "/services/hull-cleaning", priority: "0.9", changefreq: "monthly" },
+      { url: "/services/underwater-inspections", priority: "0.9", changefreq: "monthly" },
+      { url: "/services/zinc-changes", priority: "0.9", changefreq: "monthly" },
+      { url: "/services/mooring-services", priority: "0.9", changefreq: "monthly" },
+      { url: "/services/lost-item-retrieval", priority: "0.9", changefreq: "monthly" },
+      { url: "/services/commercial-diving", priority: "0.9", changefreq: "monthly" },
+      { url: "/privacy", priority: "0.3", changefreq: "yearly" },
+      { url: "/terms", priority: "0.3", changefreq: "yearly" },
+    ];
+
+    const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${pages.map(page => `  <url>
+    <loc>${baseUrl}${page.url}</loc>
+    <lastmod>${currentDate}</lastmod>
+    <changefreq>${page.changefreq}</changefreq>
+    <priority>${page.priority}</priority>
+  </url>`).join('\n')}
+</urlset>`;
+
+    res.header("Content-Type", "application/xml");
+    res.send(sitemap);
+  });
+
   const httpServer = createServer(app);
   return httpServer;
 }

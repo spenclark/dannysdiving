@@ -90,19 +90,29 @@ Submitted at: ${new Date().toLocaleString()}
   });
 
   // Sitemap for SEO
+  // Note: Keep service slugs in sync with shared/services.ts
   app.get("/sitemap.xml", (req, res) => {
     const baseUrl = "https://dannysdiving.com";
     const currentDate = new Date().toISOString().split('T')[0];
     
+    // Service slugs must match those defined in shared/services.ts
+    const serviceSlugs = [
+      "hull-cleaning",
+      "underwater-inspections",
+      "zinc-changes",
+      "mooring-services",
+      "lost-item-retrieval",
+      "commercial-diving"
+    ];
+    
     const pages = [
       { url: "/", priority: "1.0", changefreq: "weekly" },
       { url: "/videos", priority: "0.8", changefreq: "weekly" },
-      { url: "/services/hull-cleaning", priority: "0.9", changefreq: "monthly" },
-      { url: "/services/underwater-inspections", priority: "0.9", changefreq: "monthly" },
-      { url: "/services/zinc-changes", priority: "0.9", changefreq: "monthly" },
-      { url: "/services/mooring-services", priority: "0.9", changefreq: "monthly" },
-      { url: "/services/lost-item-retrieval", priority: "0.9", changefreq: "monthly" },
-      { url: "/services/commercial-diving", priority: "0.9", changefreq: "monthly" },
+      ...serviceSlugs.map(slug => ({
+        url: `/services/${slug}`,
+        priority: "0.9",
+        changefreq: "monthly"
+      })),
       { url: "/privacy", priority: "0.3", changefreq: "yearly" },
       { url: "/terms", priority: "0.3", changefreq: "yearly" },
     ];

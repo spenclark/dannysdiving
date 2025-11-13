@@ -6,6 +6,13 @@ Danny's Diving Services is a marketing website for a professional commercial div
 
 ## Recent Changes
 
+**November 13, 2025**
+- **Implemented SEO sitemap system** for improved search engine indexing:
+  - Dynamic XML sitemap at `/sitemap.xml` with all 10 pages (home, videos, 6 services, privacy, terms)
+  - robots.txt file configured to guide search engine crawlers
+  - Service page URLs prioritized at 0.9 for local search optimization in Victoria BC
+  - Sitemap automatically updates with current date for freshness signals
+
 **November 12, 2025**
 - Replaced "WorkSafeBC Compliant" trust badge with "Video Documentation - Every Job Recorded" to emphasize video recording of all jobs
 - Updated experience stats to "3+ Years Experience" and "50+ Clients" for accuracy
@@ -26,6 +33,8 @@ Danny's Diving Services is a marketing website for a professional commercial div
   - Commercial Diving (`/services/commercial-diving`)
 - Each service page includes: local keywords, benefits, process steps, service areas, FAQs, pricing info, and multiple CTAs
 - Added smooth scroll navigation for on-page sections (services, testimonials, contact)
+- Added CTA section to Videos page with phone call and quote request buttons
+- Added trust callout on homepage linking to video gallery: "Watch our recent work videos - every job is recorded"
 
 ## User Preferences
 
@@ -76,6 +85,7 @@ Preferred communication style: Simple, everyday language.
 **API Design**
 - RESTful API endpoint pattern (`/api/*`)
 - Contact form submission endpoint (`POST /api/contact`)
+- SEO sitemap endpoint (`GET /sitemap.xml`) - dynamic XML generation with all site pages
 - Zod schema validation for request payloads
 - Structured error handling with appropriate HTTP status codes
 
@@ -144,6 +154,12 @@ Preferred communication style: Simple, everyday language.
 - Note: Video playback functionality prepared for integration with actual video hosting service (YouTube, Vimeo, or custom solution)
 
 ## SEO Strategy
+
+**Search Engine Indexing**
+- XML sitemap at `/sitemap.xml` listing all site pages with priorities and change frequencies
+- robots.txt file configured to allow all crawlers and reference sitemap location
+- Dynamic sitemap generation with current lastmod dates for freshness signals
+- Service pages prioritized at 0.9 for maximum local search visibility
 
 **Local Search Optimization**
 - 6 individual service pages optimized for Victoria BC and Vancouver Island searches

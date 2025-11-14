@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { CheckCircle, Phone, ArrowLeft, MapPin } from "lucide-react";
 import { getServiceBySlug } from "@shared/services";
+import { generateServiceSchema, generateFAQSchema } from "@/lib/schema";
 
 export default function ServicePage() {
   const [, params] = useRoute("/services/:slug");
@@ -13,12 +14,47 @@ export default function ServicePage() {
 
   useEffect(() => {
     if (service) {
-      document.title = `${service.title} | Danny's Diving Services`;
+      document.title = `${service.title} - Underwater Barnacle Removal | Danny's Diving Services`;
       
       const metaDescription = document.querySelector('meta[name="description"]');
       if (metaDescription) {
         metaDescription.setAttribute('content', service.metaDescription);
       }
+
+      const ogImage = document.querySelector('meta[property="og:image"]') || document.createElement('meta');
+      ogImage.setAttribute('property', 'og:image');
+      ogImage.setAttribute('content', `https://dannysdiving.com${service.image}`);
+      if (!document.querySelector('meta[property="og:image"]')) {
+        document.head.appendChild(ogImage);
+      }
+
+      const canonicalLink = document.querySelector('link[rel="canonical"]') || document.createElement('link');
+      canonicalLink.setAttribute('rel', 'canonical');
+      canonicalLink.setAttribute('href', `https://dannysdiving.com/services/${service.slug}`);
+      if (!document.querySelector('link[rel="canonical"]')) {
+        document.head.appendChild(canonicalLink);
+      }
+
+      const serviceSchemaScript = document.createElement('script');
+      serviceSchemaScript.type = 'application/ld+json';
+      serviceSchemaScript.id = 'service-schema';
+      serviceSchemaScript.text = JSON.stringify(generateServiceSchema(service));
+      document.head.appendChild(serviceSchemaScript);
+
+      const faqSchemaScript = document.createElement('script');
+      faqSchemaScript.type = 'application/ld+json';
+      faqSchemaScript.id = 'faq-schema';
+      faqSchemaScript.text = JSON.stringify(generateFAQSchema(service.faqs));
+      document.head.appendChild(faqSchemaScript);
+
+      return () => {
+        const scripts = document.querySelectorAll('#service-schema, #faq-schema');
+        scripts.forEach(script => {
+          if (script.parentNode) {
+            script.parentNode.removeChild(script);
+          }
+        });
+      };
     }
   }, [service]);
 
@@ -82,7 +118,7 @@ export default function ServicePage() {
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-                  {service.title}
+                  {service.h1Title || service.title}
                 </h1>
                 <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed">
                   {service.description}
@@ -109,7 +145,7 @@ export default function ServicePage() {
               <div className="relative aspect-[4/3] rounded-md overflow-hidden shadow-xl">
                 <img 
                   src={service.image}
-                  alt={service.title}
+                  alt={service.imageAlt}
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -209,6 +245,32 @@ export default function ServicePage() {
             </div>
           </div>
         </section>
+
+        {/* Comparison Section (if exists) */}
+        {service.comparisonSection && (
+          <section className="py-16 bg-card">
+            <div className="max-w-4xl mx-auto px-4 md:px-6">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">
+                {service.comparisonSection.title}
+              </h2>
+              <p className="text-lg text-muted-foreground mb-12 text-center leading-relaxed">
+                {service.comparisonSection.content}
+              </p>
+              <div className="space-y-6">
+                {service.comparisonSection.differences.map((diff, index) => (
+                  <Card key={index} className="border-l-4 border-l-primary">
+                    <CardHeader>
+                      <CardTitle className="text-xl">{diff.service}</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="leading-relaxed">{diff.description}</p>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
 
         {/* Pricing Section */}
         <section className="py-16 bg-card">

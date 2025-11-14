@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Header from "@/components/Header";
 import VideoGallery from "@/components/VideoGallery";
 import Footer from "@/components/Footer";
@@ -5,6 +6,27 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft, Phone } from "lucide-react";
 
 export default function Videos() {
+  useEffect(() => {
+    document.title = "Recent Diving Work Videos | Danny's Diving Services Victoria BC";
+    
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', "Watch videos of our recent diving work in Victoria BC. Every job is documented on video. Hull cleaning, inspections, and marine services. Call (778) 535-4506");
+    }
+
+    const canonicalLink = document.querySelector('link[rel="canonical"]') || document.createElement('link');
+    canonicalLink.setAttribute('rel', 'canonical');
+    canonicalLink.setAttribute('href', 'https://dannysdiving.com/videos');
+    if (!document.querySelector('link[rel="canonical"]')) {
+      document.head.appendChild(canonicalLink);
+    }
+
+    const ogImage = document.querySelector('meta[property="og:image"]');
+    if (ogImage) {
+      ogImage.remove();
+    }
+  }, []);
+
   const handleBackHome = () => {
     console.log('Navigate to home');
     window.location.href = '/';

@@ -1,8 +1,30 @@
+import { useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export default function Privacy() {
+  useEffect(() => {
+    document.title = "Privacy Policy | Danny's Diving Services";
+    
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', "Privacy policy for Danny's Diving Services in Victoria BC. Learn how we protect your information when you request diving services.");
+    }
+
+    const canonicalLink = document.querySelector('link[rel="canonical"]') || document.createElement('link');
+    canonicalLink.setAttribute('rel', 'canonical');
+    canonicalLink.setAttribute('href', 'https://dannysdiving.com/privacy');
+    if (!document.querySelector('link[rel="canonical"]')) {
+      document.head.appendChild(canonicalLink);
+    }
+
+    const ogImage = document.querySelector('meta[property="og:image"]');
+    if (ogImage) {
+      ogImage.remove();
+    }
+  }, []);
+
   return (
     <div className="min-h-screen">
       <Header />

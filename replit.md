@@ -6,6 +6,27 @@ Danny's Diving Services is a marketing website for a professional commercial div
 
 ## Recent Changes
 
+**November 14, 2025**
+- **Comprehensive SEO Enhancement for Local Search Rankings**:
+  - Added structured data (Schema.org JSON-LD) for all pages:
+    - LocalBusiness schema on homepage with full business details, service areas, and contact info
+    - Service schema for each service page with provider, service areas, and pricing
+    - FAQ schema on all service pages for rich snippet eligibility in search results
+  - Enhanced title tags and H1 headings with service differentiators:
+    - Hull Cleaning: "Underwater Barnacle Removal & Marine Growth Cleaning"
+    - All services now include descriptive keywords like "underwater", "commercial diver", "professional"
+  - Added "Hull Cleaning vs Boat Detailing" comparison section to hull cleaning page:
+    - Clearly differentiates underwater hull cleaning from topside boat washing/detailing
+    - Explains why true hull cleaning requires commercial diving underwater
+    - Addresses common search confusion between hull cleaning and boat detailing services
+  - Implemented canonical URLs on all pages to prevent duplicate content penalties
+  - Added descriptive alt text to all service images with location keywords (Victoria, Vancouver Island)
+  - Added Open Graph image tags for improved social media sharing
+  - Enhanced keyword variations throughout content:
+    - Increased use of "Victoria" without always including "BC" for broader search coverage
+    - Added local marina names (Oak Bay, Sidney, Brentwood Bay) throughout content
+    - Included service-specific terms (barnacle removal, marine growth, underwater cleaning)
+
 **November 13, 2025**
 - **Implemented SEO sitemap system** for improved search engine indexing:
   - Dynamic XML sitemap at `/sitemap.xml` with all 10 pages (home, videos, 6 services, privacy, terms)
@@ -176,7 +197,15 @@ Preferred communication style: Simple, everyday language.
 - Multiple call-to-action sections with phone number and quote requests
 
 **Technical SEO**
-- Dynamic page titles and meta descriptions per service
+- Structured data markup (JSON-LD) on all pages:
+  - LocalBusiness schema with geo-coordinates, service areas, contact info
+  - Service schema for each service page
+  - FAQ schema for rich snippets in search results
+- Canonical URLs implemented on all pages to prevent duplicate content
+- Open Graph meta tags for social media sharing with service-specific images
+- Dynamic page titles and meta descriptions per service with keyword optimization
+- Enhanced H1 tags with service differentiators (e.g., "Underwater Barnacle Removal")
+- Descriptive image alt text with location keywords (Victoria, Vancouver Island)
 - Clean URL structure (`/services/hull-cleaning`)
 - Internal linking from service grid to individual pages
 - Mobile-responsive design for local mobile searches

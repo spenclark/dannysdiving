@@ -16,15 +16,24 @@ export interface Service {
   serviceAreas: string[];
   faqs: { question: string; answer: string }[];
   pricing: string;
+  comparisonSection?: {
+    title: string;
+    content: string;
+    differences: { service: string; description: string }[];
+  };
+  h1Title?: string;
+  imageAlt: string;
 }
 
 export const services: Service[] = [
   {
     title: "Hull Cleaning Victoria BC",
-    description: "Professional underwater hull cleaning services in Victoria BC and Vancouver Island. Remove barnacles, algae, and marine growth to improve vessel performance and fuel efficiency.",
+    h1Title: "Professional Hull Cleaning Victoria - Underwater Barnacle Removal & Marine Growth Cleaning",
+    description: "Professional underwater hull cleaning services in Victoria and Vancouver Island. Expert commercial diver removes barnacles, algae, and marine growth to improve vessel performance and fuel efficiency. Serving all Victoria marinas including Oak Bay, Sidney, and Brentwood Bay.",
     image: hullCleaningImg,
+    imageAlt: "Professional underwater hull cleaning service in Victoria BC showing commercial diver removing barnacles and marine growth from boat hull",
     slug: "hull-cleaning",
-    metaDescription: "Expert hull cleaning services in Victoria BC & Vancouver Island. Remove barnacles & marine growth. Improve fuel efficiency. Professional commercial diver. Call (778) 535-4506",
+    metaDescription: "Expert underwater hull cleaning Victoria BC. Barnacle removal, marine growth cleaning. Improve fuel efficiency 20%. Commercial diver. Oak Bay, Sidney, Victoria marinas. Call (778) 535-4506",
     benefits: [
       "Improve fuel efficiency by up to 20%",
       "Increase vessel speed and performance",
@@ -51,8 +60,8 @@ export const services: Service[] = [
     ],
     faqs: [
       {
-        question: "How often should I have my hull cleaned in Victoria BC?",
-        answer: "Most boats in Victoria BC waters benefit from hull cleaning every 3-4 months during warmer months (April-October) and every 4-6 months in winter. Boats kept in warmer areas like Oak Bay may need more frequent cleaning."
+        question: "How often should I have my hull cleaned in Victoria?",
+        answer: "Most boats in Victoria waters benefit from hull cleaning every 3-4 months during warmer months (April-October) and every 4-6 months in winter. Boats kept in warmer areas like Oak Bay may need more frequent cleaning due to faster marine growth."
       },
       {
         question: "Will hull cleaning damage my antifouling paint?",
@@ -64,17 +73,41 @@ export const services: Service[] = [
       },
       {
         question: "Do you provide hull cleaning in Sidney and Brentwood Bay?",
-        answer: "Yes! We service all marinas throughout Victoria BC and Vancouver Island, including Sidney, Brentwood Bay, Oak Bay, and beyond."
+        answer: "Yes! We service all marinas throughout Victoria and Vancouver Island, including Sidney, Brentwood Bay, Oak Bay, and beyond."
+      },
+      {
+        question: "What's the difference between hull cleaning and boat detailing?",
+        answer: "Hull cleaning is underwater barnacle and marine growth removal from below the waterline by a commercial diver. Boat detailing is topside washing, waxing, and cosmetic cleaning. We specialize in underwater hull cleaning, not boat washing or detailing services."
       }
     ],
-    pricing: "Pricing varies based on vessel size and fouling level. Contact us for a free quote specific to your boat in Victoria BC."
+    pricing: "Pricing varies based on vessel size and fouling level. Contact us for a free quote specific to your boat in Victoria.",
+    comparisonSection: {
+      title: "Hull Cleaning vs Boat Detailing: Understanding the Difference",
+      content: "Many boat owners in Victoria search for hull cleaning when they actually need underwater barnacle removal. It's important to understand that hull cleaning and boat detailing are completely different services.",
+      differences: [
+        {
+          service: "Underwater Hull Cleaning (Our Service)",
+          description: "Professional commercial diver goes underwater to scrub and remove barnacles, algae, zebra mussels, and marine growth from the underwater portion of your hull. This improves fuel efficiency, vessel speed, and prevents corrosion. Performed while your boat stays in the water at your marina in Victoria, Oak Bay, Sidney, or anywhere on Vancouver Island."
+        },
+        {
+          service: "Boat Detailing / Boat Washing",
+          description: "Topside cosmetic cleaning of your boat's exterior surfaces above the waterline. Includes washing, waxing, polishing gelcoat, cleaning upholstery, and making your boat look shiny. Does NOT involve diving or underwater work. Does NOT remove barnacles or marine growth."
+        },
+        {
+          service: "Why the Confusion?",
+          description: "Some boat cleaning companies in Victoria offer both washing/detailing AND claim to do 'hull cleaning' - but they're washing the sides of the boat, not diving underwater. True underwater hull cleaning requires a commercial diver with proper equipment to scrub barnacles off the bottom of your boat while it's in the water."
+        }
+      ]
+    }
   },
   {
     title: "Underwater Inspections Victoria BC",
-    description: "Comprehensive underwater hull inspections in Victoria BC and Vancouver Island. Professional diving inspections of hulls, propellers, shafts, rudders, and through-hulls with detailed video documentation and observation reports. Inspect damage below the waterline without hauling out.",
+    h1Title: "Professional Underwater Boat Inspections Victoria - Hull Damage Assessment & Marine Surveys",
+    description: "Comprehensive underwater hull inspections in Victoria and Vancouver Island. Professional commercial diver inspections of hulls, propellers, shafts, rudders, and through-hulls with detailed video documentation. Assess damage below the waterline without hauling out. Serving all Victoria marinas.",
     image: inspectionImg,
+    imageAlt: "Underwater boat inspection in Victoria BC showing commercial diver examining hull damage and marine components",
     slug: "underwater-inspections",
-    metaDescription: "Professional underwater boat inspections in Victoria BC. Hull damage assessment, propeller checks, through-hull examination. Complete video documentation. Call (778) 535-4506",
+    metaDescription: "Professional underwater boat inspections Victoria. Hull damage assessment, propeller checks, through-hull examination. Video documentation. Commercial diver. Victoria marinas. Call (778) 535-4506",
     benefits: [
       "Assess damage below the waterline without hauling out",
       "Complete video documentation of underwater surfaces",
@@ -121,10 +154,12 @@ export const services: Service[] = [
   },
   {
     title: "Zinc Anode Replacement Victoria BC",
-    description: "Professional zinc anode inspection and replacement services in Victoria BC and Vancouver Island. Protect your vessel from galvanic corrosion with proper sacrificial anode maintenance.",
+    h1Title: "Professional Zinc Anode Replacement Victoria - Prevent Corrosion on Your Boat",
+    description: "Professional zinc anode inspection and replacement services in Victoria and Vancouver Island. Protect your vessel from galvanic corrosion with proper sacrificial anode maintenance. Expert commercial diver service for all Victoria marinas.",
     image: zincImg,
+    imageAlt: "Zinc anode replacement service Victoria BC showing commercial diver installing new sacrificial anodes on boat propeller and shaft",
     slug: "zinc-changes",
-    metaDescription: "Zinc anode replacement & inspection in Victoria BC. Prevent corrosion on shafts, props, rudders. Expert commercial diver service. Vancouver Island. Call (778) 535-4506",
+    metaDescription: "Zinc anode replacement & inspection Victoria. Prevent corrosion on shafts, props, rudders. Commercial diver. Oak Bay, Sidney, Victoria marinas. Call (778) 535-4506",
     benefits: [
       "Prevent expensive corrosion damage to shafts and props",
       "Extend the life of your running gear",
@@ -171,10 +206,12 @@ export const services: Service[] = [
   },
   {
     title: "Mooring Services Victoria BC",
-    description: "Professional mooring inspection, maintenance, and installation services in Victoria BC and Vancouver Island. Ensure your vessel stays secure in all weather conditions with expert mooring solutions.",
+    h1Title: "Professional Mooring Services Victoria - Inspection, Maintenance & Installation",
+    description: "Professional mooring inspection, maintenance, and installation services in Victoria and Vancouver Island. Ensure your vessel stays secure in all weather conditions with expert mooring solutions. Commercial diver service for all Victoria marinas.",
     image: mooringImg,
+    imageAlt: "Mooring inspection service Victoria BC showing commercial diver examining mooring chain and anchor underwater",
     slug: "mooring-services",
-    metaDescription: "Expert mooring services in Victoria BC & Vancouver Island. Inspection, maintenance, installation. Keep your boat secure. Professional commercial diver. Call (778) 535-4506",
+    metaDescription: "Expert mooring services Victoria & Vancouver Island. Inspection, maintenance, installation. Keep your boat secure. Commercial diver. Victoria marinas. Call (778) 535-4506",
     benefits: [
       "Peace of mind in storm season",
       "Prevent vessel damage from mooring failure",
@@ -221,10 +258,12 @@ export const services: Service[] = [
   },
   {
     title: "Underwater Recovery Victoria BC",
-    description: "Professional underwater search and recovery services in Victoria BC and Vancouver Island. Recover lost items, tools, equipment, and valuable belongings from the ocean floor with experienced commercial divers.",
+    h1Title: "Professional Underwater Recovery Victoria - Lost Item Retrieval & Search Diving",
+    description: "Professional underwater search and recovery services in Victoria and Vancouver Island. Recover lost items, tools, equipment, and valuable belongings from the ocean floor with experienced commercial divers. Serving all Victoria waterfront locations.",
     image: retrievalImg,
+    imageAlt: "Underwater recovery service Victoria BC showing commercial diver searching for and retrieving lost items from ocean floor",
     slug: "lost-item-retrieval",
-    metaDescription: "Underwater recovery services Victoria BC. Lost items, tools, equipment retrieval. Professional search diving. Vancouver Island. Expert diver. Call (778) 535-4506",
+    metaDescription: "Underwater recovery services Victoria. Lost items, tools, equipment retrieval. Professional search diving. Commercial diver. Victoria waterfront. Call (778) 535-4506",
     benefits: [
       "Recover valuable items thought to be lost forever",
       "Professional search patterns and techniques",
@@ -271,10 +310,12 @@ export const services: Service[] = [
   },
   {
     title: "Commercial Diving Victoria BC",
-    description: "Professional commercial diving services in Victoria BC and Vancouver Island. Expert underwater construction, marine surveys, infrastructure inspection, and specialized underwater projects for commercial and industrial clients.",
+    h1Title: "Professional Commercial Diving Services Victoria - Marine Construction & Infrastructure Inspection",
+    description: "Professional commercial diving services in Victoria and Vancouver Island. Expert underwater construction, marine surveys, infrastructure inspection, and specialized underwater projects for commercial and industrial clients. Fully insured commercial diver.",
     image: commercialImg,
+    imageAlt: "Commercial diving services Victoria BC showing professional diver performing marine infrastructure inspection and underwater construction work",
     slug: "commercial-diving",
-    metaDescription: "Professional commercial diving services Victoria BC. Marine construction, infrastructure inspection, underwater surveys. Vancouver Island. Fully insured. Call (778) 535-4506",
+    metaDescription: "Professional commercial diving services Victoria. Marine construction, infrastructure inspection, underwater surveys. Vancouver Island. Fully insured. Call (778) 535-4506",
     benefits: [
       "Commercial diver with full insurance coverage",
       "Experience with marine infrastructure projects",

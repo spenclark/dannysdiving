@@ -1,8 +1,30 @@
+import { useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export default function Terms() {
+  useEffect(() => {
+    document.title = "Terms of Service | Danny's Diving Services";
+    
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', "Terms of service for Danny's Diving Services in Victoria BC. Understand our service agreements and policies for diving services.");
+    }
+
+    const canonicalLink = document.querySelector('link[rel="canonical"]') || document.createElement('link');
+    canonicalLink.setAttribute('rel', 'canonical');
+    canonicalLink.setAttribute('href', 'https://dannysdiving.com/terms');
+    if (!document.querySelector('link[rel="canonical"]')) {
+      document.head.appendChild(canonicalLink);
+    }
+
+    const ogImage = document.querySelector('meta[property="og:image"]');
+    if (ogImage) {
+      ogImage.remove();
+    }
+  }, []);
+
   return (
     <div className="min-h-screen">
       <Header />

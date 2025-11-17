@@ -5,6 +5,17 @@ Danny's Diving Services is a marketing website for a commercial diving business 
 
 ## Recent Changes
 
+**November 17, 2025 (Credential Update)**
+- **Corrected Licensing Language for Accuracy**:
+  - Updated all "licensed" references to "certified" or "insured" to accurately reflect Danny's credentials (certified commercial diver from Spain, not Canadian-licensed)
+  - Homepage and schema: "Licensed and insured" → "Certified and insured"
+  - Trust badge updated: "Licensed Commercial Diver" → "Certified Commercial Diver" with "Internationally Trained"
+  - Footer: "Licensed, insured, and trusted" → "Certified, insured, and trusted"
+  - Terms page: "licensed, insured commercial divers" → "certified, insured commercial divers"
+  - All 6 service page meta descriptions updated to use "certified" or "insured" instead of "licensed"
+  - Maintains professional trust signals without making false claims about Canadian licensing
+  - Changes verified via end-to-end testing and architect review
+
 **November 17, 2025 (Final)**
 - **SEO Optimization for "Diving Services Victoria" Search Term**:
   - Updated homepage to target "diving services Victoria" searches:

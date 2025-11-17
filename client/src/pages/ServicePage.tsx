@@ -1,11 +1,11 @@
 import { useEffect } from "react";
-import { useRoute } from "wouter";
+import { useRoute, Link } from "wouter";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { CheckCircle, Phone, ArrowLeft, MapPin } from "lucide-react";
-import { getServiceBySlug } from "@shared/services";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { CheckCircle, Phone, ArrowLeft, MapPin, ArrowRight } from "lucide-react";
+import { getServiceBySlug, services } from "@shared/services";
 import { generateServiceSchema, generateFAQSchema } from "@/lib/schema";
 
 export default function ServicePage() {
@@ -14,19 +14,137 @@ export default function ServicePage() {
 
   useEffect(() => {
     if (service) {
-      document.title = `${service.title} - Underwater Barnacle Removal | Danny's Diving Services`;
+      const originalTitle = document.title;
+      const originalValues: Record<string, string | null> = {};
+      
+      const captureOriginalMeta = (selector: string) => {
+        const element = document.querySelector(selector);
+        if (element) {
+          originalValues[selector] = element.getAttribute('content');
+        } else {
+          originalValues[selector] = null;
+        }
+      };
+      
+      const captureOriginalLink = (selector: string) => {
+        const element = document.querySelector(selector);
+        if (element) {
+          originalValues[selector] = element.getAttribute('href');
+        } else {
+          originalValues[selector] = null;
+        }
+      };
+      
+      captureOriginalMeta('meta[name="description"]');
+      captureOriginalMeta('meta[property="og:title"]');
+      captureOriginalMeta('meta[property="og:description"]');
+      captureOriginalMeta('meta[property="og:type"]');
+      captureOriginalMeta('meta[property="og:url"]');
+      captureOriginalMeta('meta[property="og:image"]');
+      captureOriginalMeta('meta[property="og:locale"]');
+      captureOriginalMeta('meta[name="twitter:card"]');
+      captureOriginalMeta('meta[name="twitter:title"]');
+      captureOriginalMeta('meta[name="twitter:description"]');
+      captureOriginalMeta('meta[name="twitter:image"]');
+      captureOriginalMeta('meta[name="geo.region"]');
+      captureOriginalMeta('meta[name="geo.placename"]');
+      captureOriginalMeta('meta[name="geo.position"]');
+      captureOriginalMeta('meta[name="ICBM"]');
+      captureOriginalLink('link[rel="canonical"]');
+      
+      document.title = `${service.title} | Danny's Diving Services`;
       
       const metaDescription = document.querySelector('meta[name="description"]');
       if (metaDescription) {
         metaDescription.setAttribute('content', service.metaDescription);
       }
 
-      const ogImage = document.querySelector('meta[property="og:image"]') || document.createElement('meta');
-      ogImage.setAttribute('property', 'og:image');
-      ogImage.setAttribute('content', `https://dannysdiving.com${service.image}`);
-      if (!document.querySelector('meta[property="og:image"]')) {
-        document.head.appendChild(ogImage);
-      }
+      const setOrCreateMeta = (selector: string, attributes: Record<string, string>) => {
+        let element = document.querySelector(selector);
+        if (!element) {
+          element = document.createElement('meta');
+          Object.entries(attributes).forEach(([key, value]) => {
+            element!.setAttribute(key, value);
+          });
+          document.head.appendChild(element);
+        } else {
+          Object.entries(attributes).forEach(([key, value]) => {
+            if (key !== 'name' && key !== 'property') {
+              element!.setAttribute(key, value);
+            }
+          });
+        }
+      };
+
+      setOrCreateMeta('meta[property="og:title"]', {
+        'property': 'og:title',
+        'content': `${service.title} - Danny's Diving Services`
+      });
+
+      setOrCreateMeta('meta[property="og:description"]', {
+        'property': 'og:description',
+        'content': service.metaDescription
+      });
+
+      setOrCreateMeta('meta[property="og:type"]', {
+        'property': 'og:type',
+        'content': 'website'
+      });
+
+      setOrCreateMeta('meta[property="og:url"]', {
+        'property': 'og:url',
+        'content': `https://dannysdiving.com/services/${service.slug}`
+      });
+
+      setOrCreateMeta('meta[property="og:image"]', {
+        'property': 'og:image',
+        'content': `https://dannysdiving.com${service.image}`
+      });
+
+      setOrCreateMeta('meta[property="og:locale"]', {
+        'property': 'og:locale',
+        'content': 'en_CA'
+      });
+
+      setOrCreateMeta('meta[name="twitter:card"]', {
+        'name': 'twitter:card',
+        'content': 'summary_large_image'
+      });
+
+      setOrCreateMeta('meta[name="twitter:title"]', {
+        'name': 'twitter:title',
+        'content': `${service.title} - Danny's Diving Services`
+      });
+
+      setOrCreateMeta('meta[name="twitter:description"]', {
+        'name': 'twitter:description',
+        'content': service.metaDescription
+      });
+
+      setOrCreateMeta('meta[name="twitter:image"]', {
+        'name': 'twitter:image',
+        'content': `https://dannysdiving.com${service.image}`
+      });
+
+      setOrCreateMeta('meta[name="geo.region"]', {
+        'name': 'geo.region',
+        'content': 'CA-BC'
+      });
+
+      setOrCreateMeta('meta[name="geo.placename"]', {
+        'name': 'geo.placename',
+        'content': 'Victoria'
+      });
+
+      setOrCreateMeta('meta[name="geo.position"]', {
+        'name': 'geo.position',
+        'content': '48.4284;-123.3656'
+      });
+
+      setOrCreateMeta('meta[name="ICBM"]', {
+        'name': 'ICBM',
+        'content': '48.4284, -123.3656'
+      });
 
       const canonicalLink = document.querySelector('link[rel="canonical"]') || document.createElement('link');
       canonicalLink.setAttribute('rel', 'canonical');
@@ -34,6 +152,37 @@ export default function ServicePage() {
       if (!document.querySelector('link[rel="canonical"]')) {
         document.head.appendChild(canonicalLink);
       }
+
+      const breadcrumbSchema = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://dannysdiving.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Services",
+            "item": "https://dannysdiving.com/#services"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": service.title,
+            "item": `https://dannysdiving.com/services/${service.slug}`
+          }
+        ]
+      };
+
+      const breadcrumbScript = document.createElement('script');
+      breadcrumbScript.type = 'application/ld+json';
+      breadcrumbScript.id = 'breadcrumb-schema';
+      breadcrumbScript.text = JSON.stringify(breadcrumbSchema);
+      document.head.appendChild(breadcrumbScript);
 
       const serviceSchemaScript = document.createElement('script');
       serviceSchemaScript.type = 'application/ld+json';
@@ -48,7 +197,48 @@ export default function ServicePage() {
       document.head.appendChild(faqSchemaScript);
 
       return () => {
-        const scripts = document.querySelectorAll('#service-schema, #faq-schema');
+        document.title = originalTitle;
+        
+        const restoreMeta = (selector: string) => {
+          const element = document.querySelector(selector);
+          if (!element) return;
+          
+          if (originalValues[selector] === null) {
+            element.parentNode?.removeChild(element);
+          } else if (originalValues[selector]) {
+            element.setAttribute('content', originalValues[selector]!);
+          }
+        };
+        
+        const restoreLink = (selector: string) => {
+          const element = document.querySelector(selector);
+          if (!element) return;
+          
+          if (originalValues[selector] === null) {
+            element.parentNode?.removeChild(element);
+          } else if (originalValues[selector]) {
+            element.setAttribute('href', originalValues[selector]!);
+          }
+        };
+        
+        restoreMeta('meta[name="description"]');
+        restoreMeta('meta[property="og:title"]');
+        restoreMeta('meta[property="og:description"]');
+        restoreMeta('meta[property="og:type"]');
+        restoreMeta('meta[property="og:url"]');
+        restoreMeta('meta[property="og:image"]');
+        restoreMeta('meta[property="og:locale"]');
+        restoreMeta('meta[name="twitter:card"]');
+        restoreMeta('meta[name="twitter:title"]');
+        restoreMeta('meta[name="twitter:description"]');
+        restoreMeta('meta[name="twitter:image"]');
+        restoreMeta('meta[name="geo.region"]');
+        restoreMeta('meta[name="geo.placename"]');
+        restoreMeta('meta[name="geo.position"]');
+        restoreMeta('meta[name="ICBM"]');
+        restoreLink('link[rel="canonical"]');
+        
+        const scripts = document.querySelectorAll('#service-schema, #faq-schema, #breadcrumb-schema');
         scripts.forEach(script => {
           if (script.parentNode) {
             script.parentNode.removeChild(script);
@@ -157,7 +347,7 @@ export default function ServicePage() {
         <section className="py-16 bg-card">
           <div className="max-w-7xl mx-auto px-4 md:px-6">
             <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
-              Why Choose Our {service.title.replace(' Victoria BC', '')} Services
+              Why Choose Our {service.title} Services
             </h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {service.benefits.map((benefit, index) => (
@@ -177,9 +367,9 @@ export default function ServicePage() {
         {/* Process Section */}
         <section className="py-16 bg-background">
           <div className="max-w-4xl mx-auto px-4 md:px-6">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">Our Process</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">Our {service.title.replace(' Victoria BC', '')} Process</h2>
             <p className="text-center text-muted-foreground mb-12 text-lg">
-              Professional, transparent service from start to finish
+              Professional, transparent service from start to finish in Victoria BC and Vancouver Island
             </p>
             <div className="space-y-6">
               {service.process.map((step, index) => (
@@ -206,10 +396,10 @@ export default function ServicePage() {
           <div className="max-w-4xl mx-auto px-4 md:px-6">
             <div className="flex items-center justify-center gap-3 mb-8">
               <MapPin className="w-8 h-8 text-primary" />
-              <h2 className="text-3xl md:text-4xl font-bold text-center">Service Areas</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-center">{service.title.replace(' Victoria BC', '')} Service Areas - Victoria BC & Vancouver Island</h2>
             </div>
             <p className="text-center text-muted-foreground mb-8 text-lg">
-              Proudly serving Victoria BC and Vancouver Island
+              Proudly serving all Victoria marinas, Oak Bay, Sidney, Esquimalt, and throughout Vancouver Island
             </p>
             <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
               {service.serviceAreas.map((area, index) => (
@@ -229,7 +419,7 @@ export default function ServicePage() {
         <section className="py-16 bg-background">
           <div className="max-w-4xl mx-auto px-4 md:px-6">
             <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
-              Frequently Asked Questions
+              {service.title.replace(' Victoria BC', '')} FAQ - Victoria BC
             </h2>
             <div className="space-y-6">
               {service.faqs.map((faq, index) => (
@@ -275,7 +465,7 @@ export default function ServicePage() {
         {/* Pricing Section */}
         <section className="py-16 bg-card">
           <div className="max-w-4xl mx-auto px-4 md:px-6 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Pricing</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">{service.title.replace(' Victoria BC', '')} Pricing in Victoria BC</h2>
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
               {service.pricing}
             </p>
@@ -294,6 +484,40 @@ export default function ServicePage() {
               >
                 Request Free Quote
               </Button>
+            </div>
+          </div>
+        </section>
+
+        {/* Other Services Section */}
+        <section className="py-16 bg-background">
+          <div className="max-w-7xl mx-auto px-4 md:px-6">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
+              Other Professional Diving Services in Victoria BC
+            </h2>
+            <p className="text-center text-muted-foreground mb-12 text-lg">
+              Explore our full range of commercial diving services for Victoria and Vancouver Island
+            </p>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {services
+                .filter(s => s.slug !== service.slug)
+                .map((relatedService) => (
+                  <Link key={relatedService.slug} href={`/services/${relatedService.slug}`}>
+                    <Card className="h-full hover-elevate cursor-pointer transition-all">
+                      <CardHeader>
+                        <CardTitle className="text-xl">{relatedService.title}</CardTitle>
+                        <CardDescription className="line-clamp-2">
+                          {relatedService.description}
+                        </CardDescription>
+                      </CardHeader>
+                      <CardContent>
+                        <div className="flex items-center text-primary font-medium">
+                          Learn More
+                          <ArrowRight className="w-4 h-4 ml-2" />
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </Link>
+                ))}
             </div>
           </div>
         </section>

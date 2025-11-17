@@ -51,32 +51,93 @@ export function generateLocalBusinessSchema() {
 }
 
 export function generateServiceSchema(service: Service) {
-  const serviceTypeMap: Record<string, string> = {
-    "hull-cleaning": "BoatCleaning",
-    "underwater-inspections": "BoatInspection",
-    "zinc-changes": "BoatMaintenance",
-    "mooring-services": "BoatMaintenance",
-    "lost-item-retrieval": "Service",
-    "commercial-diving": "Service"
+  const serviceTypeDescriptions: Record<string, string> = {
+    "hull-cleaning": "Boat hull cleaning and barnacle removal",
+    "underwater-inspections": "Underwater boat inspection and hull damage assessment",
+    "zinc-changes": "Zinc anode replacement and corrosion prevention",
+    "mooring-services": "Mooring installation, inspection, and maintenance",
+    "lost-item-retrieval": "Underwater search and recovery services",
+    "commercial-diving": "Commercial diving services"
   };
+
+  const areaCoordinates: Record<string, { lat: number; lng: number }> = {
+    "Victoria Inner Harbour": { lat: 48.4231, lng: -123.3683 },
+    "Oak Bay Marina": { lat: 48.4267, lng: -123.3014 },
+    "Sidney Marina": { lat: 48.6501, lng: -123.3992 },
+    "Victoria Harbour marinas": { lat: 48.4231, lng: -123.3683 },
+    "Victoria": { lat: 48.4284, lng: -123.3656 },
+    "Esquimalt Harbour": { lat: 48.4320, lng: -123.4398 },
+    "Canoe Cove Marina": { lat: 48.6622, lng: -123.4083 },
+    "Van Isle Marina": { lat: 48.6506, lng: -123.3968 },
+    "Brentwood Bay": { lat: 48.5794, lng: -123.4597 }
+  };
+
+  const enhancedAreaServed = service.serviceAreas.map(area => {
+    const coords = areaCoordinates[area];
+    if (coords) {
+      return {
+        "@type": "Place",
+        "name": area,
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": coords.lat,
+          "longitude": coords.lng
+        }
+      };
+    }
+    return {
+      "@type": "Place",
+      "name": area
+    };
+  });
 
   return {
     "@context": "https://schema.org",
-    "@type": serviceTypeMap[service.slug] || "Service",
+    "@type": "Service",
+    "serviceType": serviceTypeDescriptions[service.slug] || service.title,
     "name": service.title,
     "description": service.description,
+    "image": `https://dannysdiving.com${service.image}`,
+    "url": `https://dannysdiving.com/services/${service.slug}`,
     "provider": {
       "@type": "LocalBusiness",
-      "@id": "https://dannysdiving.com/#business"
+      "@id": "https://dannysdiving.com/#business",
+      "name": "Danny's Diving Services",
+      "telephone": "+17785354506",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Victoria",
+        "addressRegion": "BC",
+        "addressCountry": "CA"
+      }
     },
-    "areaServed": service.serviceAreas.map(area => ({
-      "@type": "Place",
-      "name": area
-    })),
+    "areaServed": enhancedAreaServed,
+    "availableChannel": {
+      "@type": "ServiceChannel",
+      "servicePhone": {
+        "@type": "ContactPoint",
+        "telephone": "+17785354506",
+        "contactType": "customer service",
+        "areaServed": "CA",
+        "availableLanguage": ["English"]
+      }
+    },
     "offers": {
       "@type": "Offer",
       "description": service.pricing,
-      "priceCurrency": "CAD"
+      "priceCurrency": "CAD",
+      "availability": "https://schema.org/InStock"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": service.title,
+      "itemListElement": service.benefits.map((benefit, index) => ({
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": benefit
+        }
+      }))
     }
   };
 }

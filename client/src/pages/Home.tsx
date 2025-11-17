@@ -14,7 +14,7 @@ export default function Home() {
     
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', "Professional diving services Victoria BC and Vancouver Island. Expert commercial divers providing hull cleaning, underwater inspections, zinc changes, and mooring services. Licensed diving services serving Victoria marinas. Call (778) 535-4506.");
+      metaDescription.setAttribute('content', "Professional diving services Victoria BC and Vancouver Island. Expert commercial divers providing hull cleaning, underwater inspections, zinc changes, and mooring services. Insured diving services serving Victoria marinas. Call (778) 535-4506.");
     }
 
     const canonicalLink = document.querySelector('link[rel="canonical"]') || document.createElement('link');

@@ -33,7 +33,7 @@ export const services: Service[] = [
     image: hullCleaningImg,
     imageAlt: "Professional underwater hull cleaning service in Victoria BC showing commercial diver removing barnacles and marine growth from boat hull",
     slug: "hull-cleaning",
-    metaDescription: "Expert underwater hull cleaning Victoria BC. Barnacle removal, marine growth cleaning. Improve fuel efficiency 20%. Commercial diver. Oak Bay, Sidney, Victoria marinas. Call (778) 535-4506",
+    metaDescription: "Professional commercial divers in Victoria BC providing expert underwater hull cleaning. Barnacle removal, marine growth cleaning. Licensed divers serving Oak Bay, Sidney, Victoria marinas. Call (778) 535-4506",
     benefits: [
       "Improve fuel efficiency by up to 20%",
       "Increase vessel speed and performance",
@@ -107,7 +107,7 @@ export const services: Service[] = [
     image: inspectionImg,
     imageAlt: "Underwater boat inspection in Victoria BC showing commercial diver examining hull damage and marine components",
     slug: "underwater-inspections",
-    metaDescription: "Professional underwater boat inspections Victoria. Hull damage assessment, propeller checks, through-hull examination. Video documentation. Commercial diver. Victoria marinas. Call (778) 535-4506",
+    metaDescription: "Professional commercial divers in Victoria providing underwater boat inspections. Hull damage assessment, propeller checks. Licensed divers with video documentation. Victoria marinas. Call (778) 535-4506",
     benefits: [
       "Assess damage below the waterline without hauling out",
       "Complete video documentation of underwater surfaces",
@@ -159,7 +159,7 @@ export const services: Service[] = [
     image: zincImg,
     imageAlt: "Zinc anode replacement service Victoria BC showing commercial diver installing new sacrificial anodes on boat propeller and shaft",
     slug: "zinc-changes",
-    metaDescription: "Zinc anode replacement & inspection Victoria. Prevent corrosion on shafts, props, rudders. Commercial diver. Oak Bay, Sidney, Victoria marinas. Call (778) 535-4506",
+    metaDescription: "Professional divers in Victoria BC providing zinc anode replacement & inspection. Prevent corrosion on shafts, props, rudders. Licensed commercial divers. Oak Bay, Sidney marinas. Call (778) 535-4506",
     benefits: [
       "Prevent expensive corrosion damage to shafts and props",
       "Extend the life of your running gear",
@@ -211,7 +211,7 @@ export const services: Service[] = [
     image: mooringImg,
     imageAlt: "Mooring inspection service Victoria BC showing commercial diver examining mooring chain and anchor underwater",
     slug: "mooring-services",
-    metaDescription: "Expert mooring services Victoria & Vancouver Island. Inspection, maintenance, installation. Keep your boat secure. Commercial diver. Victoria marinas. Call (778) 535-4506",
+    metaDescription: "Professional commercial divers in Victoria providing mooring services. Inspection, maintenance, installation by licensed divers. Keep your boat secure. Victoria marinas. Call (778) 535-4506",
     benefits: [
       "Peace of mind in storm season",
       "Prevent vessel damage from mooring failure",
@@ -263,7 +263,7 @@ export const services: Service[] = [
     image: retrievalImg,
     imageAlt: "Underwater recovery service Victoria BC showing commercial diver searching for and retrieving lost items from ocean floor",
     slug: "lost-item-retrieval",
-    metaDescription: "Underwater recovery services Victoria. Lost items, tools, equipment retrieval. Professional search diving. Commercial diver. Victoria waterfront. Call (778) 535-4506",
+    metaDescription: "Professional commercial divers in Victoria providing underwater recovery services. Lost items, tools, equipment retrieval. Expert search diving by licensed divers. Victoria waterfront. Call (778) 535-4506",
     benefits: [
       "Recover valuable items thought to be lost forever",
       "Professional search patterns and techniques",
@@ -315,7 +315,7 @@ export const services: Service[] = [
     image: commercialImg,
     imageAlt: "Commercial diving services Victoria BC showing professional diver performing marine infrastructure inspection and underwater construction work",
     slug: "commercial-diving",
-    metaDescription: "Professional commercial diving services Victoria. Marine construction, infrastructure inspection, underwater surveys. Vancouver Island. Fully insured. Call (778) 535-4506",
+    metaDescription: "Professional commercial divers in Victoria BC. Marine construction, infrastructure inspection, underwater surveys. Licensed and insured divers serving Vancouver Island. Call (778) 535-4506",
     benefits: [
       "Commercial diver with full insurance coverage",
       "Experience with marine infrastructure projects",

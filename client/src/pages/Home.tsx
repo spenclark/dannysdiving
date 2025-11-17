@@ -11,11 +11,11 @@ import { generateLocalBusinessSchema } from "@/lib/schema";
 
 export default function Home() {
   useEffect(() => {
-    document.title = "Danny's Diving Services - Professional Diving Victoria BC | Hull Cleaning & Underwater Inspections";
+    document.title = "Professional Divers Victoria BC | Danny's Diving Services - Commercial Diving & Hull Cleaning";
     
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', "Professional commercial diving services in Victoria BC and Vancouver Island. Specializing in hull cleaning, underwater inspections, zinc changes, mooring services, and lost item retrieval. Fully insured and licensed.");
+      metaDescription.setAttribute('content', "Professional commercial divers in Victoria BC and Vancouver Island. Expert underwater services including hull cleaning, boat inspections, zinc changes, and mooring services. Licensed divers serving Victoria marinas. Call (778) 535-4506.");
     }
 
     const schemaScript = document.createElement('script');

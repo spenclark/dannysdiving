@@ -26,15 +26,15 @@ export default function HeroSection() {
       <div className="relative z-10 max-w-5xl mx-auto px-4 md:px-6 text-center text-white">
         <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold mb-6 leading-tight">
           Professional Diving Services<br />
-          <span className="text-primary">Victoria BC & Vancouver Island</span>
+          <span className="text-primary">Victoria BC</span>
         </h1>
         <p className="text-lg md:text-xl lg:text-2xl mb-8 max-w-3xl mx-auto leading-relaxed text-gray-100">
-          Trusted commercial diving experts for hull cleaning, underwater inspections, and marine maintenance
+          Expert commercial divers serving Victoria and Vancouver Island for hull cleaning, underwater inspections, and marine maintenance
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <Button 
             size="lg" 
-            className="text-lg px-8 py-6 min-h-14"
+            className="text-lg"
             onClick={handleCallNow}
             data-testid="button-hero-call"
           >
@@ -44,7 +44,7 @@ export default function HeroSection() {
           <Button 
             size="lg" 
             variant="outline" 
-            className="text-lg px-8 py-6 min-h-14 bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20"
+            className="text-lg bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20"
             onClick={handleGetQuote}
             data-testid="button-hero-quote"
           >

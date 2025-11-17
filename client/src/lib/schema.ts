@@ -1,55 +1,8 @@
 import type { Service } from "@shared/services";
 
-export function generateLocalBusinessSchema() {
-  return {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "@id": "https://dannysdiving.com/#business",
-    "name": "Danny's Diving Services",
-    "image": "https://dannysdiving.com/favicon.png",
-    "description": "Professional commercial divers in Victoria BC and Vancouver Island. Licensed and insured divers specializing in underwater hull cleaning, boat inspections, zinc anode replacement, mooring services, and underwater recovery. Trusted local divers serving Victoria marinas since 2021.",
-    "slogan": "Victoria's Trusted Commercial Divers",
-    "url": "https://dannysdiving.com",
-    "telephone": "+17785354506",
-    "email": "dannysdivingservices@gmail.com",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "",
-      "addressLocality": "Victoria",
-      "addressRegion": "BC",
-      "addressCountry": "CA"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 48.4284,
-      "longitude": -123.3656
-    },
-    "areaServed": [
-      {
-        "@type": "City",
-        "name": "Victoria",
-        "containedIn": {
-          "@type": "AdministrativeArea",
-          "name": "British Columbia"
-        }
-      },
-      {
-        "@type": "Place",
-        "name": "Vancouver Island"
-      }
-    ],
-    "priceRange": "$$",
-    "openingHoursSpecification": [
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-        "opens": "08:00",
-        "closes": "18:00"
-      }
-    ],
-    "sameAs": []
-  };
-}
+// NOTE: LocalBusiness schema is statically defined in client/index.html
+// This generator is no longer used to avoid duplicate structured data
+// If you need to update the LocalBusiness schema, edit client/index.html directly
 
 export function generateServiceSchema(service: Service) {
   const serviceTypeDescriptions: Record<string, string> = {

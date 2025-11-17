@@ -5,6 +5,22 @@ Danny's Diving Services is a marketing website for a commercial diving business 
 
 ## Recent Changes
 
+**November 17, 2025 (Final)**
+- **SEO Optimization for "Diving Services Victoria" Search Term**:
+  - Updated homepage to target "diving services Victoria" searches:
+    - Title: "Diving Services Victoria BC | Danny's Diving - Professional Commercial Divers & Hull Cleaning"
+    - Meta description: "Professional diving services Victoria BC and Vancouver Island. Expert commercial divers providing hull cleaning, underwater inspections, zinc changes, and mooring services. Licensed diving services serving Victoria marinas. Call (778) 535-4506."
+    - Hero H1: "Professional Diving Services Victoria BC & Vancouver Island"
+  - Enhanced LocalBusiness schema with business service keywords:
+    - AlternateName: "Danny's Diving Services Victoria BC" (reinforces geo-targeted business name)
+    - Description: "Professional diving services Victoria BC and Vancouver Island. Licensed and insured commercial divers..."
+    - Slogan: "Victoria's Trusted Diving Services"
+  - Added og:image meta tag for proper social sharing previews
+  - Fixed duplicate LocalBusiness schema issue (single static schema in index.html only)
+  - Documented unused schema generator function to prevent future confusion
+  - Fixed hero button styling to follow UI component guidelines (removed custom padding/height)
+  - All changes validated via end-to-end testing and architect review as production-ready
+
 **November 17, 2025 (Later)**
 - **SEO Optimization for "Divers Near Me" and "Divers Victoria" Search Terms**:
   - Updated homepage to target local diver searches:

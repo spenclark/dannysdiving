@@ -1,7 +1,49 @@
 # Danny's Diving Services - Professional Diving Website
 
 ## Overview
-Danny's Diving Services is a marketing website for a commercial diving business in Victoria, BC. The site aims to generate leads by showcasing services like hull cleaning and underwater inspections, featuring trust-building elements such as video documentation, testimonials, and certifications, along with prominent calls-to-action for phone calls and quote requests. The project focuses on strong local SEO to dominate search rankings in Victoria BC and Vancouver Island.
+Danny's Diving Services is a marketing website for a commercial diving business in Victoria, BC. The site aims to generate leads by showcasing services like hull cleaning and underwater inspections, featuring trust-building elements such as video documentation, testimonials, and certifications, along with prominent calls-to-action for phone calls and quote requests. The project focuses on strong local SEO to dominate search rankings in Victoria BC and Vancouver Island, targeting key search terms including "divers near me", "divers Victoria", "hull cleaning Victoria", and related commercial diving searches.
+
+## Recent Changes
+
+**November 17, 2025 (Later)**
+- **SEO Optimization for "Divers Near Me" and "Divers Victoria" Search Terms**:
+  - Updated homepage to target local diver searches:
+    - Title: "Professional Divers Victoria BC | Danny's Diving Services - Commercial Diving & Hull Cleaning"
+    - Meta description: "Professional commercial divers in Victoria BC and Vancouver Island. Expert underwater services including hull cleaning, boat inspections, zinc changes, and mooring services. Licensed divers serving Victoria marinas."
+    - Open Graph tags updated to "Professional Commercial Divers Victoria BC"
+  - Enhanced LocalBusiness schema with diver-focused keywords:
+    - Description: "Professional commercial divers in Victoria BC and Vancouver Island. Licensed and insured divers specializing in underwater hull cleaning, boat inspections, zinc anode replacement, mooring services, and underwater recovery. Trusted local divers serving Victoria marinas since 2021."
+    - Added slogan: "Victoria's Trusted Commercial Divers"
+  - Updated all 6 service page meta descriptions to include "commercial divers", "professional divers", or "licensed divers" keywords while maintaining natural language and user readability
+  - Keyword density maintained at moderate levels (1-2 "diver" mentions per element) to avoid over-optimization
+  - Strategic placement of diver keywords in primary metadata and schema to capture "divers near me/Victoria" search intent
+  - All changes verified through end-to-end testing and architect review
+
+**November 17, 2025**
+- **Cutting-Edge SEO Implementation for Local Search Dominance**:
+  - Enhanced LocalBusiness JSON-LD schema in index.html with:
+    - Geographic coordinates (48.4284, -123.3656) for Victoria BC location
+    - Complete business hours and contact information
+    - Comprehensive service areas including all major Victoria marinas
+  - Upgraded ServicePage with advanced meta tag system:
+    - Twitter Card meta tags for social media optimization
+    - Geographic meta tags (geo.region, geo.position, ICBM) for local search signals
+    - Enhanced Open Graph properties for better social sharing
+    - BreadcrumbList structured data for improved search result navigation
+    - Proper meta tag cleanup on unmount to prevent stale metadata during SPA navigation
+  - Enhanced Service schema (schema.ts) with valid Schema.org types:
+    - Replaced invalid custom types with proper "Service" @type and serviceType annotations
+    - Added geographic coordinates for all 8 service areas (Victoria, Oak Bay, Sidney, Esquimalt, etc.)
+    - Comprehensive areaServed with Place objects including GeoCoordinates
+    - Enhanced provider details and service offers with CAD pricing
+  - Implemented "Other Services" internal linking system on service pages for improved crawlability
+  - Created comprehensive XML sitemap (sitemap.xml) with:
+    - All pages (homepage, videos, 6 service pages) with proper priorities
+    - Service pages prioritized at 0.9 for maximum local search weight
+    - Current lastmod dates (2025-11-17) for freshness signals
+  - Verified robots.txt configuration for optimal crawler guidance
+  - Optimized heading hierarchy with strategic location keyword placement throughout service pages
+  - Added resource preload hints in index.html for Core Web Vitals optimization (fonts, critical resources)
 
 ## User Preferences
 Preferred communication style: Simple, everyday language.

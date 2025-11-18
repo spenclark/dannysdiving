@@ -3,7 +3,7 @@ import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { insertContactRequestSchema } from "@shared/schema";
 import { ZodError } from "zod";
-import nodemailer from "nodemailer";
+import { sendContactNotification } from "./email";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Contact form submission endpoint
@@ -13,41 +13,15 @@ export async function registerRoutes(app: Express): Promise<Server> {
       
       const contactRequest = await storage.createContactRequest(validatedData);
       
-      // Send email notification
+      // Send email notification via Resend
       try {
-        const transporter = nodemailer.createTransport({
-          host: process.env.SMTP_HOST || "smtp.gmail.com",
-          port: parseInt(process.env.SMTP_PORT || "587"),
-          secure: false,
-          auth: process.env.SMTP_USER && process.env.SMTP_PASS ? {
-            user: process.env.SMTP_USER,
-            pass: process.env.SMTP_PASS,
-          } : undefined,
+        await sendContactNotification({
+          name: validatedData.name,
+          phone: validatedData.phone,
+          email: validatedData.email,
+          service: validatedData.service,
+          message: validatedData.message,
         });
-
-        const emailContent = `
-New Quote Request from Danny's Diving Services Website
-
-Name: ${validatedData.name}
-Phone: ${validatedData.phone}
-Email: ${validatedData.email}
-Service: ${validatedData.service || "Not specified"}
-
-Message:
-${validatedData.message || "No message provided"}
-
----
-Submitted at: ${new Date().toLocaleString()}
-        `.trim();
-
-        await transporter.sendMail({
-          from: process.env.SMTP_FROM || '"Danny\'s Diving" <noreply@dannydiver.com>',
-          to: process.env.CONTACT_EMAIL || "dannysdivingservices@gmail.com",
-          subject: `New Quote Request from ${validatedData.name}`,
-          text: emailContent,
-        });
-
-        console.log("Email notification sent successfully");
       } catch (emailError) {
         console.error("Failed to send email notification:", emailError);
         // Don't fail the request if email fails - the data is still saved

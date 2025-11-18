@@ -5,6 +5,17 @@ Danny's Diving Services is a marketing website for a commercial diving business 
 
 ## Recent Changes
 
+**November 18, 2025**
+- **Email Integration Setup with Resend**:
+  - Integrated Resend for transactional email delivery
+  - Created `server/email.ts` module with Resend client configuration using Replit connector authentication
+  - Updated contact form endpoint to use Resend instead of Nodemailer
+  - Configured automatic API key management through Replit's secure connector system
+  - Email notifications now sent via Resend when users submit quote requests through contact form
+  - Maintained graceful error handling - form submissions succeed even if email fails
+  - Updated favicon to custom-generated diving mask icon on ocean blue background
+  - Verified application running successfully with new email integration
+
 **November 17, 2025 (Credential Update)**
 - **Corrected Licensing Language for Accuracy**:
   - Updated all "licensed" references to "certified" or "insured" to accurately reflect Danny's credentials (certified commercial diver from Spain, not Canadian-licensed)
@@ -97,6 +108,6 @@ The project prioritizes SEO with structured data (JSON-LD), comprehensive meta t
 
 ## External Dependencies
 
-*   **Email Services:** Nodemailer for transactional email delivery, configured via environment variables for SMTP settings and recipient email.
+*   **Email Services:** Resend for transactional email delivery, integrated via Replit connector for secure API key management. Contact form submissions trigger email notifications to `dannysdivingservices@gmail.com` (configurable via `CONTACT_EMAIL` environment variable).
 *   **Database Hosting:** Neon serverless PostgreSQL, accessed via `DATABASE_URL` environment variable and `@neondatabase/serverless` driver.
 *   **CDN & External Assets:** Google Fonts CDN for Inter and Open Sans. Stock images are stored locally, and video gallery thumbnails are stock imagery, with video playback prepared for external hosting.

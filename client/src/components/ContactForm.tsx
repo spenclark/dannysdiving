@@ -17,8 +17,9 @@ export default function ContactForm() {
     service: "",
     message: ""
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     // Validate required fields
@@ -31,27 +32,40 @@ export default function ContactForm() {
       return;
     }
 
-    // Create mailto link with all form data
-    const subject = encodeURIComponent(`Quote Request from ${formData.name}`);
-    const body = encodeURIComponent(
-      `Name: ${formData.name}\n` +
-      `Phone: ${formData.phone}\n` +
-      `Email: ${formData.email}\n` +
-      `Service: ${formData.service || 'Not specified'}\n\n` +
-      `Message:\n${formData.message || 'No message provided'}`
-    );
-    
-    const mailtoLink = `mailto:dannysdivingservices@gmail.com?subject=${subject}&body=${body}`;
-    window.location.href = mailtoLink;
-    
-    // Clear form after opening email client
-    setTimeout(() => {
-      setFormData({ name: "", phone: "", email: "", service: "", message: "" });
-      toast({
-        title: "Email Client Opened",
-        description: "Please send the email from your email client to complete your request.",
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
       });
-    }, 500);
+
+      const data = await response.json();
+
+      if (response.ok && data.success) {
+        toast({
+          title: "Quote Request Sent!",
+          description: "We've received your request and will contact you within 24 hours.",
+        });
+        
+        // Clear form on success
+        setFormData({ name: "", phone: "", email: "", service: "", message: "" });
+      } else {
+        throw new Error(data.message || 'Failed to submit request');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      toast({
+        title: "Submission Failed",
+        description: "There was a problem sending your request. Please try calling us directly at (778) 535-4506.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (field: string, value: string) => {
@@ -145,8 +159,8 @@ export default function ContactForm() {
                   />
                 </div>
 
-                <Button type="submit" size="lg" className="w-full" data-testid="button-submit-quote">
-                  Request Quote via Email
+                <Button type="submit" size="lg" className="w-full" disabled={isSubmitting} data-testid="button-submit-quote">
+                  {isSubmitting ? "Sending Request..." : "Request Quote"}
                 </Button>
               </form>
             </CardContent>

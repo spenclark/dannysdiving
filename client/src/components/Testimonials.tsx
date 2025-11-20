@@ -81,7 +81,7 @@ export default function Testimonials() {
             data-testid="button-google-reviews"
           >
             <a
-              href="https://g.page/r/YOUR_GOOGLE_BUSINESS_ID/review"
+              href="https://share.google/jPX1F6I1wnMGh4LCa"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2"

@@ -103,7 +103,9 @@ export default function Header() {
                 <NavigationMenuItem>
                   <NavigationMenuTrigger 
                     className={`text-sm font-medium bg-transparent hover:bg-transparent data-[state=open]:bg-transparent ${
-                      shouldUseDarkText ? 'text-foreground hover:text-primary' : 'text-white hover:text-cyan-300'
+                      shouldUseDarkText 
+                        ? 'text-foreground hover:text-primary data-[state=open]:text-primary' 
+                        : 'text-white hover:text-cyan-300 data-[state=open]:text-cyan-300'
                     }`}
                     data-testid="nav-services-trigger"
                   >

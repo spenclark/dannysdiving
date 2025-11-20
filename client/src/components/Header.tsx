@@ -85,7 +85,7 @@ export default function Header() {
             <img 
               src={logoImage} 
               alt="Danny's Diving Services Logo" 
-              className="w-24 h-24md:w-28 md:h-20 rounded-full object-cover"
+              className="w-24 h-24md:w-28 md:h-28 rounded-full object-cover"
             />
           </a>
 

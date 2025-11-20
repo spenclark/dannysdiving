@@ -1,9 +1,13 @@
-import { Resend } from 'resend';
+import { google } from 'googleapis';
 
 let connectionSettings: any;
 
-async function getCredentials() {
-  const hostname = process.env.REPLIT_CONNECTORS_HOSTNAME;
+async function getAccessToken() {
+  if (connectionSettings?.settings?.expires_at && new Date(connectionSettings.settings.expires_at).getTime() > Date.now()) {
+    return connectionSettings.settings.access_token;
+  }
+  
+  const hostname = process.env.REPLIT_CONNECTORS_HOSTNAME
   const xReplitToken = process.env.REPL_IDENTITY 
     ? 'repl ' + process.env.REPL_IDENTITY 
     : process.env.WEB_REPL_RENEWAL 
@@ -15,7 +19,7 @@ async function getCredentials() {
   }
 
   connectionSettings = await fetch(
-    'https://' + hostname + '/api/v2/connection?include_secrets=true&connector_names=resend',
+    'https://' + hostname + '/api/v2/connection?include_secrets=true&connector_names=google-mail',
     {
       headers: {
         'Accept': 'application/json',
@@ -24,21 +28,23 @@ async function getCredentials() {
     }
   ).then(res => res.json()).then(data => data.items?.[0]);
 
-  if (!connectionSettings || (!connectionSettings.settings.api_key)) {
-    throw new Error('Resend not connected');
+  const accessToken = connectionSettings?.settings?.access_token || connectionSettings?.settings?.oauth?.credentials?.access_token;
+
+  if (!connectionSettings || !accessToken) {
+    throw new Error('Gmail not connected');
   }
-  return {
-    apiKey: connectionSettings.settings.api_key, 
-    fromEmail: connectionSettings.settings.from_email
-  };
+  return accessToken;
 }
 
-export async function getUncachableResendClient() {
-  const { apiKey, fromEmail } = await getCredentials();
-  return {
-    client: new Resend(apiKey),
-    fromEmail: fromEmail
-  };
+export async function getUncachableGmailClient() {
+  const accessToken = await getAccessToken();
+
+  const oauth2Client = new google.auth.OAuth2();
+  oauth2Client.setCredentials({
+    access_token: accessToken
+  });
+
+  return google.gmail({ version: 'v1', auth: oauth2Client });
 }
 
 export async function sendContactNotification(data: {
@@ -49,7 +55,7 @@ export async function sendContactNotification(data: {
   message?: string | null;
 }) {
   try {
-    const { client, fromEmail } = await getUncachableResendClient();
+    const gmailClient = await getUncachableGmailClient();
     
     const emailContent = `
 New Quote Request from Danny's Diving Services Website
@@ -66,26 +72,34 @@ ${data.message || "No message provided"}
 Submitted at: ${new Date().toLocaleString()}
     `.trim();
 
-    const result = await client.emails.send({
-      from: fromEmail || "Danny's Diving <onboarding@resend.dev>",
-      to: process.env.CONTACT_EMAIL || "dannysdivingservices@gmail.com",
-      subject: `New Quote Request from ${data.name}`,
-      text: emailContent,
+    const fromEmail = process.env.FROM_EMAIL || "dannysdivingservices@gmail.com";
+    const toEmail = process.env.CONTACT_EMAIL || "dannysdivingservices@gmail.com";
+
+    const message = [
+      `From: ${fromEmail}`,
+      `To: ${toEmail}`,
+      `Subject: New Quote Request from ${data.name}`,
+      '',
+      emailContent
+    ].join('\n');
+
+    const encodedMessage = Buffer.from(message)
+      .toString('base64')
+      .replace(/\+/g, '-')
+      .replace(/\//g, '_')
+      .replace(/=+$/, '');
+
+    const result = await gmailClient.users.messages.send({
+      userId: 'me',
+      requestBody: {
+        raw: encodedMessage,
+      },
     });
 
-    if (result.error) {
-      console.error("Resend API returned an error:", {
-        statusCode: result.error.statusCode,
-        message: result.error.message,
-        name: result.error.name
-      });
-      throw new Error(`Resend email failed: ${result.error.message}`);
-    }
-
-    console.log("Email notification sent successfully via Resend:", result.data);
+    console.log("Email notification sent successfully via Gmail:", result.data);
     return result;
   } catch (error) {
-    console.error("Failed to send email notification via Resend:", error);
+    console.error("Failed to send email notification via Gmail:", error);
     throw error;
   }
 }

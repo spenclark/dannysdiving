@@ -16,14 +16,14 @@ export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
-  const isHomePage = window.location.pathname === '/';
+  const isHomePage = window.location.pathname === "/";
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   // Handle scrolling to hash sections on page load
@@ -34,7 +34,7 @@ export default function Header() {
       setTimeout(() => {
         const element = document.getElementById(hash);
         if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
+          element.scrollIntoView({ behavior: "smooth" });
         }
       }, 100);
     }
@@ -44,48 +44,63 @@ export default function Header() {
     console.log(`Navigate to: ${section}`);
     setIsMobileMenuOpen(false);
     setIsMobileServicesOpen(false);
-    if (section === 'videos') {
-      window.location.href = '/videos';
-    } else if (section === 'services') {
-      if (window.location.pathname === '/') {
-        document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
+    if (section === "videos") {
+      window.location.href = "/videos";
+    } else if (section === "services") {
+      if (window.location.pathname === "/") {
+        document
+          .getElementById("services")
+          ?.scrollIntoView({ behavior: "smooth" });
       } else {
-        window.location.href = '/#services';
+        window.location.href = "/#services";
       }
-    } else if (section === 'testimonials') {
-      if (window.location.pathname === '/') {
-        document.getElementById('testimonials')?.scrollIntoView({ behavior: 'smooth' });
+    } else if (section === "testimonials") {
+      if (window.location.pathname === "/") {
+        document
+          .getElementById("testimonials")
+          ?.scrollIntoView({ behavior: "smooth" });
       } else {
-        window.location.href = '/#testimonials';
+        window.location.href = "/#testimonials";
       }
-    } else if (section === 'contact') {
-      if (window.location.pathname === '/' || window.location.pathname.startsWith('/services/')) {
-        document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' });
+    } else if (section === "contact") {
+      if (
+        window.location.pathname === "/" ||
+        window.location.pathname.startsWith("/services/")
+      ) {
+        document
+          .getElementById("contact-form")
+          ?.scrollIntoView({ behavior: "smooth" });
       } else {
-        window.location.href = '/#contact-form';
+        window.location.href = "/#contact-form";
       }
     }
   };
 
   const handleCallNow = () => {
-    window.location.href = 'tel:+17785354506';
+    window.location.href = "tel:+17785354506";
   };
 
   const shouldUseDarkText = isScrolled || !isHomePage || isMobileMenuOpen;
 
   return (
-    <header 
+    <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        shouldUseDarkText ? 'bg-background/95 backdrop-blur-sm shadow-md' : 'bg-transparent'
+        shouldUseDarkText
+          ? "bg-background/95 backdrop-blur-sm shadow-md"
+          : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 md:px-6">
-        <div className="flex items-center justify-between h-20">
-          <a href="/" className="flex items-center" data-testid="link-home-logo">
-            <img 
-              src={logoImage} 
-              alt="Danny's Diving Services Logo" 
-              className="w-24 h-24md:w-28 md:h-28 rounded-full object-cover"
+        <div className="flex items-center justify-between py-3">
+          <a
+            href="/"
+            className="flex items-center py-2"
+            data-testid="link-home-logo"
+          >
+            <img
+              src={logoImage}
+              alt="Danny's Diving Services Logo"
+              className="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover"
             />
           </a>
 
@@ -93,11 +108,11 @@ export default function Header() {
             <NavigationMenu>
               <NavigationMenuList>
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger 
+                  <NavigationMenuTrigger
                     className={`text-sm font-medium bg-transparent hover:bg-transparent data-[state=open]:bg-transparent ${
-                      shouldUseDarkText 
-                        ? 'text-foreground hover:text-primary data-[state=open]:text-primary' 
-                        : 'text-white hover:text-cyan-300 data-[state=open]:text-cyan-300'
+                      shouldUseDarkText
+                        ? "text-foreground hover:text-primary data-[state=open]:text-primary"
+                        : "text-white hover:text-cyan-300 data-[state=open]:text-cyan-300"
                     }`}
                     data-testid="nav-services-trigger"
                   >
@@ -113,7 +128,9 @@ export default function Header() {
                               className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
                               data-testid={`nav-service-${service.slug}`}
                             >
-                              <div className="text-sm font-medium leading-none">{service.title.replace(' Victoria BC', '')}</div>
+                              <div className="text-sm font-medium leading-none">
+                                {service.title.replace(" Victoria BC", "")}
+                              </div>
                               <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                                 {service.description.substring(0, 100)}...
                               </p>
@@ -126,28 +143,34 @@ export default function Header() {
                 </NavigationMenuItem>
               </NavigationMenuList>
             </NavigationMenu>
-            <button 
-              onClick={() => handleNavClick('videos')}
+            <button
+              onClick={() => handleNavClick("videos")}
               className={`text-sm font-medium transition-colors ${
-                shouldUseDarkText ? 'text-foreground hover:text-primary' : 'text-white hover:text-cyan-300'
+                shouldUseDarkText
+                  ? "text-foreground hover:text-primary"
+                  : "text-white hover:text-cyan-300"
               }`}
               data-testid="nav-videos"
             >
               Recent Work
             </button>
-            <button 
-              onClick={() => handleNavClick('testimonials')}
+            <button
+              onClick={() => handleNavClick("testimonials")}
               className={`text-sm font-medium transition-colors ${
-                shouldUseDarkText ? 'text-foreground hover:text-primary' : 'text-white hover:text-cyan-300'
+                shouldUseDarkText
+                  ? "text-foreground hover:text-primary"
+                  : "text-white hover:text-cyan-300"
               }`}
               data-testid="nav-testimonials"
             >
               Testimonials
             </button>
-            <button 
-              onClick={() => handleNavClick('contact')}
+            <button
+              onClick={() => handleNavClick("contact")}
               className={`text-sm font-medium transition-colors ${
-                shouldUseDarkText ? 'text-foreground hover:text-primary' : 'text-white hover:text-cyan-300'
+                shouldUseDarkText
+                  ? "text-foreground hover:text-primary"
+                  : "text-white hover:text-cyan-300"
               }`}
               data-testid="nav-contact"
             >
@@ -156,7 +179,7 @@ export default function Header() {
           </nav>
 
           <div className="flex items-center gap-4">
-            <Button 
+            <Button
               variant={shouldUseDarkText ? "default" : "secondary"}
               size="default"
               onClick={handleCallNow}
@@ -168,7 +191,7 @@ export default function Header() {
             </Button>
 
             <button
-              className={`lg:hidden ${shouldUseDarkText ? 'text-foreground' : 'text-white'}`}
+              className={`lg:hidden ${shouldUseDarkText ? "text-foreground" : "text-white"}`}
               onClick={() => {
                 setIsMobileMenuOpen(!isMobileMenuOpen);
                 if (isMobileMenuOpen) {
@@ -177,7 +200,11 @@ export default function Header() {
               }}
               data-testid="button-mobile-menu"
             >
-              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {isMobileMenuOpen ? (
+                <X className="w-6 h-6" />
+              ) : (
+                <Menu className="w-6 h-6" />
+              )}
             </button>
           </div>
         </div>
@@ -186,13 +213,15 @@ export default function Header() {
           <div className="lg:hidden py-4 border-t bg-background">
             <nav className="flex flex-col gap-4">
               <div>
-                <button 
+                <button
                   onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
                   className="flex items-center justify-between w-full text-left py-2 text-foreground hover:text-primary transition-colors"
                   data-testid="mobile-nav-services-trigger"
                 >
                   <span>Services</span>
-                  <ChevronDown className={`w-4 h-4 transition-transform ${isMobileServicesOpen ? 'rotate-180' : ''}`} />
+                  <ChevronDown
+                    className={`w-4 h-4 transition-transform ${isMobileServicesOpen ? "rotate-180" : ""}`}
+                  />
                 </button>
                 {isMobileServicesOpen && (
                   <div className="ml-4 mt-2 flex flex-col gap-2">
@@ -207,34 +236,34 @@ export default function Header() {
                           setIsMobileServicesOpen(false);
                         }}
                       >
-                        {service.title.replace(' Victoria BC', '')}
+                        {service.title.replace(" Victoria BC", "")}
                       </a>
                     ))}
                   </div>
                 )}
               </div>
-              <button 
-                onClick={() => handleNavClick('videos')}
+              <button
+                onClick={() => handleNavClick("videos")}
                 className="text-left py-2 text-foreground hover:text-primary transition-colors"
                 data-testid="mobile-nav-videos"
               >
                 Recent Work
               </button>
-              <button 
-                onClick={() => handleNavClick('testimonials')}
+              <button
+                onClick={() => handleNavClick("testimonials")}
                 className="text-left py-2 text-foreground hover:text-primary transition-colors"
                 data-testid="mobile-nav-testimonials"
               >
                 Testimonials
               </button>
-              <button 
-                onClick={() => handleNavClick('contact')}
+              <button
+                onClick={() => handleNavClick("contact")}
                 className="text-left py-2 text-foreground hover:text-primary transition-colors"
                 data-testid="mobile-nav-contact"
               >
                 Contact
               </button>
-              <Button 
+              <Button
                 variant="default"
                 className="w-full"
                 onClick={handleCallNow}

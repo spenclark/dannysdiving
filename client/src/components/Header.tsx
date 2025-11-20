@@ -109,7 +109,7 @@ export default function Header() {
               <NavigationMenuList>
                 <NavigationMenuItem>
                   <NavigationMenuTrigger
-                    className={`text-sm font-medium bg-transparent hover:bg-transparent data-[state=open]:bg-transparent ${
+                    className={`text-base font-medium bg-transparent hover:bg-transparent data-[state=open]:bg-transparent ${
                       shouldUseDarkText
                         ? "text-foreground hover:text-primary data-[state=open]:text-primary"
                         : "text-white hover:text-cyan-300 data-[state=open]:text-cyan-300"
@@ -145,7 +145,7 @@ export default function Header() {
             </NavigationMenu>
             <button
               onClick={() => handleNavClick("videos")}
-              className={`text-sm font-medium transition-colors ${
+              className={`text-base font-medium transition-colors ${
                 shouldUseDarkText
                   ? "text-foreground hover:text-primary"
                   : "text-white hover:text-cyan-300"
@@ -156,7 +156,7 @@ export default function Header() {
             </button>
             <button
               onClick={() => handleNavClick("testimonials")}
-              className={`text-sm font-medium transition-colors ${
+              className={`text-base font-medium transition-colors ${
                 shouldUseDarkText
                   ? "text-foreground hover:text-primary"
                   : "text-white hover:text-cyan-300"
@@ -167,7 +167,7 @@ export default function Header() {
             </button>
             <button
               onClick={() => handleNavClick("contact")}
-              className={`text-sm font-medium transition-colors ${
+              className={`text-base font-medium transition-colors ${
                 shouldUseDarkText
                   ? "text-foreground hover:text-primary"
                   : "text-white hover:text-cyan-300"

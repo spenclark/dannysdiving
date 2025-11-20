@@ -13,7 +13,7 @@ Preferred communication style: Simple, everyday language.
   - Replaced all stock service images with authentic underwater photos from actual diving work
   - Updated images in shared/services.ts:
     - Hull Cleaning: Underwater hull view showing boat from below in clear blue water
-    - Underwater Inspections: Hull inspection photo with "Select area" overlay showing inspection process
+    - Underwater Inspections: Propeller/shaft inspection photo showing marine growth and component condition
     - Zinc Anode Replacement: Close-up of zinc anode underwater showing replacement work
     - Mooring Services: Mooring chain and equipment on seafloor showing maintenance work
     - Lost Item Retrieval: Underwater recovery scene showing search and retrieval operations

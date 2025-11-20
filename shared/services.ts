@@ -1,5 +1,5 @@
 import hullCleaningImg from "@assets/hullcleanthumb_1763670375200.png";
-import inspectionImg from "@assets/inspectionsthumb_1763670375201.png";
+import inspectionImg from "@assets/image_1763670536282.png";
 import zincImg from "@assets/zincthumb_1763670375200.png";
 import mooringImg from "@assets/mooringthumb_1763670375201.png";
 import retrievalImg from "@assets/lostitemthumb_1763670375201.png";

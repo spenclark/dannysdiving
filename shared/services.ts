@@ -1,8 +1,8 @@
-import hullCleaningImg from "@assets/stock_images/professional_commerc_fe47fda8.jpg";
-import inspectionImg from "@assets/stock_images/underwater_boat_hull_a2ba17a3.jpg";
-import zincImg from "@assets/stock_images/professional_commerc_90fd6021.jpg";
-import mooringImg from "@assets/stock_images/underwater_boat_hull_5ed3bff6.jpg";
-import retrievalImg from "@assets/stock_images/commercial_diver_oce_e582419b.jpg";
+import hullCleaningImg from "@assets/hullcleanthumb_1763670375200.png";
+import inspectionImg from "@assets/inspectionsthumb_1763670375201.png";
+import zincImg from "@assets/zincthumb_1763670375200.png";
+import mooringImg from "@assets/mooringthumb_1763670375201.png";
+import retrievalImg from "@assets/lostitemthumb_1763670375201.png";
 import commercialImg from "@assets/stock_images/commercial_diver_oce_4aae3a08.jpg";
 
 export interface Service {

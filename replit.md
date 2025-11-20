@@ -9,6 +9,18 @@ Preferred communication style: Simple, everyday language.
 ## Recent Changes
 
 **November 20, 2025**
+- **Service Page Thumbnail Images Update**:
+  - Replaced all stock service images with authentic underwater photos from actual diving work
+  - Updated images in shared/services.ts:
+    - Hull Cleaning: Underwater hull view showing boat from below in clear blue water
+    - Underwater Inspections: Hull inspection photo with "Select area" overlay showing inspection process
+    - Zinc Anode Replacement: Close-up of zinc anode underwater showing replacement work
+    - Mooring Services: Mooring chain and equipment on seafloor showing maintenance work
+    - Lost Item Retrieval: Underwater recovery scene showing search and retrieval operations
+  - New thumbnails display on homepage services grid and individual service detail pages
+  - All images provide authentic visual examples of actual services performed
+  - Verified across all service pages through end-to-end testing
+
 - **Hull Cleaning Before/After Video Improvements**:
   - Updated videos to play once and pause at the end instead of looping continuously
   - Removed `loop` attribute; added `onEnded` handler to track playback completion

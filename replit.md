@@ -5,6 +5,22 @@ Danny's Diving Services is a marketing website for a commercial diving business 
 
 ## Recent Changes
 
+**November 20, 2025**
+- **Brand Identity Update - Logo and Color Palette**:
+  - Replaced placeholder "DD" text logo with actual Danny's Diving Services circular logo
+  - Logo image set to rounded-full styling for professional circular appearance
+  - Extracted navy blue color (HSL 230° 65% 18%) from logo background as new primary brand color
+  - Updated entire color palette from cyan/teal (HSL 199° 89% 48%) to navy blue across:
+    - Primary buttons, links, and interactive elements
+    - Icons and trust badges
+    - Chart colors coordinated with navy blue theme
+  - Implemented conditional navigation hover states for accessibility:
+    - Transparent header (on hero): Navigation uses cyan-300 hover color for contrast on dark background
+    - Scrolled header (solid background): Navigation uses navy blue primary hover color
+  - Updated hero section "Victoria BC" text to cyan-300 for visibility against dark hero image
+  - All changes maintain WCAG contrast requirements and improve brand consistency
+  - Verified through end-to-end testing and architect review
+
 **November 18, 2025**
 - **Email Integration Setup with Resend**:
   - Integrated Resend for transactional email delivery

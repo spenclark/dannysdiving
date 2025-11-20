@@ -6,6 +6,13 @@ Danny's Diving Services is a marketing website for a commercial diving business 
 ## Recent Changes
 
 **November 20, 2025**
+- **Favicon Update with Actual Logo**:
+  - Replaced previous favicon with actual Danny's Diving circular logo for consistent branding
+  - Created favicon generation script using Sharp to resize logo into all required sizes (16x16, 32x32, 180x180, 192x192, 512x512)
+  - Generated favicons maintain circular logo appearance and navy blue brand colors
+  - Browser tab icons now match header/footer logo for complete brand consistency across all touchpoints
+  - All favicon sizes tested and verified across homepage, service pages, and videos page
+
 - **Header and Footer Logo Updates**:
   - Header logo increased from 48px to 64px (mobile) and 80px (desktop) for greater prominence
   - Removed "Danny's Diving" and "Professional Services" text from header for cleaner, logo-only design

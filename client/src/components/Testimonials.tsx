@@ -1,25 +1,32 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Star } from "lucide-react";
+import { Star, ExternalLink } from "lucide-react";
+import { SiGoogle } from "react-icons/si";
+import { Button } from "@/components/ui/button";
 
-// todo: remove mock functionality
 const testimonials = [
   {
-    name: "Captain Mike Richardson",
-    vessel: "M/V Ocean Spirit",
+    name: "Stuart Dahlgren",
     rating: 5,
-    text: "Danny did an exceptional job cleaning our 45-foot sailboat hull. The difference in performance was immediately noticeable. Professional, punctual, and thorough.",
+    text: "Danny is very friendly and responds quickly. Pricing is very reasonable, and he provides a video of the before and after.",
+    source: "Google",
   },
   {
-    name: "Sarah Thompson",
-    vessel: "Island Princess",
+    name: "Chris and Anne Daley",
     rating: 5,
-    text: "Outstanding underwater inspection service. Danny provided a detailed report with photos and recommendations. Found issues we didn't know existed. Highly recommend!",
+    text: "Prompt and personably. Fair pricing and accurate time keeping. Took great video of before and after. I will definitely use Danny the next time.",
+    source: "Google",
   },
   {
-    name: "Pacific Marina Management",
-    vessel: "Commercial Client",
+    name: "Thorsten Hoefling",
     rating: 5,
-    text: "We've used Danny's services for multiple vessels. Always reliable, professional, and competitively priced. Our go-to diver for all marine maintenance.",
+    text: "Danny cleaned the hull of our boat twice and changed the zincs in the water. He will send you a video of the finished work. Super friendly guy, will definitely ask for his services again!",
+    source: "Google",
+  },
+  {
+    name: "John Bain",
+    rating: 5,
+    text: "Danny did a great job replacing zincs, bottom scrub AND provided video of the job!",
+    source: "Google",
   },
 ];
 
@@ -36,7 +43,7 @@ export default function Testimonials() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {testimonials.map((testimonial, index) => (
             <Card
               key={index}
@@ -44,26 +51,46 @@ export default function Testimonials() {
               data-testid={`testimonial-${index}`}
             >
               <CardContent className="pt-6">
-                <div className="flex gap-1 mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star
-                      key={i}
-                      className="w-5 h-5 fill-primary text-primary"
-                    />
-                  ))}
+                <div className="flex items-center justify-between mb-4">
+                  <div className="flex gap-1">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star
+                        key={i}
+                        className="w-4 h-4 fill-primary text-primary"
+                      />
+                    ))}
+                  </div>
+                  <SiGoogle className="w-5 h-5 text-muted-foreground" aria-label="Google review" />
                 </div>
-                <p className="text-base leading-relaxed mb-6">
+                <p className="text-sm leading-relaxed mb-4">
                   "{testimonial.text}"
                 </p>
                 <div className="border-t pt-4">
-                  <p className="font-semibold">{testimonial.name}</p>
-                  <p className="text-sm text-muted-foreground">
-                    {testimonial.vessel}
-                  </p>
+                  <p className="font-semibold text-sm">{testimonial.name}</p>
                 </div>
               </CardContent>
             </Card>
           ))}
+        </div>
+
+        <div className="mt-12 text-center">
+          <Button
+            asChild
+            variant="outline"
+            size="lg"
+            data-testid="button-google-reviews"
+          >
+            <a
+              href="https://g.page/r/YOUR_GOOGLE_BUSINESS_ID/review"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2"
+            >
+              <SiGoogle className="w-5 h-5" />
+              <span>Read More Reviews on Google</span>
+              <ExternalLink className="w-4 h-4" />
+            </a>
+          </Button>
         </div>
       </div>
     </section>

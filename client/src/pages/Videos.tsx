@@ -1,18 +1,17 @@
 import { useEffect } from "react";
 import Header from "@/components/Header";
 import VideoGallery from "@/components/VideoGallery";
-import BeforeAfterVideo from "@/components/BeforeAfterVideo";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Phone } from "lucide-react";
 
 export default function Videos() {
   useEffect(() => {
-    document.title = "Hull Cleaning Before & After Videos | Danny's Diving Services Victoria BC";
+    document.title = "Recent Diving Work Videos | Danny's Diving Services Victoria BC";
     
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', "Watch before and after videos of our professional hull cleaning in Victoria BC. See dramatic results from our certified commercial divers. Every underwater job documented on video. Call (778) 535-4506");
+      metaDescription.setAttribute('content', "Watch videos of our recent diving work in Victoria BC. Every job is documented on video. Hull cleaning, inspections, and marine services. Call (778) 535-4506");
     }
 
     const canonicalLink = document.querySelector('link[rel="canonical"]') || document.createElement('link');
@@ -56,9 +55,6 @@ export default function Videos() {
             Back to Home
           </Button>
         </div>
-        
-        <BeforeAfterVideo />
-        
         <VideoGallery />
         
         <section className="py-16 bg-card">

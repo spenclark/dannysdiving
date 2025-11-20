@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Card } from "@/components/ui/card";
-import { Play, Pause } from "lucide-react";
+import { Play, Pause, Video } from "lucide-react";
 import beforeVideo from "@assets/HullCleaningBefore_1763663836016.mp4";
 import afterVideo from "@assets/HullCleaningAfter_1763663848002.mp4";
 import beforePoster from "@assets/stock_images/underwater_boat_hull_6473b96e.jpg";
@@ -18,26 +18,40 @@ interface VideoPlayerProps {
 function VideoPlayer({ videoSrc, posterSrc, title, label, isVisible }: VideoPlayerProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
-  const [hasLoaded, setHasLoaded] = useState(false);
+  const [shouldLoad, setShouldLoad] = useState(false);
 
   useEffect(() => {
-    if (!videoRef.current || !isVisible || hasLoaded) return;
+    if (isVisible && !shouldLoad) {
+      setShouldLoad(true);
+    }
+  }, [isVisible, shouldLoad]);
 
-    const video = videoRef.current;
-    video.src = videoSrc;
-    video.load();
-    setHasLoaded(true);
-  }, [isVisible, hasLoaded, videoSrc]);
-
-  const togglePlay = () => {
+  const togglePlay = async () => {
     if (!videoRef.current) return;
     
-    if (isPlaying) {
-      videoRef.current.pause();
-    } else {
-      videoRef.current.play();
+    if (!shouldLoad) {
+      setShouldLoad(true);
+      setTimeout(async () => {
+        if (videoRef.current) {
+          try {
+            await videoRef.current.play();
+          } catch (error) {
+            console.error('Error playing video:', error);
+          }
+        }
+      }, 100);
+      return;
     }
-    setIsPlaying(!isPlaying);
+    
+    if (videoRef.current.paused) {
+      try {
+        await videoRef.current.play();
+      } catch (error) {
+        console.error('Error playing video:', error);
+      }
+    } else {
+      videoRef.current.pause();
+    }
   };
 
   const handleVideoPlay = () => setIsPlaying(true);
@@ -65,11 +79,14 @@ function VideoPlayer({ videoSrc, posterSrc, title, label, isVisible }: VideoPlay
           poster={posterSrc}
           playsInline
           loop
+          autoPlay
+          muted
           onPlay={handleVideoPlay}
           onPause={handleVideoPause}
           aria-label={`${label} hull cleaning video: ${title}`}
           data-testid={`video-${label.toLowerCase()}`}
         >
+          {shouldLoad && <source src={videoSrc} type="video/mp4" />}
           <track kind="captions" label="English" srcLang="en" />
         </video>
         
@@ -102,10 +119,24 @@ export default function BeforeAfterVideo() {
   const observerRef = useRef<IntersectionObserver | null>(null);
 
   useEffect(() => {
+    if (isVisible) return;
+
+    const checkInitialVisibility = () => {
+      if (!sectionRef.current) return false;
+      const rect = sectionRef.current.getBoundingClientRect();
+      const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+      return rect.top <= windowHeight + 200 && rect.bottom >= -200;
+    };
+
+    if (checkInitialVisibility()) {
+      setIsVisible(true);
+      return;
+    }
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting && !isVisible) {
+          if (entry.isIntersecting) {
             setIsVisible(true);
             if (observerRef.current && sectionRef.current) {
               observerRef.current.unobserve(sectionRef.current);
@@ -243,11 +274,19 @@ export default function BeforeAfterVideo() {
         </div>
 
         <div className="mt-8 text-center">
-          <p className="text-sm text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-sm text-muted-foreground max-w-3xl mx-auto mb-6">
             Professional hull cleaning improves fuel efficiency, boat speed, and protects your investment. 
             Every job is documented on video so you can see exactly what we did. 
             Serving Victoria BC and Vancouver Island since 2021.
           </p>
+          <a 
+            href="/videos"
+            className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors font-medium"
+            data-testid="link-view-recent-work"
+          >
+            <Video className="w-5 h-5" />
+            <span>Watch our recent work videos - every job is recorded</span>
+          </a>
         </div>
       </div>
     </section>

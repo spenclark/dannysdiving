@@ -26,20 +26,24 @@ function VideoPlayer({ videoSrc, posterSrc, title, label, isVisible }: VideoPlay
     }
   }, [isVisible, shouldLoad]);
 
+  useEffect(() => {
+    const playVideo = async () => {
+      if (shouldLoad && videoRef.current) {
+        try {
+          await videoRef.current.play();
+        } catch (error) {
+          console.log('Autoplay prevented, waiting for user interaction');
+        }
+      }
+    };
+    playVideo();
+  }, [shouldLoad]);
+
   const togglePlay = async () => {
     if (!videoRef.current) return;
     
     if (!shouldLoad) {
       setShouldLoad(true);
-      setTimeout(async () => {
-        if (videoRef.current) {
-          try {
-            await videoRef.current.play();
-          } catch (error) {
-            console.error('Error playing video:', error);
-          }
-        }
-      }, 100);
       return;
     }
     
@@ -79,14 +83,13 @@ function VideoPlayer({ videoSrc, posterSrc, title, label, isVisible }: VideoPlay
           poster={posterSrc}
           playsInline
           loop
-          autoPlay
           muted
           onPlay={handleVideoPlay}
           onPause={handleVideoPause}
           aria-label={`${label} hull cleaning video: ${title}`}
           data-testid={`video-${label.toLowerCase()}`}
         >
-          {shouldLoad && <source src={videoSrc} type="video/mp4" />}
+          <source src={videoSrc} type="video/mp4" />
           <track kind="captions" label="English" srcLang="en" />
         </video>
         
@@ -274,11 +277,6 @@ export default function BeforeAfterVideo() {
         </div>
 
         <div className="mt-8 text-center">
-          <p className="text-sm text-muted-foreground max-w-3xl mx-auto mb-6">
-            Professional hull cleaning improves fuel efficiency, boat speed, and protects your investment. 
-            Every job is documented on video so you can see exactly what we did. 
-            Serving Victoria BC and Vancouver Island since 2021.
-          </p>
           <a 
             href="/videos"
             className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors font-medium"

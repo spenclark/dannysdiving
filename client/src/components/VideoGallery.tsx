@@ -5,52 +5,52 @@ import { useState } from "react";
 const videos = [
   {
     id: "1gaRg897ljE",
-    title: "Danny's Diving Services - Professional Work Video 1",
+    title: "Hull Clean - Bayliner After",
     date: "2025"
   },
   {
     id: "kcvHC_N6e-U",
-    title: "Danny's Diving Services - Professional Work Video 2",
+    title: "Hull Clean - Bayliner Before",
     date: "2025"
   },
   {
     id: "0H4JUd-fdoQ",
-    title: "Danny's Diving Services - Professional Work Video 3",
+    title: "Hull Clean - Catamaran",
     date: "2025"
   },
   {
     id: "gtsiId2rd-A",
-    title: "Danny's Diving Services - Professional Work Video 4",
+    title: "Hull Clean - Catamaran",
     date: "2025"
   },
   {
     id: "_IxxoYyr9EA",
-    title: "Danny's Diving Services - Professional Work Video 5",
+    title: "Hull Clean - Hotfoot After",
     date: "2025"
   },
   {
     id: "BTGRZ86pwyM",
-    title: "Danny's Diving Services - Professional Work Video 6",
+    title: "Hull Clean - Hotfoot Before",
     date: "2025"
   },
   {
     id: "oRVcdmAVrv0",
-    title: "Danny's Diving Services - Professional Work Video 7",
+    title: "Race Clean - IC 37 After",
     date: "2025"
   },
   {
     id: "4Pc8Nd8hTwU",
-    title: "Danny's Diving Services - Professional Work Video 8",
+    title: "Race Clean - IC 37 Before",
     date: "2025"
   },
   {
     id: "0X3ZNlc93vI",
-    title: "Danny's Diving Services - Professional Work Video 9",
+    title: "Hull Clean - Moseying After",
     date: "2025"
   },
   {
     id: "ki0AJxZKpFM",
-    title: "Danny's Diving Services - Professional Work Video 10",
+    title: "Hull Clean - Moseying Before",
     date: "2025"
   }
 ];
@@ -84,13 +84,10 @@ export default function VideoGallery() {
             >
               <div className="relative aspect-video bg-muted overflow-hidden">
                 <img 
-                  src={`https://img.youtube.com/vi/${video.id}/maxresdefault.jpg`}
+                  src={`https://img.youtube.com/vi/${video.id}/sddefault.jpg`}
                   alt={video.title}
                   className="absolute inset-0 w-full h-full object-cover"
                   loading="lazy"
-                  onError={(e) => {
-                    e.currentTarget.src = `https://img.youtube.com/vi/${video.id}/hqdefault.jpg`;
-                  }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10" />
                 <div className="absolute inset-0 flex items-center justify-center z-20">

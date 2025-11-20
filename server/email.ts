@@ -73,7 +73,16 @@ Submitted at: ${new Date().toLocaleString()}
       text: emailContent,
     });
 
-    console.log("Email notification sent successfully via Resend:", result);
+    if (result.error) {
+      console.error("Resend API returned an error:", {
+        statusCode: result.error.statusCode,
+        message: result.error.message,
+        name: result.error.name
+      });
+      throw new Error(`Resend email failed: ${result.error.message}`);
+    }
+
+    console.log("Email notification sent successfully via Resend:", result.data);
     return result;
   } catch (error) {
     console.error("Failed to send email notification via Resend:", error);

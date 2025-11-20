@@ -19,6 +19,7 @@ function VideoPlayer({ videoSrc, posterSrc, title, label, isVisible }: VideoPlay
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [shouldLoad, setShouldLoad] = useState(false);
+  const [hasPlayedOnce, setHasPlayedOnce] = useState(false);
 
   useEffect(() => {
     if (isVisible && !shouldLoad) {
@@ -60,6 +61,10 @@ function VideoPlayer({ videoSrc, posterSrc, title, label, isVisible }: VideoPlay
 
   const handleVideoPlay = () => setIsPlaying(true);
   const handleVideoPause = () => setIsPlaying(false);
+  const handleVideoEnded = () => {
+    setHasPlayedOnce(true);
+    setIsPlaying(false);
+  };
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter' || e.key === ' ') {
       e.preventDefault();
@@ -79,13 +84,13 @@ function VideoPlayer({ videoSrc, posterSrc, title, label, isVisible }: VideoPlay
         <video
           ref={videoRef}
           className="w-full h-full object-cover"
-          preload="none"
+          preload="metadata"
           poster={posterSrc}
           playsInline
-          loop
           muted
           onPlay={handleVideoPlay}
           onPause={handleVideoPause}
+          onEnded={handleVideoEnded}
           aria-label={`${label} hull cleaning video: ${title}`}
           data-testid={`video-${label.toLowerCase()}`}
         >

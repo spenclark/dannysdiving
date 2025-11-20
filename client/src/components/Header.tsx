@@ -103,7 +103,7 @@ export default function Header() {
                 <NavigationMenuItem>
                   <NavigationMenuTrigger 
                     className={`text-sm font-medium bg-transparent hover:bg-transparent data-[state=open]:bg-transparent ${
-                      shouldUseDarkText ? 'text-foreground hover:text-primary' : 'text-white hover:text-primary'
+                      shouldUseDarkText ? 'text-foreground hover:text-primary' : 'text-white hover:text-cyan-300'
                     }`}
                     data-testid="nav-services-trigger"
                   >
@@ -134,8 +134,8 @@ export default function Header() {
             </NavigationMenu>
             <button 
               onClick={() => handleNavClick('videos')}
-              className={`text-sm font-medium hover:text-primary transition-colors ${
-                shouldUseDarkText ? 'text-foreground' : 'text-white'
+              className={`text-sm font-medium transition-colors ${
+                shouldUseDarkText ? 'text-foreground hover:text-primary' : 'text-white hover:text-cyan-300'
               }`}
               data-testid="nav-videos"
             >
@@ -143,8 +143,8 @@ export default function Header() {
             </button>
             <button 
               onClick={() => handleNavClick('testimonials')}
-              className={`text-sm font-medium hover:text-primary transition-colors ${
-                shouldUseDarkText ? 'text-foreground' : 'text-white'
+              className={`text-sm font-medium transition-colors ${
+                shouldUseDarkText ? 'text-foreground hover:text-primary' : 'text-white hover:text-cyan-300'
               }`}
               data-testid="nav-testimonials"
             >
@@ -152,8 +152,8 @@ export default function Header() {
             </button>
             <button 
               onClick={() => handleNavClick('contact')}
-              className={`text-sm font-medium hover:text-primary transition-colors ${
-                shouldUseDarkText ? 'text-foreground' : 'text-white'
+              className={`text-sm font-medium transition-colors ${
+                shouldUseDarkText ? 'text-foreground hover:text-primary' : 'text-white hover:text-cyan-300'
               }`}
               data-testid="nav-contact"
             >

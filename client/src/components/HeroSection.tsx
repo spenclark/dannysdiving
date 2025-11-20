@@ -26,7 +26,7 @@ export default function HeroSection() {
       <div className="relative z-10 max-w-5xl mx-auto px-4 md:px-6 text-center text-white">
         <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold mb-6 leading-tight">
           Professional Diving Services<br />
-          <span className="text-primary">Victoria BC</span>
+          <span className="text-cyan-300">Victoria BC</span>
         </h1>
         <p className="text-lg md:text-xl lg:text-2xl mb-8 max-w-3xl mx-auto leading-relaxed text-gray-100">
           Expert commercial divers serving Victoria and Vancouver Island for hull cleaning, underwater inspections, and marine maintenance

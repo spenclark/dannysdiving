@@ -9,11 +9,12 @@ Danny's Diving Services is a marketing website for a commercial diving business 
 - **YouTube Video Integration for Recent Work Gallery**:
   - Replaced placeholder video gallery with 10 real YouTube videos from Danny's diving projects
   - Videos display in specific order requested by user
-  - Implemented YouTube thumbnail loading with fallback to lower resolution if maxresdefault unavailable
+  - Updated all video titles to match actual YouTube video names (Hull Clean - Bayliner After/Before, Hull Clean - Catamaran, Hull Clean - Hotfoot After/Before, Race Clean - IC 37 After/Before, Hull Clean - Moseying After/Before)
+  - Fixed thumbnail loading issue by using sddefault.jpg format instead of maxresdefault.jpg for reliable thumbnail display across all videos
   - Created modal video player with YouTube iframe embed and autoplay functionality
   - Added close button (X icon) and backdrop click to dismiss modal
   - Optimized performance with lazy loading and single activeVideo computation
-  - All videos tested and confirmed working correctly
+  - All videos and thumbnails tested and confirmed working correctly
   - Changes verified through end-to-end testing and architect review
 
 - **Brand Identity Update - Logo and Color Palette**:

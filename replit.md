@@ -6,6 +6,16 @@ Danny's Diving Services is a marketing website for a commercial diving business 
 ## Recent Changes
 
 **November 20, 2025**
+- **YouTube Video Integration for Recent Work Gallery**:
+  - Replaced placeholder video gallery with 10 real YouTube videos from Danny's diving projects
+  - Videos display in specific order requested by user
+  - Implemented YouTube thumbnail loading with fallback to lower resolution if maxresdefault unavailable
+  - Created modal video player with YouTube iframe embed and autoplay functionality
+  - Added close button (X icon) and backdrop click to dismiss modal
+  - Optimized performance with lazy loading and single activeVideo computation
+  - All videos tested and confirmed working correctly
+  - Changes verified through end-to-end testing and architect review
+
 - **Brand Identity Update - Logo and Color Palette**:
   - Replaced placeholder "DD" text logo with actual Danny's Diving Services circular logo
   - Logo image set to rounded-full styling for professional circular appearance

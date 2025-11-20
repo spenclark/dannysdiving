@@ -81,20 +81,12 @@ export default function Header() {
     >
       <div className="max-w-7xl mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between h-20">
-          <a href="/" className="flex items-center gap-3" data-testid="link-home-logo">
+          <a href="/" className="flex items-center" data-testid="link-home-logo">
             <img 
               src={logoImage} 
               alt="Danny's Diving Services Logo" 
-              className="w-12 h-12 rounded-full object-cover"
+              className="w-16 h-16 md:w-20 md:h-20 rounded-full object-cover"
             />
-            <div>
-              <h1 className={`font-bold text-lg leading-tight ${shouldUseDarkText ? 'text-foreground' : 'text-white'}`}>
-                Danny's Diving
-              </h1>
-              <p className={`text-xs ${shouldUseDarkText ? 'text-muted-foreground' : 'text-gray-300'}`}>
-                Professional Services
-              </p>
-            </div>
           </a>
 
           <nav className="hidden lg:flex items-center gap-8">

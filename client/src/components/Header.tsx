@@ -112,7 +112,7 @@ export default function Header() {
                     className={`text-base font-medium bg-transparent hover:bg-transparent data-[state=open]:bg-transparent ${
                       shouldUseDarkText
                         ? "text-foreground hover:text-primary data-[state=open]:text-primary"
-                        : "text-white hover:text-cyan-300 data-[state=open]:text-cyan-300"
+                        : "text-white hover:text-primary data-[state=open]:text-primary"
                     }`}
                     data-testid="nav-services-trigger"
                   >
@@ -148,7 +148,7 @@ export default function Header() {
               className={`text-base font-medium transition-colors ${
                 shouldUseDarkText
                   ? "text-foreground hover:text-primary"
-                  : "text-white hover:text-cyan-300"
+                  : "text-white hover:text-primary"
               }`}
               data-testid="nav-videos"
             >
@@ -159,7 +159,7 @@ export default function Header() {
               className={`text-base font-medium transition-colors ${
                 shouldUseDarkText
                   ? "text-foreground hover:text-primary"
-                  : "text-white hover:text-cyan-300"
+                  : "text-white hover:text-primary"
               }`}
               data-testid="nav-testimonials"
             >
@@ -170,7 +170,7 @@ export default function Header() {
               className={`text-base font-medium transition-colors ${
                 shouldUseDarkText
                   ? "text-foreground hover:text-primary"
-                  : "text-white hover:text-cyan-300"
+                  : "text-white hover:text-primary"
               }`}
               data-testid="nav-contact"
             >

@@ -34,17 +34,17 @@ export default function HeroSection() {
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <Button 
             size="lg" 
-            className="text-lg"
+            className="text-xl px-8 py-6"
             onClick={handleCallNow}
             data-testid="button-hero-call"
           >
-            <Phone className="mr-2 h-5 w-5" />
+            <Phone className="mr-2 h-6 w-6" />
             Call Now: (778) 535-4506
           </Button>
           <Button 
             size="lg" 
             variant="outline" 
-            className="text-lg bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20"
+            className="text-xl px-8 py-6 bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20"
             onClick={handleGetQuote}
             data-testid="button-hero-quote"
           >

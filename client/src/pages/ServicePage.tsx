@@ -291,7 +291,7 @@ export default function ServicePage() {
     <div className="min-h-screen">
       <Header />
       
-      <main className="pt-20">
+      <main className="pt-28">
         {/* Hero Section */}
         <section className="relative py-16 md:py-24 bg-gradient-to-br from-primary/10 via-background to-background">
           <div className="max-w-7xl mx-auto px-4 md:px-6">

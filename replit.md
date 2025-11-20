@@ -6,10 +6,11 @@ Danny's Diving Services is a marketing website for a commercial diving business 
 ## Recent Changes
 
 **November 20, 2025**
-- **Header Logo Enhancement**:
-  - Increased logo size from 48px to 64px (mobile) and 80px (desktop) for greater prominence
+- **Header and Footer Logo Updates**:
+  - Header logo increased from 48px to 64px (mobile) and 80px (desktop) for greater prominence
   - Removed "Danny's Diving" and "Professional Services" text from header for cleaner, logo-only design
-  - Maintained circular logo styling and proper scaling across all breakpoints
+  - Footer updated to replace "DD" placeholder text with actual 40px x 40px logo image styled with rounded-md corners
+  - Maintained circular logo styling in header and subtle rectangular styling in footer across all breakpoints
   - All changes tested and verified through end-to-end testing and architect review
 
 - **YouTube Video Integration for Recent Work Gallery**:

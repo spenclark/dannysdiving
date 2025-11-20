@@ -6,6 +6,25 @@ Danny's Diving Services is a marketing website for a commercial diving business 
 ## User Preferences
 Preferred communication style: Simple, everyday language.
 
+## Recent Changes
+
+**November 20, 2025**
+- **Hull Cleaning Before/After Video Improvements**:
+  - Updated videos to play once and pause at the end instead of looping continuously
+  - Removed `loop` attribute; added `onEnded` handler to track playback completion
+  - Changed video preload from "none" to "metadata" for better loading
+  - Videos autoplay when visible (muted), play through once, then pause
+  - Users can manually replay videos by clicking the play/pause button
+  - Replaced stock poster images with actual underwater hull photos showing real before/after conditions
+  - New poster images provide authentic preview and serve as fallback if video fails to load
+
+- **Gmail Email Integration (Replacing Resend)**:
+  - Replaced Resend with Gmail API for contact form email notifications
+  - Integrated via Replit's secure Gmail connector using googleapis package
+  - Emails sent from dannysdivingservices@gmail.com (free, no custom domain required)
+  - OAuth2 authentication with automatic token refresh
+  - Successfully tested end-to-end with contact form
+
 ## System Architecture
 
 ### Frontend Architecture

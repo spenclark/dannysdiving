@@ -3,8 +3,8 @@ import { Card } from "@/components/ui/card";
 import { Play, Pause, Video } from "lucide-react";
 import beforeVideo from "@assets/HullCleaningBefore_1763663836016.mp4";
 import afterVideo from "@assets/HullCleaningAfter_1763663848002.mp4";
-import beforePoster from "@assets/stock_images/underwater_boat_hull_6473b96e.jpg";
-import afterPoster from "@assets/stock_images/underwater_boat_hull_5ed3bff6.jpg";
+import beforePoster from "@assets/before_1763669755573.jpg";
+import afterPoster from "@assets/After_1763669731989.jpg";
 import logoImage from "@assets/PHOTO-2025-11-19-20-50-16_1763614659104.jpeg";
 
 interface VideoPlayerProps {

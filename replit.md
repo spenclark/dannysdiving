@@ -9,6 +9,20 @@ Preferred communication style: Simple, everyday language.
 ## Recent Changes
 
 **November 20, 2025**
+- **Google Reviews Integration**:
+  - Replaced mock testimonials with 4 authentic Google reviews
+  - Reviews from Stuart Dahlgren, Chris and Anne Daley, Thorsten Hoefling, and John Bain
+  - Added Google icon branding to each review card for authenticity
+  - Added "Read More Reviews on Google" button linking to Google Business Profile (https://share.google/jPX1F6I1wnMGh4LCa)
+  - Changed layout from 3-column to 4-column grid to accommodate all reviews
+  - All reviews highlight key strengths: video documentation, fair pricing, prompt service
+
+- **Sitemap Configuration**:
+  - Removed static sitemap.xml from public folder
+  - Now using dynamic backend-generated sitemap at `/sitemap.xml`
+  - Sitemap automatically updates lastmod date daily for better SEO
+  - Includes all pages: homepage, videos, 6 service pages, privacy, and terms
+
 - **Service Page Thumbnail Images Update**:
   - Replaced all stock service images with authentic underwater photos from actual diving work
   - Updated images in shared/services.ts:

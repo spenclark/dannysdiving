@@ -10,6 +10,7 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 import { services } from "@shared/services";
+import logoImage from "@assets/PHOTO-2025-11-19-20-50-16_1763614659104.jpeg";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -80,10 +81,12 @@ export default function Header() {
     >
       <div className="max-w-7xl mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between h-20">
-          <a href="/" className="flex items-center gap-2" data-testid="link-home-logo">
-            <div className="w-10 h-10 bg-primary rounded-md flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-xl">DD</span>
-            </div>
+          <a href="/" className="flex items-center gap-3" data-testid="link-home-logo">
+            <img 
+              src={logoImage} 
+              alt="Danny's Diving Services Logo" 
+              className="w-12 h-12 rounded-full object-cover"
+            />
             <div>
               <h1 className={`font-bold text-lg leading-tight ${shouldUseDarkText ? 'text-foreground' : 'text-white'}`}>
                 Danny's Diving

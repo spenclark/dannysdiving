@@ -80,12 +80,12 @@ export default function Header() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 md:px-6">
-        <div className="flex items-center justify-between h-20">
-          <a href="/" className="flex items-center" data-testid="link-home-logo">
+        <div className="flex items-center justify-between py-3">
+          <a href="/" className="flex items-center py-2" data-testid="link-home-logo">
             <img 
               src={logoImage} 
               alt="Danny's Diving Services Logo" 
-              className="w-16 h-16 md:w-20 md:h-20 rounded-full object-cover"
+              className="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover"
             />
           </a>
 

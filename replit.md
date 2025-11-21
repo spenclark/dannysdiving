@@ -8,6 +8,16 @@ Preferred communication style: Simple, everyday language.
 
 ## Recent Changes
 
+**November 21, 2025**
+- **Hero Video Background**:
+  - Replaced static hero image with full-screen video background
+  - Video autoplays, loops continuously, and is muted for optimal user experience
+  - Includes `playsInline` attribute for iOS compatibility
+  - Uses original hero image as poster/fallback for browsers that don't support video
+  - Maintains dark gradient overlay for text readability
+  - Video properly sized with `object-cover` for responsive behavior across all devices
+  - Accessibility enhanced with semantic video element and proper ARIA labeling
+
 **November 20, 2025**
 - **Google Reviews Integration**:
   - Replaced mock testimonials with 4 authentic Google reviews

@@ -13,7 +13,7 @@ Preferred communication style: Simple, everyday language.
   - Replaced static hero image with full-screen video background
   - Video autoplays, loops continuously, and is muted for optimal user experience
   - Includes `playsInline` attribute for iOS compatibility
-  - Uses original hero image as poster/fallback for browsers that don't support video
+  - No poster/thumbnail - video starts playing immediately for seamless experience
   - Maintains dark gradient overlay for text readability
   - Video properly sized with `object-cover` for responsive behavior across all devices
   - Accessibility enhanced with semantic video element and proper ARIA labeling

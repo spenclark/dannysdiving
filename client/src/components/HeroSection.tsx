@@ -33,12 +33,11 @@ export default function HeroSection() {
   };
 
   const handleGetQuote = () => {
-    console.log("Get quote button clicked"); {
-      document
-        .getElementById("contact-form")
-        ?.scrollIntoView({ behavior: "smooth" });
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+      contactForm.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   };
-
   return (
     <section className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
       <video

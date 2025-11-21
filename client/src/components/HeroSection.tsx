@@ -19,10 +19,10 @@ export default function HeroSection() {
   return (
     <section className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
       <video
-        autoPlay
-        muted
-        loop
-        playsInline
+        autoPlay={true}
+        muted={true}
+        loop={true}
+        playsInline={true}
         poster={heroImage}
         className="absolute inset-0 w-full h-full object-cover"
         aria-label="Underwater diving footage showcasing professional diving services"

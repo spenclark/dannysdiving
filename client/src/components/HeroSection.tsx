@@ -1,9 +1,32 @@
+import { useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Phone } from "lucide-react";
 import heroImage from "@assets/stock_images/commercial_diver_oce_08019dc9.jpg";
 import heroVideo from "@assets/HeroVideo_1763687681763.mp4";
+import heroPoster from "@assets/hero-poster.jpg";
 
 export default function HeroSection() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const playVideo = async () => {
+      try {
+        await video.play();
+      } catch (error) {
+        console.log('Autoplay prevented, waiting for user interaction');
+      }
+    };
+
+    video.addEventListener('loadeddata', playVideo, { once: true });
+
+    return () => {
+      video.removeEventListener('loadeddata', playVideo);
+    };
+  }, []);
+
   const handleCallNow = () => {
     console.log('Call button clicked');
     window.location.href = 'tel:+17785354506';
@@ -19,10 +42,13 @@ export default function HeroSection() {
   return (
     <section className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
       <video
+        ref={videoRef}
         autoPlay={true}
         muted={true}
         loop={true}
         playsInline={true}
+        preload="metadata"
+        poster={heroPoster}
         className="absolute inset-0 w-full h-full object-cover"
         aria-label="Underwater diving footage showcasing professional diving services"
       >

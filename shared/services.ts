@@ -3,7 +3,7 @@ import inspectionImg from "@assets/image_1763670536282.png";
 import zincImg from "@assets/zincthumb_1763670375200.png";
 import mooringImg from "@assets/mooringthumb_1763670375201.png";
 import retrievalImg from "@assets/lostitemthumb_1763670375201.png";
-import commercialImg from "@assets/stock_images/commercial_diver_oce_4aae3a08.jpg";
+import commercialImg from "@assets/image_1763686460850.png";
 
 export interface Service {
   title: string;

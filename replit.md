@@ -31,6 +31,7 @@ Preferred communication style: Simple, everyday language.
     - Zinc Anode Replacement: Close-up of zinc anode underwater showing replacement work
     - Mooring Services: Mooring chain and equipment on seafloor showing maintenance work
     - Lost Item Retrieval: Underwater recovery scene showing search and retrieval operations
+    - Commercial Diving: Professional diver working underwater in clear turquoise water showing marine infrastructure work
   - New thumbnails display on homepage services grid and individual service detail pages
   - All images provide authentic visual examples of actual services performed
   - Verified across all service pages through end-to-end testing

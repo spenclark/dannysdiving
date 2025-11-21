@@ -20,10 +20,10 @@ export default function HeroSection() {
       }
     };
 
-    video.addEventListener("loadeddata", playVideo, { once: true });
+    video.addEventListener("canplay", playVideo, { once: true });
 
     return () => {
-      video.removeEventListener("loadeddata", playVideo);
+      video.removeEventListener("canplay", playVideo);
     };
   }, []);
 
@@ -46,7 +46,7 @@ export default function HeroSection() {
         muted={true}
         loop={true}
         playsInline={true}
-        preload="metadata"
+        preload="auto"
         poster={heroPoster}
         className="absolute inset-0 w-full h-full object-cover"
         aria-label="Underwater diving footage showcasing professional diving services"

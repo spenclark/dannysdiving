@@ -31,7 +31,7 @@ export default function HeroSection() {
       </video>
       <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70" />
       
-      <div className="relative z-10 max-w-5xl mx-auto px-4 md:px-6 text-center text-white">
+      <div className="relative z-10 max-w-5xl mx-auto px-4 md:px-6 text-center text-white mt-32 md:mt-40">
         <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold mb-6 leading-tight">
           Professional Diving Services<br />
           <span className="text-navy-800">Victoria BC</span>

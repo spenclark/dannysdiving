@@ -23,7 +23,6 @@ export default function HeroSection() {
         muted={true}
         loop={true}
         playsInline={true}
-        poster={heroImage}
         className="absolute inset-0 w-full h-full object-cover"
         aria-label="Underwater diving footage showcasing professional diving services"
       >

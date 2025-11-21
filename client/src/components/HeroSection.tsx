@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Phone } from "lucide-react";
 import heroImage from "@assets/stock_images/commercial_diver_oce_08019dc9.jpg";
+import heroVideo from "@assets/HeroVideo_1763687681763.mp4";
 
 export default function HeroSection() {
   const handleCallNow = () => {
@@ -17,10 +18,18 @@ export default function HeroSection() {
 
   return (
     <section className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
-      <div 
-        className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: `url(${heroImage})` }}
-      />
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        poster={heroImage}
+        className="absolute inset-0 w-full h-full object-cover"
+        aria-label="Underwater diving footage showcasing professional diving services"
+      >
+        <source src={heroVideo} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
       <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70" />
       
       <div className="relative z-10 max-w-5xl mx-auto px-4 md:px-6 text-center text-white">

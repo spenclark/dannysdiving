@@ -5,25 +5,25 @@ import { Button } from "@/components/ui/button";
 
 const testimonials = [
   {
-    name: "Stuart Dahlgren",
+    name: "Stuart D.",
     rating: 5,
     text: "Danny is very friendly and responds quickly. Pricing is very reasonable, and he provides a video of the before and after.",
     source: "Google",
   },
   {
-    name: "Chris and Anne Daley",
+    name: "Chris and Anne D.",
     rating: 5,
     text: "Prompt and personably. Fair pricing and accurate time keeping. Took great video of before and after. I will definitely use Danny the next time.",
     source: "Google",
   },
   {
-    name: "Thorsten Hoefling",
+    name: "Thorsten H.",
     rating: 5,
     text: "Danny cleaned the hull of our boat twice and changed the zincs in the water. He will send you a video of the finished work. Super friendly guy, will definitely ask for his services again!",
     source: "Google",
   },
   {
-    name: "John Bain",
+    name: "John B.",
     rating: 5,
     text: "Danny did a great job replacing zincs, bottom scrub AND provided video of the job!",
     source: "Google",
@@ -60,7 +60,10 @@ export default function Testimonials() {
                       />
                     ))}
                   </div>
-                  <SiGoogle className="w-5 h-5 text-muted-foreground" aria-label="Google review" />
+                  <SiGoogle
+                    className="w-5 h-5 text-muted-foreground"
+                    aria-label="Google review"
+                  />
                 </div>
                 <p className="text-sm leading-relaxed mb-4">
                   "{testimonial.text}"

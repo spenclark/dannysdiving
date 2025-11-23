@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Phone } from "lucide-react";
 import heroImage from "@assets/stock_images/commercial_diver_oce_08019dc9.jpg";
 import heroVideo from "@assets/HeroVideo_1763687681763.mp4";
-import heroPoster from "@assets/hero-poster.jpg";
+import heroPoster from "@assets/hero-poster.webp";
 
 export default function HeroSection() {
   const videoRef = useRef<HTMLVideoElement>(null);

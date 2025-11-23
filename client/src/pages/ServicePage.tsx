@@ -98,7 +98,7 @@ export default function ServicePage() {
 
       setOrCreateMeta('meta[property="og:image"]', {
         'property': 'og:image',
-        'content': `https://dannysdiving.com${service.image}`
+        'content': service.ogImage
       });
 
       setOrCreateMeta('meta[property="og:locale"]', {
@@ -123,7 +123,7 @@ export default function ServicePage() {
 
       setOrCreateMeta('meta[name="twitter:image"]', {
         'name': 'twitter:image',
-        'content': `https://dannysdiving.com${service.image}`
+        'content': service.ogImage
       });
 
       setOrCreateMeta('meta[name="geo.region"]', {
@@ -337,6 +337,7 @@ export default function ServicePage() {
                   src={service.image}
                   alt={service.imageAlt}
                   className="w-full h-full object-cover"
+                  loading="eager"
                 />
               </div>
             </div>

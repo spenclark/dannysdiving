@@ -3,9 +3,9 @@ import { Card } from "@/components/ui/card";
 import { Play, Pause, Video } from "lucide-react";
 import beforeVideo from "@assets/HullCleaningBefore_1763663836016.mp4";
 import afterVideo from "@assets/HullCleaningAfter_1763663848002.mp4";
-import beforePoster from "@assets/before_1763669755573.jpg";
-import afterPoster from "@assets/After_1763669731989.jpg";
-import logoImage from "@assets/PHOTO-2025-11-19-20-50-16_1763614659104.jpeg";
+import beforePoster from "@assets/before_1763669755573.webp";
+import afterPoster from "@assets/After_1763669731989.webp";
+import logoImage from "@assets/PHOTO-2025-11-19-20-50-16_1763614659104.webp";
 
 interface VideoPlayerProps {
   videoSrc: string;

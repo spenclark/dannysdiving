@@ -10,7 +10,7 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 import { services } from "@shared/services";
-import logoImage from "@assets/PHOTO-2025-11-19-20-50-16_1763614659104.jpeg";
+import logoImage from "@assets/PHOTO-2025-11-19-20-50-16_1763614659104.webp";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -101,6 +101,9 @@ export default function Header() {
               src={logoImage}
               alt="Danny's Diving Services Logo"
               className="w-28 h-28 md:w-36 md:h-36 rounded-full object-cover"
+              width="144"
+              height="144"
+              loading="eager"
             />
           </a>
 

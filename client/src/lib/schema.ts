@@ -51,7 +51,7 @@ export function generateServiceSchema(service: Service) {
     "serviceType": serviceTypeDescriptions[service.slug] || service.title,
     "name": service.title,
     "description": service.description,
-    "image": `https://dannysdiving.com${service.image}`,
+    "image": service.ogImage,
     "url": `https://dannysdiving.com/services/${service.slug}`,
     "provider": {
       "@type": "LocalBusiness",

@@ -1,6 +1,6 @@
 import { Mail, MapPin, Phone } from "lucide-react";
 import { FaFacebook, FaInstagram } from "react-icons/fa";
-import logoImage from "@assets/PHOTO-2025-11-19-20-50-16_1763614659104.jpeg";
+import logoImage from "@assets/PHOTO-2025-11-19-20-50-16_1763614659104.webp";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -15,6 +15,9 @@ export default function Footer() {
                 src={logoImage} 
                 alt="Danny's Diving Services Logo" 
                 className="w-10 h-10 rounded-md object-cover"
+                width="40"
+                height="40"
+                loading="lazy"
                 data-testid="img-footer-logo"
               />
               <div>

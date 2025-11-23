@@ -23,6 +23,7 @@ export default function ServicesGrid() {
                     src={service.image} 
                     alt={service.title}
                     className="w-full h-full object-cover"
+                    loading="lazy"
                   />
                 </div>
                 <CardHeader className="space-y-2">

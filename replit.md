@@ -8,6 +8,24 @@ Preferred communication style: Simple, everyday language.
 
 ## Recent Changes
 
+**November 23, 2025**
+- **Page Speed Optimizations**:
+  - **Google Fonts Optimization**: Implemented async font loading using media="print" onload technique with preconnect hints, eliminating 1,220ms render-blocking time
+  - **Image Optimization**: Converted all PNG/JPG images to WebP format achieving 94.4% compression (5.51MB savings)
+    - Service thumbnails: hull cleaning, underwater inspections, zinc anodes, mooring, lost items, commercial diving
+    - Video poster images: hero background, before/after hull cleaning posters
+    - Brand assets: logo images optimized to WebP
+  - **Image Loading Strategy**: 
+    - Above-fold logo images use eager loading with explicit width/height to prevent CLS
+    - Below-fold service thumbnails use lazy loading for better initial page load
+  - **Social Media Preview Images**:
+    - Generated optimized 1200x630px OG images in client/public/og-images/ directory
+    - Each service has dedicated OG image for social sharing (Facebook, Twitter, LinkedIn)
+    - Added ogImage field to Service interface with canonical URLs
+    - Updated meta tags and structured data to use absolute OG image URLs
+  - **Build Scripts**: Created scripts/optimize-images.ts and scripts/generate-og-images.ts for reproducible asset optimization
+  - **Expected Performance Impact**: ~1.2 seconds faster load time, ~5.4 MB bandwidth savings per page load
+
 **November 21, 2025**
 - **Hero Video Background**:
   - Replaced static hero image with full-screen video background

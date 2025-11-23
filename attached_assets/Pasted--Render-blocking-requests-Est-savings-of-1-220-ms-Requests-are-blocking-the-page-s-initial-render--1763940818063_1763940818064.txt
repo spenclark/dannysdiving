@@ -1,0 +1,97 @@
+
+Render blocking requests Est savings of 1,220 ms
+Requests are blocking the page's initial render, which may delay LCP. Deferring or inlining can move these network requests out of the critical path.LCPFCPUnscored
+URL
+Transfer Size
+Duration
+dannysdiving.com 1st party
+93.5 KiB	1,410 ms
+/assets/index-Pv2OFkIp.css(dannysdiving.com)
+93.5 KiB
+1,410 ms
+Google Fonts cdn 
+3.0 KiB	750 ms
+/css2?family=…(fonts.googleapis.com)
+3.0 KiB
+750 ms
+Improve image delivery Est savings of 5,416 KiB
+Reducing the download time of images can improve the perceived load time of the page and LCP. Learn more about optimizing image sizeLCPFCPUnscored
+URL
+Resource Size
+Est Savings
+dannysdiving.com 1st party
+5,971.4 KiB	5,415.6 KiB
+Mooring Services Victoria BC
+<img src="/assets/mooringthumb_1763670375201-D6poT8Ig.png" alt="Mooring Services Victoria BC" class="w-full h-full object-cover">
+/assets/mooringth….png(dannysdiving.com)
+2,016.5 KiB
+1,944.9 KiB
+Using a modern image format (WebP, AVIF) or increasing the image compression could improve this image's download size.
+1,875.8 KiB
+This image file is larger than it needs to be (1074x805) for its displayed dimensions (886x496). Use responsive images to reduce the image download size.
+991.2 KiB
+Underwater Recovery Victoria BC
+<img src="/assets/lostitemthumb_1763670375201-BBRznhLU.png" alt="Underwater Recovery Victoria BC" class="w-full h-full object-cover">
+/assets/lostitemt….png(dannysdiving.com)
+1,083.0 KiB
+1,011.8 KiB
+Using a modern image format (WebP, AVIF) or increasing the image compression could improve this image's download size.
+943.4 KiB
+This image file is larger than it needs to be (1070x802) for its displayed dimensions (882x496). Use responsive images to reduce the image download size.
+530.4 KiB
+Zinc Anode Replacement Victoria BC
+<img src="/assets/zincthumb_1763670375200-CiCxxcMV.png" alt="Zinc Anode Replacement Victoria BC" class="w-full h-full object-cover">
+/assets/zincthumb….png(dannysdiving.com)
+982.7 KiB
+912.1 KiB
+Using a modern image format (WebP, AVIF) or increasing the image compression could improve this image's download size.
+841.5 KiB
+This image file is larger than it needs to be (1075x807) for its displayed dimensions (874x496). Use responsive images to reduce the image download size.
+491.4 KiB
+Underwater Inspections Victoria BC
+<img src="/assets/image_1763670536282-Dzg5CLW8.png" alt="Underwater Inspections Victoria BC" class="w-full h-full object-cover">
+/assets/image_176….png(dannysdiving.com)
+674.1 KiB
+602.8 KiB
+Using a modern image format (WebP, AVIF) or increasing the image compression could improve this image's download size.
+533.7 KiB
+This image file is larger than it needs to be (1073x804) for its displayed dimensions (882x496). Use responsive images to reduce the image download size.
+331.8 KiB
+Hull Cleaning Victoria BC
+<img src="/assets/hullcleanthumb_1763670375200-BD9-GkL9.png" alt="Hull Cleaning Victoria BC" class="w-full h-full object-cover">
+/assets/hullclean….png(dannysdiving.com)
+661.7 KiB
+589.9 KiB
+Using a modern image format (WebP, AVIF) or increasing the image compression could improve this image's download size.
+523.4 KiB
+This image file is larger than it needs to be (1065x798) for its displayed dimensions (890x496). Use responsive images to reduce the image download size.
+318.0 KiB
+Commercial Diving Victoria BC
+<img src="/assets/image_1763686460850-DdAWRu2L.png" alt="Commercial Diving Victoria BC" class="w-full h-full object-cover">
+/assets/image_176….png(dannysdiving.com)
+332.6 KiB
+261.5 KiB
+Using a modern image format (WebP, AVIF) or increasing the image compression could improve this image's download size.
+195.3 KiB
+This image file is larger than it needs to be (1060x796) for its displayed dimensions (881x496). Use responsive images to reduce the image download size.
+160.3 KiB
+Underwater diving footage showcasing professional diving services
+<video autoplay="" loop="" playsinline="" preload="auto" poster="/assets/hero-poster-D6m9aciz.jpg" class="absolute inset-0 w-full h-full object-cover" aria-label="Underwater diving footage showcasing professional diving services">
+/assets/hero-post….jpg(dannysdiving.com)
+155.9 KiB
+60.9 KiB
+Using a modern image format (WebP, AVIF) or increasing the image compression could improve this image's download size.
+60.9 KiB
+Before hull cleaning video: Hull covered with barnacles and marine growth
+<video class="w-full h-full object-cover" preload="metadata" poster="/assets/before_1763669755573-CneKe7tA.jpg" playsinline="" aria-label="Before hull cleaning video: Hull covered with barnacles and marine growth" data-testid="video-before">
+/assets/before_17….jpg(dannysdiving.com)
+51.5 KiB
+27.7 KiB
+Using a modern image format (WebP, AVIF) or increasing the image compression could improve this image's download size.
+27.7 KiB
+Danny's Diving Services Logo
+<img src="/assets/PHOTO-2025-11-19-20-50-16_1763614659104-dVH93n5c.jpeg" alt="Danny's Diving Services Logo" class="w-28 h-28 md:w-36 md:h-36 rounded-full object-cover">
+/assets/PHOTO-202….jpeg(dannysdiving.com)
+13.3 KiB
+4.0 KiB
+This image file is larger than it needs to be (300x299) for its displayed dimensions (320x196). Use responsive images to reduce the image download size.

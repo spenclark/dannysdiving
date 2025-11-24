@@ -126,6 +126,7 @@ export default function VideoGallery() {
                   <button
                     onClick={() => setSelectedVideo(null)}
                     className="absolute -top-12 right-0 text-white hover:text-gray-300 transition-colors"
+                    aria-label="Close video modal"
                     data-testid="button-close-modal"
                   >
                     <X className="w-8 h-8" />

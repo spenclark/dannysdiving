@@ -21,7 +21,7 @@ export default function Footer() {
                 data-testid="img-footer-logo"
               />
               <div>
-                <h3 className="font-bold text-lg">Danny's Diving Services</h3>
+                <div className="font-bold text-lg">Danny's Diving Services</div>
               </div>
             </div>
             <p className="text-muted-foreground text-sm leading-relaxed mb-4">
@@ -52,7 +52,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="font-semibold mb-4">Our Services</h4>
+            <div className="font-semibold mb-4">Our Services</div>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li><a href="/services/hull-cleaning" className="hover:text-primary transition-colors">Hull Cleaning</a></li>
               <li><a href="/services/underwater-inspections" className="hover:text-primary transition-colors">Underwater Inspections</a></li>
@@ -64,7 +64,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="font-semibold mb-4">Contact Us</h4>
+            <div className="font-semibold mb-4">Contact Us</div>
             <ul className="space-y-3 text-sm">
               <li className="flex items-start gap-2">
                 <Phone className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />

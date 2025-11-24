@@ -95,7 +95,7 @@ function VideoPlayer({ videoSrc, posterSrc, title, label, isVisible }: VideoPlay
           data-testid={`video-${label.toLowerCase()}`}
         >
           <source src={videoSrc} type="video/mp4" />
-          <track kind="captions" label="English" srcLang="en" />
+          <track kind="captions" src="/captions/hull-cleaning.vtt" srcLang="en" label="English" />
         </video>
         
         <button

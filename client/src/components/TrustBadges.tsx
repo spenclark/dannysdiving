@@ -39,7 +39,7 @@ export default function TrustBadges() {
                 <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4">
                   <Icon className="w-8 h-8 text-primary" />
                 </div>
-                <h3 className="font-semibold text-lg mb-1">{badge.title}</h3>
+                <div className="font-semibold text-lg mb-1">{badge.title}</div>
                 <p className="text-sm text-muted-foreground">{badge.description}</p>
               </div>
             );

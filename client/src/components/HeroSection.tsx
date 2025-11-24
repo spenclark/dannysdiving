@@ -52,6 +52,7 @@ export default function HeroSection() {
         aria-label="Underwater diving footage showcasing professional diving services"
       >
         <source src={heroVideo} type="video/mp4" />
+        <track kind="captions" src="/captions/hero-video.vtt" srcLang="en" label="English" />
         Your browser does not support the video tag.
       </video>
       <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70" />

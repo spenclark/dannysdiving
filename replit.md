@@ -26,6 +26,18 @@ Preferred communication style: Simple, everyday language.
   - **Build Scripts**: Created scripts/optimize-images.ts and scripts/generate-og-images.ts for reproducible asset optimization
   - **Expected Performance Impact**: ~1.2 seconds faster load time, ~5.4 MB bandwidth savings per page load
 
+- **Accessibility Improvements**:
+  - **Zoom Support**: Removed viewport zoom restrictions to allow users to pinch-zoom on mobile (critical for vision-impaired users)
+  - **Button Labels**: Added aria-label to modal close button for screen reader accessibility
+  - **Heading Hierarchy**: Fixed heading structure to follow proper h1 → h2 → h3 sequence across all pages
+    - Removed h3/h4 from TrustBadges and Footer components where they broke hierarchy
+    - Ensures screen readers can properly navigate page structure
+    - Improves SEO by providing clear content hierarchy to search engines
+  - **Video Captions**: Added caption tracks to all video elements (hero video, before/after videos)
+    - Created VTT caption files in client/public/captions/ directory
+    - Provides accessibility for hearing-impaired users
+    - Meets WCAG 2.1 accessibility standards
+
 **November 21, 2025**
 - **Hero Video Background**:
   - Replaced static hero image with full-screen video background

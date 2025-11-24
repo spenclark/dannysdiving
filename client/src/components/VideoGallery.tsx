@@ -4,6 +4,11 @@ import { useState } from "react";
 
 const videos = [
   {
+    id: "xChc4h53Peo",
+    title: "Hull clean and saildrive zinc/anode replacement.",
+    date: "2025",
+  },
+  {
     id: "1gaRg897ljE",
     title: "Hull Clean - Bayliner After",
     date: "2025",

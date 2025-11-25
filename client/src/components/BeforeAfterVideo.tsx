@@ -177,7 +177,7 @@ export default function BeforeAfterVideo() {
       "@context": "https://schema.org",
       "@type": "VideoObject",
       "name": "Hull Cleaning Before - Professional Underwater Footage Victoria BC",
-      "description": "Professional underwater video showing boat hull condition before cleaning service by Danny's Diving Services in Victoria BC. Watch the barnacles and marine growth on the hull before our certified commercial divers perform the cleaning. This video documents the typical condition of boat hulls requiring professional marine maintenance.",
+      "description": "Professional underwater video showing boat hull condition before cleaning service by Danny's Diving Services in Victoria BC. Watch the barnacles and marine growth on the hull before our professional commercial divers perform the cleaning. This video documents the typical condition of boat hulls requiring professional marine maintenance.",
       "thumbnailUrl": `${window.location.origin}${beforePoster}`,
       "uploadDate": "2025-11-20",
       "contentUrl": `${window.location.origin}${beforeVideo}`,
@@ -201,7 +201,7 @@ export default function BeforeAfterVideo() {
       "@context": "https://schema.org",
       "@type": "VideoObject",
       "name": "Hull Cleaning After - Professional Results Victoria BC",
-      "description": "Professional underwater video showing pristine boat hull after cleaning service by Danny's Diving Services in Victoria BC. See the dramatic difference our certified commercial divers achieve with expert hull cleaning. Clean hulls improve fuel efficiency and boat performance. Serving Victoria BC and Vancouver Island since 2021.",
+      "description": "Professional underwater video showing pristine boat hull after cleaning service by Danny's Diving Services in Victoria BC. See the dramatic difference our professional commercial divers achieve with expert hull cleaning. Clean hulls improve fuel efficiency and boat performance. Serving Victoria BC and Vancouver Island since 2021.",
       "thumbnailUrl": `${window.location.origin}${afterPoster}`,
       "uploadDate": "2025-11-20",
       "contentUrl": `${window.location.origin}${afterVideo}`,
@@ -255,7 +255,7 @@ export default function BeforeAfterVideo() {
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             See the dramatic difference our professional hull cleaning service makes. 
-            These underwater videos document actual results from our certified commercial divers in Victoria BC.
+            These underwater videos document actual results from our professional commercial divers in Victoria BC.
           </p>
         </div>
 

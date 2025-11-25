@@ -8,7 +8,7 @@ const badges = [
   },
   {
     icon: Award,
-    title: "Certified Commercial Diver",
+    title: "Professional Commercial Diver",
     description: "Internationally Trained"
   },
   {

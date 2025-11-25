@@ -110,7 +110,7 @@ export const services: Service[] = [
     ogImage: "https://dannysdiving.com/og-images/underwater-inspections.jpg",
     imageAlt: "Underwater boat inspection in Victoria BC showing commercial diver examining hull damage and marine components",
     slug: "underwater-inspections",
-    metaDescription: "Professional commercial divers in Victoria providing underwater boat inspections. Hull damage assessment, propeller checks. Certified divers with video documentation. Victoria marinas. Call (778) 535-4506",
+    metaDescription: "Professional commercial divers in Victoria providing underwater boat inspections. Hull damage assessment, propeller checks. Experienced divers with video documentation. Victoria marinas. Call (778) 535-4506",
     benefits: [
       "Assess damage below the waterline without hauling out",
       "Complete video documentation of underwater surfaces",
@@ -163,7 +163,7 @@ export const services: Service[] = [
     ogImage: "https://dannysdiving.com/og-images/zinc-changes.jpg",
     imageAlt: "Zinc anode replacement service Victoria BC showing commercial diver installing new sacrificial anodes on boat propeller and shaft",
     slug: "zinc-changes",
-    metaDescription: "Professional divers in Victoria BC providing zinc anode replacement & inspection. Prevent corrosion on shafts, props, rudders. Certified commercial divers. Oak Bay, Sidney marinas. Call (778) 535-4506",
+    metaDescription: "Professional divers in Victoria BC providing zinc anode replacement & inspection. Prevent corrosion on shafts, props, rudders. Experienced commercial divers. Oak Bay, Sidney marinas. Call (778) 535-4506",
     benefits: [
       "Prevent expensive corrosion damage to shafts and props",
       "Extend the life of your running gear",
@@ -216,7 +216,7 @@ export const services: Service[] = [
     ogImage: "https://dannysdiving.com/og-images/mooring-services.jpg",
     imageAlt: "Mooring inspection service Victoria BC showing commercial diver examining mooring chain and anchor underwater",
     slug: "mooring-services",
-    metaDescription: "Professional commercial divers in Victoria providing mooring services. Inspection, maintenance, installation by certified divers. Keep your boat secure. Victoria marinas. Call (778) 535-4506",
+    metaDescription: "Professional commercial divers in Victoria providing mooring services. Inspection, maintenance, installation by experienced divers. Keep your boat secure. Victoria marinas. Call (778) 535-4506",
     benefits: [
       "Peace of mind in storm season",
       "Prevent vessel damage from mooring failure",
@@ -269,7 +269,7 @@ export const services: Service[] = [
     ogImage: "https://dannysdiving.com/og-images/lost-item-retrieval.jpg",
     imageAlt: "Underwater recovery service Victoria BC showing commercial diver searching for and retrieving lost items from ocean floor",
     slug: "lost-item-retrieval",
-    metaDescription: "Professional commercial divers in Victoria providing underwater recovery services. Lost items, tools, equipment retrieval. Expert search diving by certified divers. Victoria waterfront. Call (778) 535-4506",
+    metaDescription: "Professional commercial divers in Victoria providing underwater recovery services. Lost items, tools, equipment retrieval. Expert search diving by experienced divers. Victoria waterfront. Call (778) 535-4506",
     benefits: [
       "Recover valuable items thought to be lost forever",
       "Professional search patterns and techniques",
@@ -322,7 +322,7 @@ export const services: Service[] = [
     ogImage: "https://dannysdiving.com/og-images/commercial-diving.jpg",
     imageAlt: "Commercial diving services Victoria BC showing professional diver performing marine infrastructure inspection and underwater construction work",
     slug: "commercial-diving",
-    metaDescription: "Professional commercial divers in Victoria BC. Marine construction, infrastructure inspection, underwater surveys. Certified and insured divers serving Vancouver Island. Call (778) 535-4506",
+    metaDescription: "Professional commercial divers in Victoria BC. Marine construction, infrastructure inspection, underwater surveys. Experienced and insured divers serving Vancouver Island. Call (778) 535-4506",
     benefits: [
       "Commercial diver with full insurance coverage",
       "Experience with marine infrastructure projects",
@@ -335,7 +335,7 @@ export const services: Service[] = [
       { step: "Project Consultation", description: "Discuss your commercial diving needs, project scope, timelines, and any regulatory requirements specific to Victoria BC." },
       { step: "Planning & Safety", description: "Develop comprehensive dive plan including safety procedures, equipment needs, and coordination with other contractors." },
       { step: "Professional Execution", description: "Execute diving operations with commercial diver following all safety protocols and industry best practices." },
-      { step: "Documentation & Reporting", description: "Provide detailed reports, video documentation, and any required certifications or compliance paperwork." }
+      { step: "Documentation & Reporting", description: "Provide detailed reports, video documentation, and any required compliance paperwork." }
     ],
     serviceAreas: [
       "Victoria and Esquimalt harbours",
@@ -354,7 +354,7 @@ export const services: Service[] = [
       },
       {
         question: "Are you insured for commercial work?",
-        answer: "Yes. We carry $2M liability insurance coverage and maintain all required certifications for commercial diving operations in British Columbia."
+        answer: "Yes. We carry $2M liability insurance coverage for commercial diving operations."
       },
       {
         question: "Can you handle emergency commercial diving calls?",

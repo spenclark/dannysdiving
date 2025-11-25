@@ -63,7 +63,7 @@ export default function Terms() {
                   <li>Commercial diving projects</li>
                 </ul>
                 <p>
-                  All services are performed by certified, insured commercial divers following industry best practices and safety standards.
+                  All services are performed by professional, insured commercial divers following industry best practices and safety standards.
                 </p>
               </CardContent>
             </Card>

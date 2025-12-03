@@ -173,15 +173,17 @@ export default function BeforeAfterVideo() {
   }, [isVisible]);
 
   useEffect(() => {
+    const baseUrl = "https://dannysdiving.com";
+    
     const beforeVideoSchema = {
       "@context": "https://schema.org",
       "@type": "VideoObject",
       "name": "Hull Cleaning Before - Professional Underwater Footage Victoria BC",
       "description": "Professional underwater video showing boat hull condition before cleaning service by Danny's Diving Services in Victoria BC. Watch the barnacles and marine growth on the hull before our professional commercial divers perform the cleaning. This video documents the typical condition of boat hulls requiring professional marine maintenance.",
-      "thumbnailUrl": `${window.location.origin}${beforePoster}`,
-      "uploadDate": "2025-11-20",
-      "contentUrl": `${window.location.origin}${beforeVideo}`,
-      "embedUrl": `${window.location.origin}/videos#before-after`,
+      "thumbnailUrl": `${baseUrl}/og-images/hull-cleaning.jpg`,
+      "uploadDate": "2025-11-20T08:00:00-08:00",
+      "contentUrl": `${baseUrl}${beforeVideo}`,
+      "embedUrl": `${baseUrl}/videos#before-after`,
       "duration": "PT30S",
       "inLanguage": "en",
       "publisher": {
@@ -189,7 +191,7 @@ export default function BeforeAfterVideo() {
         "name": "Danny's Diving Services",
         "logo": {
           "@type": "ImageObject",
-          "url": `${window.location.origin}${logoImage}`,
+          "url": `${baseUrl}/android-chrome-512x512.png`,
           "width": 512,
           "height": 512
         }
@@ -202,10 +204,10 @@ export default function BeforeAfterVideo() {
       "@type": "VideoObject",
       "name": "Hull Cleaning After - Professional Results Victoria BC",
       "description": "Professional underwater video showing pristine boat hull after cleaning service by Danny's Diving Services in Victoria BC. See the dramatic difference our professional commercial divers achieve with expert hull cleaning. Clean hulls improve fuel efficiency and boat performance. Serving Victoria BC and Vancouver Island since 2021.",
-      "thumbnailUrl": `${window.location.origin}${afterPoster}`,
-      "uploadDate": "2025-11-20",
-      "contentUrl": `${window.location.origin}${afterVideo}`,
-      "embedUrl": `${window.location.origin}/videos#before-after`,
+      "thumbnailUrl": `${baseUrl}/og-images/hull-cleaning.jpg`,
+      "uploadDate": "2025-11-20T08:00:00-08:00",
+      "contentUrl": `${baseUrl}${afterVideo}`,
+      "embedUrl": `${baseUrl}/videos#before-after`,
       "duration": "PT30S",
       "inLanguage": "en",
       "publisher": {
@@ -213,7 +215,7 @@ export default function BeforeAfterVideo() {
         "name": "Danny's Diving Services",
         "logo": {
           "@type": "ImageObject",
-          "url": `${window.location.origin}${logoImage}`,
+          "url": `${baseUrl}/android-chrome-512x512.png`,
           "width": 512,
           "height": 512
         }

@@ -12,7 +12,7 @@ export default function About() {
     
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', "Meet Daniel Garcia, lead diver at Danny's Diving Services in Victoria BC. Born in Peru, trained in Spain, experienced from Europe's largest aquariums to offshore rigs. Call (778) 535-4506.");
+      metaDescription.setAttribute('content', "Meet Daniel Garcia, lead diver at Danny's Diving Services in Victoria BC. Born in Peru, trained in Spain, experienced from Europe's largest aquariums to heavy industry operations. Call (778) 535-4506.");
     }
 
     const canonicalLink = document.querySelector('link[rel="canonical"]') || document.createElement('link');
@@ -69,9 +69,9 @@ export default function About() {
                     certification as a commercial diver.
                   </p>
                   <p>
-                    My career has taken me from Europe's largest aquariums to offshore drilling rigs, 
+                    My career has taken me from Europe's largest aquariums to heavy industry practicums, 
                     giving me hands-on experience across every sector of the diving industry. From delicate 
-                    underwater maintenance work to heavy industrial operations, I've done it all.
+                    underwater maintenance work to industrial operations, I've done it all.
                   </p>
                   <p>
                     Now I'm proud to bring that international expertise home to Victoria, providing 

@@ -1,6 +1,7 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Phone, Mail, MapPin } from "lucide-react";
+import profileImage from "@assets/f570d30b-9d76-442e-9d1e-72f3ac24e66a_1764800451103.jpeg";
 
 export default function AboutSection() {
   return (
@@ -18,7 +19,7 @@ export default function AboutSection() {
             <div className="relative">
               <Avatar className="w-64 h-64 md:w-80 md:h-80 border-4 border-primary/20">
                 <AvatarImage 
-                  src="" 
+                  src={profileImage} 
                   alt="Daniel Garcia - Professional Commercial Diver"
                   className="object-cover"
                   data-testid="img-about-profile"

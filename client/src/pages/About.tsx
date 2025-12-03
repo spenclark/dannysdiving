@@ -3,7 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
-import { Phone, Mail, MapPin, Anchor, Award, Globe } from "lucide-react";
+import { Phone, Mail, MapPin } from "lucide-react";
 import profileImage from "@assets/f570d30b-9d76-442e-9d1e-72f3ac24e66a_1764800451103.jpeg";
 
 export default function About() {
@@ -107,35 +107,6 @@ export default function About() {
               </div>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-8 mt-16">
-              <div className="text-center p-6 rounded-lg bg-muted/30">
-                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Globe className="w-6 h-6 text-primary" />
-                </div>
-                <h3 className="font-semibold text-lg mb-2">International Training</h3>
-                <p className="text-muted-foreground text-sm">
-                  Certified commercial diver trained in Spain with experience across Europe
-                </p>
-              </div>
-              <div className="text-center p-6 rounded-lg bg-muted/30">
-                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Award className="w-6 h-6 text-primary" />
-                </div>
-                <h3 className="font-semibold text-lg mb-2">Diverse Experience</h3>
-                <p className="text-muted-foreground text-sm">
-                  From aquarium maintenance to offshore drilling operations
-                </p>
-              </div>
-              <div className="text-center p-6 rounded-lg bg-muted/30">
-                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Anchor className="w-6 h-6 text-primary" />
-                </div>
-                <h3 className="font-semibold text-lg mb-2">Local Expert</h3>
-                <p className="text-muted-foreground text-sm">
-                  Proudly serving Victoria and Vancouver Island marinas
-                </p>
-              </div>
-            </div>
           </div>
         </section>
       </main>

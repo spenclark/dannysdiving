@@ -82,25 +82,7 @@ export const services: Service[] = [
         answer: "Hull cleaning is underwater barnacle and marine growth removal from below the waterline by a commercial diver. Boat detailing is topside washing, waxing, and cosmetic cleaning. We specialize in underwater hull cleaning, not boat washing or detailing services."
       }
     ],
-    pricing: "Pricing varies based on vessel size and fouling level. Contact us for a free quote specific to your boat in Victoria.",
-    comparisonSection: {
-      title: "Hull Cleaning vs Boat Detailing: Understanding the Difference",
-      content: "Many boat owners in Victoria search for hull cleaning when they actually need underwater barnacle removal. It's important to understand that hull cleaning and boat detailing are completely different services.",
-      differences: [
-        {
-          service: "Underwater Hull Cleaning (Our Service)",
-          description: "Professional commercial diver goes underwater to scrub and remove barnacles, algae, zebra mussels, and marine growth from the underwater portion of your hull. This improves fuel efficiency, vessel speed, and prevents corrosion. Performed while your boat stays in the water at your marina in Victoria, Oak Bay, Sidney, or anywhere on Vancouver Island."
-        },
-        {
-          service: "Boat Detailing / Boat Washing",
-          description: "Topside cosmetic cleaning of your boat's exterior surfaces above the waterline. Includes washing, waxing, polishing gelcoat, cleaning upholstery, and making your boat look shiny. Does NOT involve diving or underwater work. Does NOT remove barnacles or marine growth."
-        },
-        {
-          service: "Why the Confusion?",
-          description: "Some boat cleaning companies in Victoria offer both washing/detailing AND claim to do 'hull cleaning' - but they're washing the sides of the boat, not diving underwater. True underwater hull cleaning requires a commercial diver with proper equipment to scrub barnacles off the bottom of your boat while it's in the water."
-        }
-      ]
-    }
+    pricing: "Pricing varies based on vessel size and fouling level. Contact us for a free quote specific to your boat in Victoria."
   },
   {
     title: "Underwater Inspections Victoria BC",

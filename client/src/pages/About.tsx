@@ -70,8 +70,7 @@ export default function About() {
                   </p>
                   <p>
                     My career has taken me from Europe's largest aquariums to heavy industry practicums, 
-                    giving me hands-on experience across every sector of the diving industry. From delicate 
-                    underwater maintenance work to industrial operations, I've done it all.
+                    giving me hands-on experience across every sector of the diving industry.
                   </p>
                   <p>
                     Now I'm proud to bring that international expertise home to Victoria, providing 

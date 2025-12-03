@@ -58,33 +58,32 @@ export default function HeroSection() {
       <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70" />
 
       <div className="relative z-10 max-w-5xl mx-auto px-4 md:px-6 text-center text-white mt-32 md:mt-40">
-        <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold mb-6 leading-tight">
-          Professional Diving Services
-          <br />
-          <span className="text-navy-800">Victoria BC</span>
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight tracking-tight">
+          <span className="block">Professional Diving Services</span>
+          <span className="block mt-2 text-primary-foreground/90">in Victoria BC</span>
         </h1>
-        <p className="text-lg md:text-xl lg:text-2xl mb-8 max-w-3xl mx-auto leading-relaxed text-gray-100">
-          Expert commercial divers serving Victoria and Vancouver Island for
-          hull cleaning, underwater inspections, and marine maintenance
+        <p className="text-lg md:text-xl lg:text-2xl mb-10 max-w-3xl mx-auto leading-relaxed text-white/90" data-testid="text-hero-description">
+          Expert hull cleaning, underwater inspections, and marine maintenance. 
+          Serving boat owners across Victoria and Vancouver Island.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <Button
             size="lg"
-            className="text-xl px-8 py-6"
+            className="text-lg md:text-xl px-6 md:px-8 py-6"
             onClick={handleCallNow}
             data-testid="button-hero-call"
           >
-            <Phone className="mr-2 h-6 w-6" />
-            Call Now: (778) 535-4506
+            <Phone className="mr-2 h-5 w-5 md:h-6 md:w-6" />
+            (778) 535-4506
           </Button>
           <Button
             size="lg"
             variant="outline"
-            className="text-xl px-8 py-6 bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20"
+            className="text-lg md:text-xl px-6 md:px-8 py-6 bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20"
             onClick={handleGetQuote}
             data-testid="button-hero-quote"
           >
-            Request a Quote
+            Get a Free Quote
           </Button>
         </div>
       </div>

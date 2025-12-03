@@ -48,16 +48,15 @@ export default function HeroSection() {
         playsInline={true}
         preload="auto"
         poster={heroPoster}
-        className="absolute inset-0 w-full h-full object-cover"
+        className="absolute inset-0 z-0 w-full h-full object-cover"
         aria-label="Underwater diving footage showcasing professional diving services"
       >
         <source src={heroVideo} type="video/mp4" />
         <track kind="captions" src="/captions/hero-video.vtt" srcLang="en" label="English" />
-        Your browser does not support the video tag.
       </video>
-      <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70" />
+      <div className="absolute inset-0 z-[1] bg-gradient-to-b from-black/60 via-black/50 to-black/70" />
 
-      <div className="relative z-10 max-w-5xl mx-auto px-4 md:px-6 text-center text-white mt-32 md:mt-40">
+      <div className="relative z-10 max-w-5xl mx-auto px-4 md:px-6 text-center text-white pt-20 pb-24 md:pt-28 md:pb-32">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight tracking-tight">
           <span className="block">Professional Diving Services</span>
           <span className="block mt-2 text-primary-foreground/90">in Victoria BC</span>
@@ -88,7 +87,7 @@ export default function HeroSection() {
         </div>
       </div>
 
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+      <div className="absolute z-10 bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
         <div className="w-6 h-10 rounded-full border-2 border-white/50 flex items-start justify-center p-2">
           <div className="w-1 h-2 bg-white/70 rounded-full" />
         </div>

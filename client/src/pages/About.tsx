@@ -12,7 +12,7 @@ export default function About() {
     
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', "Meet Daniel Garcia, professional commercial diver serving Victoria BC. Born in Peru, trained in Spain, experienced from Europe's largest aquariums to offshore rigs. Call (778) 535-4506.");
+      metaDescription.setAttribute('content', "Meet Daniel Garcia, lead diver at Danny's Diving Services in Victoria BC. Born in Peru, trained in Spain, experienced from Europe's largest aquariums to offshore rigs. Call (778) 535-4506.");
     }
 
     const canonicalLink = document.querySelector('link[rel="canonical"]') || document.createElement('link');
@@ -59,7 +59,7 @@ export default function About() {
               <div className="space-y-6">
                 <div>
                   <h2 className="text-2xl md:text-3xl font-bold mb-2" data-testid="text-about-name">Daniel Garcia</h2>
-                  <p className="text-primary font-medium text-lg">Professional Commercial Diver</p>
+                  <p className="text-primary font-medium text-lg">Lead Diver</p>
                 </div>
 
                 <div className="space-y-4 text-muted-foreground leading-relaxed">

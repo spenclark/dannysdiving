@@ -81,6 +81,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
     
     const pages = [
       { url: "/", priority: "1.0", changefreq: "weekly" },
+      { url: "/about", priority: "0.8", changefreq: "monthly" },
       { url: "/videos", priority: "0.8", changefreq: "weekly" },
       ...serviceSlugs.map(slug => ({
         url: `/services/${slug}`,

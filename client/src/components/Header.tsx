@@ -74,13 +74,7 @@ export default function Header() {
         window.location.href = "/#contact-form";
       }
     } else if (section === "about") {
-      if (window.location.pathname === "/") {
-        document
-          .getElementById("about")
-          ?.scrollIntoView({ behavior: "smooth" });
-      } else {
-        window.location.href = "/#about";
-      }
+      window.location.href = "/about";
     }
   };
 

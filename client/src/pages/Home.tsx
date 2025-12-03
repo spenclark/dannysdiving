@@ -2,10 +2,9 @@ import { useEffect } from "react";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import TrustBadges from "@/components/TrustBadges";
-import ServicesGrid from "@/components/ServicesGrid";
-import AboutSection from "@/components/AboutSection";
-import BeforeAfterVideo from "@/components/BeforeAfterVideo";
 import Testimonials from "@/components/Testimonials";
+import ServicesGrid from "@/components/ServicesGrid";
+import BeforeAfterVideo from "@/components/BeforeAfterVideo";
 import ContactForm from "@/components/ContactForm";
 import Footer from "@/components/Footer";
 
@@ -36,10 +35,9 @@ export default function Home() {
       <main>
         <HeroSection />
         <TrustBadges />
-        <ServicesGrid />
-        <AboutSection />
-        <BeforeAfterVideo />
         <Testimonials />
+        <ServicesGrid />
+        <BeforeAfterVideo />
         <ContactForm />
       </main>
       <Footer />

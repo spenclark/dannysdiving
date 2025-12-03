@@ -69,8 +69,7 @@ export default function About() {
                     certification as a commercial diver.
                   </p>
                   <p>
-                    My career has taken me from Europe's largest aquariums to heavy industry practicums, 
-                    giving me hands-on experience across every sector of the diving industry.
+                    I have experience in everything from delicate underwater maintenance work to industrial operations.
                   </p>
                   <p>
                     Now I'm proud to bring that international expertise home to Victoria, providing 

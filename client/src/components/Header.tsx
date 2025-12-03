@@ -73,6 +73,14 @@ export default function Header() {
       } else {
         window.location.href = "/#contact-form";
       }
+    } else if (section === "about") {
+      if (window.location.pathname === "/") {
+        document
+          .getElementById("about")
+          ?.scrollIntoView({ behavior: "smooth" });
+      } else {
+        window.location.href = "/#about";
+      }
     }
   };
 
@@ -146,6 +154,17 @@ export default function Header() {
                 </NavigationMenuItem>
               </NavigationMenuList>
             </NavigationMenu>
+            <button
+              onClick={() => handleNavClick("about")}
+              className={`text-base font-medium transition-colors ${
+                shouldUseDarkText
+                  ? "text-foreground hover:text-primary"
+                  : "text-white hover:text-primary"
+              }`}
+              data-testid="nav-about"
+            >
+              About
+            </button>
             <button
               onClick={() => handleNavClick("videos")}
               className={`text-base font-medium transition-colors ${
@@ -245,6 +264,13 @@ export default function Header() {
                   </div>
                 )}
               </div>
+              <button
+                onClick={() => handleNavClick("about")}
+                className="text-left py-2 text-foreground hover:text-primary transition-colors"
+                data-testid="mobile-nav-about"
+              >
+                About
+              </button>
               <button
                 onClick={() => handleNavClick("videos")}
                 className="text-left py-2 text-foreground hover:text-primary transition-colors"

@@ -226,7 +226,7 @@ export default function Header() {
         </div>
 
         {isMobileMenuOpen && (
-          <div className="lg:hidden py-4 border-t bg-background">
+          <div className="lg:hidden py-4 border-t">
             <nav className="flex flex-col gap-4">
               <div>
                 <button

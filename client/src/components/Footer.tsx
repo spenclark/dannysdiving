@@ -1,5 +1,5 @@
 import { Mail, MapPin, Phone } from "lucide-react";
-import { FaFacebook, FaInstagram } from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa";
 import logoImage from "@assets/PHOTO-2025-11-19-20-50-16_1763614659104.webp";
 
 export default function Footer() {
@@ -47,6 +47,16 @@ export default function Footer() {
                 aria-label="Visit our Instagram profile"
               >
                 <FaInstagram className="w-6 h-6" />
+              </a>
+              <a 
+                href="https://www.youtube.com/@dannysdivingservices" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-primary transition-colors"
+                data-testid="link-youtube"
+                aria-label="Visit our YouTube channel"
+              >
+                <FaYoutube className="w-6 h-6" />
               </a>
             </div>
           </div>

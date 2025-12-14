@@ -1,0 +1,132 @@
+What You Did Right (keep all of this)
+1. Static, deterministic sitemap
+
+✔️ Perfect for a service business
+✔️ No DB dependency, no runtime surprises
+✔️ Google loves boring XML that never breaks
+
+2. Service pages are explicitly enumerated
+/services/hull-cleaning
+/services/underwater-inspections
+/services/zinc-changes
+
+
+✔️ Excellent
+✔️ Avoids orphan pages
+✔️ Ensures all money pages are crawlable
+✔️ Matches your actual service architecture
+
+This is exactly how a small service business should do it.
+
+3. Reasonable priorities and changefreq
+
+Your values are sane:
+
+Page	Priority	Verdict
+/	1.0	Correct
+/services/*	0.9	Correct
+/about	0.8	Correct
+/videos	0.8	Good (if active)
+legal	0.3	Correct
+
+Google largely ignores these, but they do no harm, and they help other crawlers.
+
+What I’d Improve (SEO-focused, minimal changes)
+1. Add service category root (important)
+
+If you have /services as an index page, it must be included.
+
+{ url: "/services", priority: "0.95", changefreq: "monthly" }
+
+
+This page often:
+
+Ranks for “commercial diving services Victoria”
+
+Acts as a hub for internal linking equity
+
+This is a small but real SEO win.
+
+2. Add location page(s) if they exist
+
+If you serve Victoria / Vancouver Island and have or plan pages like:
+
+/victoria-commercial-diving
+
+/vancouver-island-diver
+
+They should be explicitly listed, not programmatic.
+
+Local SEO ≠ dynamic routes. Be intentional.
+
+3. Use res.type("application/xml")
+
+Small polish, but cleaner Express usage:
+
+res.type("application/xml");
+res.send(sitemap);
+
+4. Consider HTTP caching headers
+
+This is free performance + crawl efficiency:
+
+res.set("Cache-Control", "public, max-age=86400");
+
+
+Google does not need a fresh sitemap every request.
+
+5. Don’t over-rotate on lastmod
+
+You’re using:
+
+const currentDate = new Date().toISOString().split('T')[0];
+
+
+This is fine, but it technically tells Google everything changes every day.
+
+Better (optional):
+
+Hardcode a deploy date
+
+Or only update when services actually change
+
+Not critical, but more “honest”.
+
+Minor SEO Notes (Reality Check)
+
+Google does not rank you higher because of:
+
+priority
+
+changefreq
+
+Google does use sitemap to:
+
+discover pages faster
+
+confirm canonical URLs
+
+crawl new service pages quickly
+
+Your sitemap does exactly what it should.
+
+Final Verdict
+
+For a local, SEO-driven service business like Danny’s Diving:
+
+✔️ Correct architecture
+✔️ No over-engineering
+✔️ No “AI SEO slop”
+✔️ Very hard to screw up
+
+Grade: A-
+
+Add /services + any geo pages and you’re at A / A+.
+
+If you want, next we can:
+
+Tune service slugs for actual search demand
+
+Decide if /videos helps or hurts SEO
+
+Design a sitemap index (only if you scale content)

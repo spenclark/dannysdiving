@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import TrustBadges from "@/components/TrustBadges";
+import ServiceLinks from "@/components/ServiceLinks";
 import Testimonials from "@/components/Testimonials";
 import ServicesGrid from "@/components/ServicesGrid";
 import BeforeAfterVideo from "@/components/BeforeAfterVideo";
@@ -35,8 +36,9 @@ export default function Home() {
       <main>
         <HeroSection />
         <TrustBadges />
-        <Testimonials />
+        <ServiceLinks />
         <ServicesGrid />
+        <Testimonials />
         <BeforeAfterVideo />
         <ContactForm />
       </main>

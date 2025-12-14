@@ -146,6 +146,11 @@ export default function ServicePage() {
         'content': '48.4284, -123.3656'
       });
 
+      setOrCreateMeta('meta[name="robots"]', {
+        'name': 'robots',
+        'content': 'index, follow'
+      });
+
       const canonicalLink = document.querySelector('link[rel="canonical"]') || document.createElement('link');
       canonicalLink.setAttribute('rel', 'canonical');
       canonicalLink.setAttribute('href', `https://dannysdiving.com/services/${service.slug}`);
@@ -236,6 +241,7 @@ export default function ServicePage() {
         restoreMeta('meta[name="geo.placename"]');
         restoreMeta('meta[name="geo.position"]');
         restoreMeta('meta[name="ICBM"]');
+        restoreMeta('meta[name="robots"]');
         restoreLink('link[rel="canonical"]');
         
         const scripts = document.querySelectorAll('#service-schema, #faq-schema, #breadcrumb-schema');
@@ -512,7 +518,7 @@ export default function ServicePage() {
                       </CardHeader>
                       <CardContent>
                         <div className="flex items-center text-primary font-medium">
-                          Learn More
+                          View {relatedService.title.replace(' Victoria BC', '')} Services
                           <ArrowRight className="w-4 h-4 ml-2" />
                         </div>
                       </CardContent>

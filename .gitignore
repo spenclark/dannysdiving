@@ -1,6 +1,37 @@
+# Dependencies
 node_modules
+
+# Replit
+.local/
+.replit
+replit.nix
+
+# Build output
 dist
+.netlify
+
+# OS files
 .DS_Store
+Thumbs.db
+
+# IDE
+.idea
+*.swp
+*.swo
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log
+npm-debug.log*
+
+# Temp files
 server/public
 vite.config.ts.*
 *.tar.gz
+
+# Local Netlify folder
+.netlify

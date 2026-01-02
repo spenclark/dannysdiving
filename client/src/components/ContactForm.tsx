@@ -35,17 +35,22 @@ export default function ContactForm() {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
+      // Submit to Netlify Forms
+      const formBody = new URLSearchParams();
+      formBody.append("form-name", "contact");
+      formBody.append("name", formData.name);
+      formBody.append("phone", formData.phone);
+      formBody.append("email", formData.email);
+      formBody.append("service", formData.service);
+      formBody.append("message", formData.message);
+
+      const response = await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: formBody.toString(),
       });
 
-      const data = await response.json();
-
-      if (response.ok && data.success) {
+      if (response.ok) {
         toast({
           title: "Quote Request Sent!",
           description: "We've received your request and will contact you within 24 hours.",
@@ -54,7 +59,7 @@ export default function ContactForm() {
         // Clear form on success
         setFormData({ name: "", phone: "", email: "", service: "", message: "" });
       } else {
-        throw new Error(data.message || 'Failed to submit request');
+        throw new Error('Failed to submit request');
       }
     } catch (error) {
       console.error('Error submitting form:', error);
@@ -89,12 +94,22 @@ export default function ContactForm() {
               <CardDescription>Fill out the form and we'll get back to you within 24 hours</CardDescription>
             </CardHeader>
             <CardContent>
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form 
+                name="contact" 
+                method="POST" 
+                data-netlify="true"
+                onSubmit={handleSubmit} 
+                className="space-y-6"
+              >
+                {/* Hidden field for Netlify Forms */}
+                <input type="hidden" name="form-name" value="contact" />
+                
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <Label htmlFor="name">Full Name *</Label>
                     <Input
                       id="name"
+                      name="name"
                       required
                       value={formData.name}
                       onChange={(e) => handleChange('name', e.target.value)}
@@ -106,6 +121,7 @@ export default function ContactForm() {
                     <Label htmlFor="phone">Phone Number *</Label>
                     <Input
                       id="phone"
+                      name="phone"
                       type="tel"
                       required
                       value={formData.phone}
@@ -120,6 +136,7 @@ export default function ContactForm() {
                   <Label htmlFor="email">Email Address *</Label>
                   <Input
                     id="email"
+                    name="email"
                     type="email"
                     required
                     value={formData.email}
@@ -145,12 +162,15 @@ export default function ContactForm() {
                       <SelectItem value="other">Other</SelectItem>
                     </SelectContent>
                   </Select>
+                  {/* Hidden input to capture select value for Netlify */}
+                  <input type="hidden" name="service" value={formData.service} />
                 </div>
 
                 <div className="space-y-2">
                   <Label htmlFor="message">Message / Details</Label>
                   <Textarea
                     id="message"
+                    name="message"
                     value={formData.message}
                     onChange={(e) => handleChange('message', e.target.value)}
                     placeholder="Tell us about your vessel and diving needs..."
